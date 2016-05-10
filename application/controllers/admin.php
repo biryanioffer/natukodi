@@ -101,15 +101,15 @@ class admin extends CI_Controller {
 		print '</pre>';*/
 
 		/* Retrieve and print the row count */
-		$rowcount = $this->Service_areas_model->get_row_count();
-		print '<strong>Row count: ' . $rowcount . '</strong>';
+		/*$rowcount = $this->Service_areas_model->get_row_count();
+		print '<strong>Row count: ' . $rowcount . '</strong>';*/
         
 
-	/*	$this->load->view('admin/common/head');
+		$this->load->view('admin/common/head');
 		$this->load->view('admin/common/side-nav');
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/service_areas');
-		$this->load->view('admin/common/footer');*/
+		$this->load->view('admin/common/footer');
 	}
 	public function service_area()
 	{
