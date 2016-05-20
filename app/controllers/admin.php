@@ -21,9 +21,9 @@ class admin extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('admin/common/head');
-		$this->load->view('admin/common/side-nav');
-		$this->load->view('admin/common/top-bar');
-		$this->load->view('admin/administrators');
+		//$this->load->view('admin/common/side-nav');
+		//$this->load->view('admin/common/top-bar');
+		$this->load->view('admin/login');
 		$this->load->view('admin/common/footer');
 	}
 

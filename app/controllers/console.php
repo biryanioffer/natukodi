@@ -19,6 +19,11 @@ class console extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
+	public function index()
+	{
+		$this->load->view('index');
+	}
+	
 	//	*** USER WORKFLOW ***
 	public function login()
 	{
@@ -28,13 +33,26 @@ class console extends CI_Controller {
 	{
 		$this->load->view('user/signUp');
 	}
-	public function index()
+	public function profile()
 	{
-		$this->load->view('index');
+		$this->load->view('user/profile');
 	}
+	public function thank_you()
+	{
+		$this->load->view('user/thankYou');
+	}
+	
 	public function offers()
 	{
 		$this->load->view('offer/results');
+	}
+	public function more_details()
+	{
+		$this->load->view('offer/offerMoreDetails');
+	}
+	public function offer_post()
+	{
+		$this->load->view('offer/postOffer');
 	}
 
 
@@ -75,7 +93,7 @@ class console extends CI_Controller {
 	{
 		$this->load->view('merchant/support');
 	}
-	public function thank_you()
+	public function merchant_thank_you()
 	{
 		$this->load->view('merchant/thankYou');
 	}

@@ -136,7 +136,7 @@
                      <div class="form-group">
                         <!-- Button -->                                        
                         <div class="col-md-offset-4 col-md-8">
-                           <a href="user-thank-you.php" id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</a>
+                           <a href="thankYou.php" id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</a>
                         </div>
                      </div>
                   </form>

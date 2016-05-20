@@ -1,4 +1,4 @@
-<?php include 'includes/head.php';?>
+<?php include 'app/views/includes/head.php';?>
 <title>Offerciti | Home</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Offerciti offline discounts" />
@@ -90,7 +90,7 @@
    <header>
             <!-- top nav section -->
             <section class="top-sec-nav">
-             <?php include 'includes/top-nav.php';?>  
+             <?php include 'app/views/includes/top-nav.php';?>
 				
             </section>
             <!-- top nav section ends -->
@@ -98,7 +98,7 @@
          </header>
   
   <div id="advertiser-more-cont" class="advertiser-more-cont">
-            <h3 class="store-hd">CHANDANA BROTHERS<a href="results.html" class="btn btn-primary btn-xs">Back</a><a href="javascript:window.print()" target="_blank"><img src="../assets/images/print.png"></a></h3>
+            <h3 class="store-hd">CHANDANA BROTHERS<a href="offers" class="btn btn-primary btn-xs">Back</a><a href="javascript:window.print()" target="_blank"><img src="<?php echo site_url('app/assets/images/print.png');?>"></a></h3>
             
              <!-- resutls section-wise-start -->
                   <div class="res-wrap rec-partner">
@@ -111,7 +111,7 @@
                                  <h4>FLAT <span>55%</span></h4>
                                  <p>SOUTH INDIA SHOPPING MALL</p>
                               </div>
-                              <img src="../assets/images/vendor-assets/chandana.jpg" alt="Chandana Brothers" title="Chandana Brothers">
+                              <img src="<?php echo site_url('app/assets/images/vendor-assets/chandana.jpg');?>" alt="Chandana Brothers" title="Chandana Brothers">
                            </div>
                         </div>
                         <div class="col-md-10 vendor-info-wrap">
@@ -182,12 +182,12 @@
                               </li>
                            </ul>
                            <ul class="share-buttons">
-                              <li><a href="https://www.facebook.com/sharer/sharer.php?u=&t=" title="Share on Facebook" target="_blank"><img src="../assets/images/social/Facebook.png"></a></li>
-                              <li><a href="https://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet"><img src="../assets/images/social/Twitter.png"></a></li>
-                              <li><a href="https://plus.google.com/share?url=" target="_blank" title="Share on Google+"><img src="../assets/images/social/Google+.png"></a></li>
-                              <li><a href="mailto:?subject=&body=:%20" target="_blank" title="Email"><img src="../assets/images/social/Email.png"></a></li>
-                              <li><a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share"><img src="../assets/images/social/whatsapp.png"></a></li>
-                              <li><a href="#overlay" id="open-overlay"><img src="../assets/images/social/sms.png"></a></li>
+                              <li><a href="https://www.facebook.com/sharer/sharer.php?u=&t=" title="Share on Facebook" target="_blank"><img src="<?php echo site_url('app/assets/images/social/Facebook.png');?>"></a></li>
+                              <li><a href="https://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet"><img src="<?php echo site_url('app/assets/images/social/Twitter.png');?>"></a></li>
+                              <li><a href="https://plus.google.com/share?url=" target="_blank" title="Share on Google+"><img src="<?php echo site_url('app/assets/images/social/Google+.png');?>"></a></li>
+                              <li><a href="mailto:?subject=&body=:%20" target="_blank" title="Email"><img src="<?php echo site_url('app/assets/images/social/Email.png');?>"></a></li>
+                              <li><a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share"><img src="<?php echo site_url('app/assets/images/social/whatsapp.png');?>"></a></li>
+                              <li><a href="#overlay" id="open-overlay"><img src="<?php echo site_url('app/assets/images/social/sms.png');?>"></a></li>
                            </ul>
                         </div>
                      </div>
@@ -211,7 +211,7 @@
                      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                         <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"  data-target="#image-gallery">
                            <figure>
-                              <img class="img-responsive" src="../assets/images/store-gallery/1.jpg">
+                              <img class="img-responsive" src="<?php echo site_url('app/assets/images/store-gallery/1.jpg');?>">
                               <figcaption>
                                  <div>View</div>
                               </figcaption>
@@ -225,7 +225,7 @@
                      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                         <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"  data-target="#image-gallery">
                            <figure>
-                              <img class="img-responsive" src="../assets/images/store-gallery/14.jpg">
+                              <img class="img-responsive" src="<?php echo site_url('app/assets/images/store-gallery/14.jpg');?>">
                               <figcaption>
                                  <div>View</div>
                               </figcaption>
@@ -239,7 +239,7 @@
                      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                         <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"  data-target="#image-gallery">
                            <figure>
-                              <img class="img-responsive" src="../assets/images/store-gallery/1.jpg">
+                              <img class="img-responsive" src="<?php echo site_url('app/assets/images/store-gallery/1.jpg');?>">
                               <figcaption>
                                  <div>View</div>
                               </figcaption>
@@ -253,7 +253,7 @@
                      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                         <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"  data-target="#image-gallery">
                            <figure>
-                              <img class="img-responsive" src="../assets/images/store-gallery/1.jpg">
+                              <img class="img-responsive" src="<?php echo site_url('app/assets/images/store-gallery/1.jpg');?>">
                               <figcaption>
                                  <div>View</div>
                               </figcaption>
@@ -270,7 +270,7 @@
                   <div class="col-lg-12">
                      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                         <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"  data-target="#image-gallery">
-                        <img class="img-responsive" src="../assets/images/store-gallery/07.jpg">						
+                        <img class="img-responsive" src="<?php echo site_url('app/assets/images/store-gallery/07.jpg');?>">						
                         </a>
                         <div class="product-info">
                            <div class="h4"><span class="brand"><label>Brand:</label><small>Rain &amp; Rainbow</small></span> <span class="model"><label>Model:</label><small>Brown Printed Cotton Anarkali</small></span></div>
@@ -279,7 +279,7 @@
                      </div>
                      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                         <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"  data-target="#image-gallery">
-                        <img class="img-responsive" src="../assets/images/store-gallery/15.jpg">						
+                        <img class="img-responsive" src="<?php echo site_url('app/assets/images/store-gallery/15.jpg');?>">						
                         </a>
                         <div class="product-info">
                            <div class="h4"><span class="brand"><label>Brand:</label><small>Rain &amp; Rainbow</small></span> <span class="model"><label>Model:</label><small>Brown Printed Cotton Anarkali</small></span></div>
@@ -288,7 +288,7 @@
                      </div>
                      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                         <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"  data-target="#image-gallery">
-                        <img class="img-responsive" src="../assets/images/store-gallery/07.jpg">						
+                        <img class="img-responsive" src="<?php echo site_url('app/assets/images/store-gallery/07.jpg');?>">						
                         </a>
                         <div class="product-info">
                            <div class="h4"><span class="brand"><label>Brand:</label><small>Rain &amp; Rainbow</small></span> <span class="model"><label>Model:</label><small>Brown Printed Cotton Anarkali</small></span></div>
@@ -297,7 +297,7 @@
                      </div>
                      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                         <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"  data-target="#image-gallery">
-                        <img class="img-responsive" src="../assets/images/store-gallery/15.jpg">						
+                        <img class="img-responsive" src="<?php echo site_url('app/assets/images/store-gallery/15.jpg');?>">						
                         </a>
                         <div class="product-info">
                            <div class="h4"><span class="brand"><label>Brand:</label><small>Rain &amp; Rainbow</small></span> <span class="model"><label>Model:</label><small>Brown Printed Cotton Anarkali</small></span></div>
@@ -312,7 +312,7 @@
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>                           
                         <div class="modal-body">
                            <div class="prod-img-wrap">
-                              <img id="image-gallery-image" class="img-responsive" src="../assets/images/store-gallery/14.jpg">
+                              <img id="image-gallery-image" class="img-responsive" src="<?php echo site_url('app/assets/images/store-gallery/14.jpg');?>">
                            </div>
                            <div class="product-info product-info-pop">
                               <div class="h4"><span class="brand"><label>Brand:</label><small>Rain &amp; Rainbow</small></span> <span class="model"><label>Model:</label><small>Brown Printed Cotton Anarkali</small></span></div>
@@ -421,4 +421,4 @@
             <!-- map ends --> 
          </div>
          </div>
-<?php include 'includes/footer.php' ?>
+<?php include 'app/views/includes/footer.php' ?>

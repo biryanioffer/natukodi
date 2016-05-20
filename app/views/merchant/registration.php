@@ -28,7 +28,7 @@
                      </div>
                      <div class="">
                         <input type="text" class="form-control" id="mob-no" placeholder="*Enter Verification Code" maxlength="10" required="1" value="">	
-                        <a href="thankYou.php" class="btn btn-theme">Signup</a>						
+                        <a href="merchant_thank_you" class="btn btn-theme">Signup</a>
                      </div>
                   </div>
                </div>
@@ -50,7 +50,7 @@
          <div class="panel panel-info">
             <div class="panel-heading">
                <div class="panel-title">Advertiser Sign Up
-				<div class="already-registered"><a href="login.php" id="Advertiser-login">Already Registered?</a></div>
+				<div class="already-registered"><a href="merchant_login" id="Advertiser-login">Already Registered?</a></div>
 				</div>
             </div>
             <div class="panel-body" >
