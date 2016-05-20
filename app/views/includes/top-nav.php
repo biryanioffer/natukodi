@@ -7,20 +7,20 @@
                      <span>&nbsp;</span>Shortlist
                      </a>
                      <div class="dropdown user-login-cont">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Merchant Login / Signup
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Merchant Login / Sign Up
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu">
                            <li><a href="merchant_login">Login / Signup</a></li>
-                           <li><a href="merchant_profile">My Account</a></li>
+                           <li><a href="posts">My Account</a></li>
                            <li><a href="merchant_login">Logout</a></li>
                         </ul>
                      </div>
                      <div class="dropdown user-login-cont">
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login / Signup
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login / Sign Up
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu">
-                           <li><a href="login">Login / Signup</a></li>
-                           <li><a href="sign_up">My Account</a></li>
+                           <li><a href="login">Login / Sign Up</a></li>
+                           <li><a href="profile">My Account</a></li>
                            <li><a href="login">Logout</a></li>
                         </ul>
                      </div>
@@ -32,21 +32,21 @@
                      <div class="list-group mobile-menu-list">
                         <a href="#" class="list-group-item">Favourites</a>
                         <a href="#" class="list-group-item">Shortlist</a>
-                        <a href="advertiser-signup.php" class="list-group-item">Post A Free Add</a>
+                        <a href="merchant_login" class="list-group-item">Post A Free Ad</a>
                         <div class="dropdown user-login-cont">
-                           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Advertiser Login / Signup
+                           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Merchant Login / Sign Up
                            <span class="caret"></span></button>
                            <ul class="dropdown-menu">
-                              <li><a href="postad.php">My Account</a></li>
-                              <li><a href="#">Logout</a></li>
+                              <li><a href="posts">My Account</a></li>
+                              <li><a href="merchant_login">Logout</a></li>
                            </ul>
                         </div>
                         <div class="dropdown user-login-cont">
-                           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login / Signup
+                           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login / Sign Up
                            <span class="caret"></span></button>
                            <ul class="dropdown-menu">
-                              <li><a href="user-account.php">My Account</a></li>
-                              <li><a href="#">Logout</a></li>
+                              <li><a href="profile">My Account</a></li>
+                              <li><a href="login">Logout</a></li>
                            </ul>
                         </div>
                      </div>
