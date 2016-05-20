@@ -42,28 +42,28 @@
                               <div class="panel-body">
                                  <div class="row">
                                     <div class="col-sm-2">										
-                                       <a id="" href="profile.php" class="btn btn-theme-dark btn-theme-dark"><span class="glyphicon glyphicon-user"></span>Profile </a>
+                                       <a id="" href="#" class="btn btn-theme-dark btn-theme-dark"><span class="glyphicon glyphicon-user"></span>Profile </a>
                                     </div>
                                     <div class="col-sm-2">
-                                       <a id="" href="posts.php" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-tag"></span>Manage Ads</a>
+                                       <a id="" href="posts" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-tag"></span>Manage Ads</a>
                                     </div>
                                     <div class="col-sm-2">
-                                       <a id="" href="wallet.php" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-briefcase"></span>Wallet</a>
+                                       <a id="" href="wallet" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-briefcase"></span>Wallet</a>
                                     </div>
                                     <div class="col-sm-2">
-                                       <a id="" href="branches.php" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-home"></span>Branches</a>
+                                       <a id="" href="branches" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-home"></span>Branches</a>
                                     </div>
                                     <div class="col-sm-2">
-                                       <a id="" href="../offer/postad.php" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-bullhorn"></span>Post Ad </a>
+                                       <a id="" href="offer_post" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-bullhorn"></span>Post Ad </a>
                                     </div>
                                     <div class="col-sm-2">
-                                       <a id="" href="changePassword.php" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-lock"></span>Change Password</a>
+                                       <a id="" href="merchant_change_password" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-lock"></span>Change Password</a>
                                     </div>
                                     <div class="col-sm-2">
-                                       <a id="" href="notifications.php" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-bell"></span>Notifications</a>
+                                       <a id="" href="notifications" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-bell"></span>Notifications</a>
                                     </div>
                                     <div class="col-sm-2">
-                                       <a id="" href="support.php" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-envelope"></span>Support</a>
+                                       <a id="" href="support" class="btn btn-theme btn-theme-block"><span class="glyphicon glyphicon-envelope"></span>Support</a>
                                     </div>
                                  </div>
                               </div>

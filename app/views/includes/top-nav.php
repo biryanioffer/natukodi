@@ -55,10 +55,10 @@
 			   
 			   <h1 id="logo-wrap">
                   <p>
-                     <a href="index.php">
+                     <a href="index">
                      <img src="<?php echo site_url('app/assets/images/offerciti-logo.png');?>">
                      </a>
-                     <a href="advertiser-signup.php" class="postafreead">
+                     <a href="register" class="postafreead">
                      <span class="a-btn-text">Post A Free Ad</span>						
                      </a>
                   </p>

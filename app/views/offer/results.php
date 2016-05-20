@@ -1,4 +1,4 @@
-<?php include 'includes/head.php';?>
+<?php include 'app/views/includes/head.php';?>
 <title>Offerciti | Results</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Offerciti offline discounts" />
@@ -57,12 +57,12 @@
    <header>
             <!-- top nav section -->
             <section class="top-sec-nav">
-             <?php include 'includes/top-nav.php';?>  
+             <?php include 'app/views/includes/top-nav.php';?>
 				
             </section>
             <!-- top nav section ends -->
             <!-- top  nav categories starts -->
-            <?php include 'includes/search.php'; ?>
+            <?php include 'app/views/includes/search.php'; ?>
 			
             <!-- top nav categories ends -->
          </header>
@@ -253,7 +253,7 @@
                                  <h4>FLAT <span>55%</span></h4>
                                  <p>SOUTH INDIA SHOPPING MALL</p>
                               </div>
-                              <img src="../assets/images/vendor-assets/chandana.jpg" alt="Chandana Brothers" title="Chandana Brothers">
+                              <img src="<?php echo site_url('app/assets/images/vendor-assets/chandana.jpg');?>" alt="Chandana Brothers" title="Chandana Brothers">
                            </div>
                         </div>
                         <div class="col-md-10 vendor-info-wrap">
@@ -323,16 +323,16 @@
                                  <div class="vendor-lbl"><span class="btn-social btn-outline" data-toggle="tooltip" data-placement="bottom" title="Like"><i class="fa fa-fw fa-thumbs-up"></i></span><b class="like-info">555</b></div>
                               </li>
                               <li>
-                                 <div class="vendor-lbl"><a href="offer-details.php" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="bottom" title="More Information">More</a></div>
+                                 <div class="vendor-lbl"><a href="more_details" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="bottom" title="More Information">More</a></div>
                               </li>
                            </ul>
                            <ul class="share-buttons">
-                              <li><a href="https://www.facebook.com/sharer/sharer.php?u=&t=" title="Share on Facebook" target="_blank"><img src="../assets/images/social/Facebook.png"></a></li>
-                              <li><a href="https://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet"><img src="../assets/images/social/Twitter.png"></a></li>
-                              <li><a href="https://plus.google.com/share?url=" target="_blank" title="Share on Google+"><img src="../assets/images/social/Google+.png"></a></li>
-                              <li><a href="mailto:?subject=&body=:%20" target="_blank" title="Email"><img src="../assets/images/social/Email.png"></a></li>
-                              <li><a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share"><img src="../assets/images/social/whatsapp.png"></a></li>
-                              <li><a href="#overlay" id="open-overlay"><img src="../assets/images/social/sms.png"></a></li>
+                              <li><a href="https://www.facebook.com/sharer/sharer.php?u=&t=" title="Share on Facebook" target="_blank"><img src="<?php echo site_url('app/assets/images/social/Facebook.png');?>"></a></li>
+                              <li><a href="https://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet"><img src="<?php echo site_url('app/assets/images/social/Twitter.png');?>"></a></li>
+                              <li><a href="https://plus.google.com/share?url=" target="_blank" title="Share on Google+"><img src="<?php echo site_url('app/assets/images/social/Google+.png');?>"></a></li>
+                              <li><a href="mailto:?subject=&body=:%20" target="_blank" title="Email"><img src="<?php echo site_url('app/assets/images/social/Email.png');?>"></a></li>
+                              <li><a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share"><img src="<?php echo site_url('app/assets/images/social/whatsapp.png');?>"></a></li>
+                              <li><a href="#overlay" id="open-overlay"><img src="<?php echo site_url('app/assets/images/social/sms.png');?>"></a></li>
                            </ul>
                         </div>
                      </div>
@@ -351,7 +351,7 @@
                                  <h4>FLAT <span>55%</span></h4>
                                  <p>RS Brothers</p>
                               </div>
-                              <img src="../assets/images/vendor-assets/rsbrothers.jpg" alt="Chandana Brothers" title="Chandana Brothers">
+                              <img src="<?php echo site_url('app/assets/images/vendor-assets/rsbrothers.jpg');?>" alt="Chandana Brothers" title="Chandana Brothers">
                            </div>
                         </div>
                         <div class="col-md-10 vendor-info-wrap">
@@ -420,7 +420,7 @@
                                  <div class="vendor-lbl"><span class="btn-social btn-outline" data-toggle="tooltip" data-placement="bottom" title="Like"><i class="fa fa-fw fa-thumbs-up"></i></span><b class="like-info">555</b></div>
                               </li>
                               <li>
-                                 <div class="vendor-lbl"><a href="offer-details.php" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="bottom" title="More Information">More</a></div>
+                                 <div class="vendor-lbl"><a href="more_details" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="bottom" title="More Information">More</a></div>
                               </li>
                            </ul>
                            
@@ -442,7 +442,7 @@
                                  <h4>FLAT <span>45%</span></h4>
                                  <p>Nalli Silks</p>
                               </div>
-                              <img src="../assets/images/vendor-assets/nallisilks.jpg" alt="Nalli Silks" title="Nalli Silks">
+                              <img src="<?php echo site_url('app/assets/images/vendor-assets/nallisilks.jpg');?>" alt="Nalli Silks" title="Nalli Silks">
                            </div>
                         </div>
                         <div class="col-md-10 vendor-info-wrap">
@@ -511,7 +511,7 @@
                                  <div class="vendor-lbl"><span class="btn-social btn-outline" data-toggle="tooltip" data-placement="bottom" title="Like"><i class="fa fa-fw fa-thumbs-up"></i></span><b class="like-info">555</b></div>
                               </li>
                               <li>
-                                 <div class="vendor-lbl"><a href="offer-details.php" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="bottom" title="More Information">More</a></div>
+                                 <div class="vendor-lbl"><a href="more_details" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="bottom" title="More Information">More</a></div>
                               </li>
                            </ul>
                            
@@ -533,7 +533,7 @@
                                  <h4>Upto <span>35%</span></h4>
                                  <p>Zari Sarees</p>
                               </div>
-                              <img src="../assets/images/vendor-assets/zari.jpg" alt="Zari Sarees" title="Zari Sarees">
+                              <img src="<?php echo site_url('app/assets/images/vendor-assets/zari.jpg');?>" alt="Zari Sarees" title="Zari Sarees">
                            </div>
                         </div>
                         <div class="col-md-10 vendor-info-wrap">
@@ -602,7 +602,7 @@
                                  <div class="vendor-lbl"><span class="btn-social btn-outline" data-toggle="tooltip" data-placement="bottom" title="Like"><i class="fa fa-fw fa-thumbs-up"></i></span><b class="like-info">555</b></div>
                               </li>
                               <li>
-                                 <div class="vendor-lbl"><a href="offer-details.php" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="bottom" title="More Information">More</a></div>
+                                 <div class="vendor-lbl"><a href="more_details" class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="bottom" title="More Information">More</a></div>
                               </li>
                            </ul>
                            

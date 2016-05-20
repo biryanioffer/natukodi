@@ -58,14 +58,14 @@
                                     <div style="margin-top:10px" class="form-group">
                                        <!-- Button -->
                                        <div class="col-sm-12 controls user-login-btn-wrap">
-                                          <a id="btn-login" href="../offer/postad.php" class="btn btn-theme">Login  </a>                                     
+                                          <a id="btn-login" href="posts" class="btn btn-theme">Login  </a>
                                        </div>
                                     </div>
                                     <div class="form-group">
                                        <div class="col-md-12 control">
                                           <div class="dont-ac">
                                              Don't have an account! 
-                                             <a href="registration.php" id="create-ac-btn">
+                                             <a href="register" id="create-ac-btn">
                                              Sign Up Here
                                              </a>
                                           </div>

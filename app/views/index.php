@@ -37,282 +37,282 @@
         	
 			<div class="item">
         		<div class="animate-box">
-	        		<a href="app/assets/images/img_12.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_12.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_12.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Khazana Jewllery</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_2.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_2.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_2.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>RS Brothers</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_6.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_6.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_6.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Carbon</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_4.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_4.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_4.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_5.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_5.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_5.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_6.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_6.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_6.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_7.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_7.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_7.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_8.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_8.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_8.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_9.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_9.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_9.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_10.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_10.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_10.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_11.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_11.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_11.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_12.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_12.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_12.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_6.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_6.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_6.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_1.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_1.jpg');?>" alt="">
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_1.jpg');?>" alt="">
 					</a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_2.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_12.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_12.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_5.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_5.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_5.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_6.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_6.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_6.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_8.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_8.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_8.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_7.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_7.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_7.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_9.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_9.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_9.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_2.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_2.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_2.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_12.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_12.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_12.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_3.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_3.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_3.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_4.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_4.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_4.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_6.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_6.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_6.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_7.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_7.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_7.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_10.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_10.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_10.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_8.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_8.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_8.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_6.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_6.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_6.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
         	<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_5.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_5.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_5.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
 			<div class="item">
         		<div class="animate-box">
-	        		<a href="assets/images/img_2.jpg" class="image-popup fh5co-board-img"><img src="<?php echo site_url('app/assets/images/img_2.jpg');?>" alt=""></a>
+	        		<a href="more_details"><img src="<?php echo site_url('app/assets/images/img_2.jpg');?>" alt=""></a>
 	        		<div class="fh5co-desc">
 						<h4>Bajaja Electronics</h4>
-						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="#">View</a>
+						<span>100 Rs less on on every Gram and 5000 RS Less on every carrat.</span><a href="more_details">View</a>
 					</div>
         		</div>
         	</div>
