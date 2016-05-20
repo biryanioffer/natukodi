@@ -2,7 +2,7 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP
+ * An open source app development framework for PHP
  *
  * This content is released under the MIT License (MIT)
  *
@@ -85,7 +85,7 @@ switch (ENVIRONMENT)
 
 	default:
 		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-		echo 'The application environment is not set correctly.';
+		echo 'The app environment is not set correctly.';
 		exit(1); // EXIT_ERROR
 }
 
@@ -104,7 +104,7 @@ switch (ENVIRONMENT)
  * APPLICATION DIRECTORY NAME
  *---------------------------------------------------------------
  *
- * If you want this front controller to use a different "application"
+ * If you want this front controller to use a different "app"
  * directory than the default one you can set its name here. The directory
  * can also be renamed or relocated anywhere on your server. If you do,
  * use an absolute (full) server path.
@@ -114,17 +114,17 @@ switch (ENVIRONMENT)
  *
  * NO TRAILING SLASH!
  */
-	$application_folder = 'application';
+	$application_folder = 'app';
 
 /*
  *---------------------------------------------------------------
  * VIEW DIRECTORY NAME
  *---------------------------------------------------------------
  *
- * If you want to move the view directory out of the application
+ * If you want to move the view directory out of the app
  * directory, set the path to it here. The directory can be renamed
  * and relocated anywhere on your server. If blank, it will default
- * to the standard location inside your application directory.
+ * to the standard location inside your app directory.
  * If you do move this, use an absolute (full) server path.
  *
  * NO TRAILING SLASH!
@@ -145,7 +145,7 @@ switch (ENVIRONMENT)
  * routing in a specific front controller that shares a common CI installation.
  *
  * IMPORTANT: If you set the routing here, NO OTHER controller will be
- * callable. In essence, this preference limits your application to ONE
+ * callable. In essence, this preference limits your app to ONE
  * specific controller. Leave the function name blank if you need
  * to call functions dynamically via the URI.
  *
@@ -170,7 +170,7 @@ switch (ENVIRONMENT)
  * The $assign_to_config array below will be passed dynamically to the
  * config class when initialized. This allows you to set custom config
  * items or override any default config values found in the config.php file.
- * This can be handy as it permits you to share one application between
+ * This can be handy as it permits you to share one app between
  * multiple front controller files, with each file containing different
  * config values.
  *
@@ -235,7 +235,7 @@ switch (ENVIRONMENT)
 	// Name of the "system" directory
 	define('SYSDIR', basename(BASEPATH));
 
-	// The path to the "application" directory
+	// The path to the "app" directory
 	if (is_dir($application_folder))
 	{
 		if (($_temp = realpath($application_folder)) !== FALSE)
@@ -262,7 +262,7 @@ switch (ENVIRONMENT)
 	else
 	{
 		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-		echo 'Your application folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
+		echo 'Your app folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
 		exit(3); // EXIT_CONFIG
 	}
 

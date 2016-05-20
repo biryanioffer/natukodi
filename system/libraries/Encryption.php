@@ -2,7 +2,7 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP
+ * An open source app development framework for PHP
  *
  * This content is released under the MIT License (MIT)
  *
@@ -834,7 +834,7 @@ class CI_Encryption {
 	 * @param	$digest	A SHA-2 hashing algorithm
 	 * @param	$salt	Optional salt
 	 * @param	$length	Output length (defaults to the selected digest size)
-	 * @param	$info	Optional context/application-specific info
+	 * @param	$info	Optional context/app-specific info
 	 * @return	string	A pseudo-random key
 	 */
 	public function hkdf($key, $digest = 'sha512', $salt = NULL, $length = NULL, $info = '')

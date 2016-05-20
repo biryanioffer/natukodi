@@ -2,7 +2,7 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP
+ * An open source app development framework for PHP
  *
  * This content is released under the MIT License (MIT)
  *
@@ -1735,7 +1735,7 @@ abstract class CI_DB_driver {
 	 * @param	string	the error message
 	 * @param	string	any "swap" values
 	 * @param	bool	whether to localize the message
-	 * @return	string	sends the application/views/errors/error_db.php template
+	 * @return	string	sends the app/views/errors/error_db.php template
 	 */
 	public function display_error($error = '', $swap = '', $native = FALSE)
 	{

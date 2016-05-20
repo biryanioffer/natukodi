@@ -2,7 +2,7 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP
+ * An open source app development framework for PHP
  *
  * This content is released under the MIT License (MIT)
  *
@@ -84,7 +84,7 @@ if ( ! function_exists('force_download'))
 		}
 
 		// Set the default MIME type to send
-		$mime = 'application/octet-stream';
+		$mime = 'app/octet-stream';
 
 		$x = explode('.', $filename);
 		$extension = end($x);

@@ -2,7 +2,7 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP
+ * An open source app development framework for PHP
  *
  * This content is released under the MIT License (MIT)
  *
@@ -180,7 +180,7 @@ class CI_Loader {
 	 * Library Loader
 	 *
 	 * Loads and instantiates libraries.
-	 * Designed to be called from application controllers.
+	 * Designed to be called from app controllers.
 	 *
 	 * @param	string	$library	Library name
 	 * @param	array	$params		Optional parameters to pass to the library class constructor
@@ -848,7 +848,7 @@ class CI_Loader {
 			}
 		}
 
-		// make sure the application default paths are still in the array
+		// make sure the app default paths are still in the array
 		$this->_ci_library_paths = array_unique(array_merge($this->_ci_library_paths, array(APPPATH, BASEPATH)));
 		$this->_ci_helper_paths = array_unique(array_merge($this->_ci_helper_paths, array(APPPATH, BASEPATH)));
 		$this->_ci_model_paths = array_unique(array_merge($this->_ci_model_paths, array(APPPATH)));

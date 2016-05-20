@@ -2,7 +2,7 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP
+ * An open source app development framework for PHP
  *
  * This content is released under the MIT License (MIT)
  *
@@ -1054,7 +1054,7 @@ class CI_Email {
 	 */
 	protected function _get_mime_message()
 	{
-		return 'This is a multi-part message in MIME format.'.$this->newline.'Your email application may not support this format.';
+		return 'This is a multi-part message in MIME format.'.$this->newline.'Your email app may not support this format.';
 	}
 
 	// --------------------------------------------------------------------
@@ -2339,7 +2339,7 @@ class CI_Email {
 				: $mimes[$ext];
 		}
 
-		return 'application/x-unknown-content-type';
+		return 'app/x-unknown-content-type';
 	}
 
 }

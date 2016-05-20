@@ -1,0 +1,137 @@
+body
+{
+font-size: 11px;
+}
+.dark-gray
+{
+color: #2f3032;
+}
+.orange
+{
+color: #e7561b;
+}
+.white
+{
+color: #fff;
+}
+.black
+{
+color: #000;
+}
+.blue
+{
+/*color: #24b7ed;*/
+color: #0177c1;
+}
+h1
+{
+margin: 0px;
+}
+h2, h3
+{
+margin: 0px;
+font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+font-size: 3em;
+font-style: normal;
+font-variant: normal;
+font-weight: 400;
+line-height: 23px;
+color: #2f3032;
+text-transform: uppercase;
+}
+h3
+{
+font-size: 16px;
+padding: 5px 15px 10px 15px;
+clear: both;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.mobile-menu-list
+{
+margin-bottom: 0px !important;
+}
+p
+{
+margin-top: 10px;
+margin-bottom: 10px;
+}
+h2 span
+{
+color: #e7561b;
+}
+h2 {
+    margin: 0px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 2em;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+#map-cont-main .breadcrumb
+{
+font-size: 12px;
+}
+#signupbox
+{
+min-height: 500px;
+}
+/* my account starts */ 
+div.myaccount-wrap
+{
+border: 1px solid rgb(204, 204, 204);
+width: 100px;
+background-color: white;
+position: absolute;
+right: 0px;
+top: 23px;
+display: none;}
+div.myaccount-wrap a
+{
+display: block;
+color: #000;
+border-radius: 0px !important;
+margin: 0px !important;
+border: 0px;
+border-bottom: 1px solid rgb(216, 216, 216);
+padding: 5px;
+}
+.form-control:focus
+{
+    border-color: #FFCB01;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+
+}
+
+div.myaccount-wrap .user-profile-info
+{
+
+
+}
+div.myaccount-wrap .user-profile-info .list-group
+{
+margin-bottom: 0px;	
+}
+
+
+
+.date-pic[type=text] {
+width: 100%;
+background: url(../../images/calendar.png) 99% 50% no-repeat;
+background-size: auto;   
+outline: 0;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 4px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-transition: border .4s ease-in-out;
+-moz-transition: border .4s ease-in-out;
+transition: border .4s ease-in-out
+}
+
+
+

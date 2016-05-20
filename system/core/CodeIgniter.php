@@ -2,7 +2,7 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP
+ * An open source app development framework for PHP
  *
  * This content is released under the MIT License (MIT)
  *
@@ -143,7 +143,7 @@ if ( ! is_php('5.4'))
  *
  * Normally the "subclass_prefix" is set in the config file.
  * The subclass prefix allows CI to know if a core class is
- * being extended via a library in the local application
+ * being extended via a library in the local app
  * "libraries" folder. Since CI allows config items to be
  * overridden via data set in the main index.php file,
  * before proceeding we need to know if a subclass_prefix

@@ -2,7 +2,7 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP
+ * An open source app development framework for PHP
  *
  * This content is released under the MIT License (MIT)
  *
@@ -180,7 +180,7 @@ class CI_Security {
 				}
 			}
 
-			// Append application specific cookie prefix
+			// Append app specific cookie prefix
 			if ($cookie_prefix = config_item('cookie_prefix'))
 			{
 				$this->_csrf_cookie_name = $cookie_prefix.$this->_csrf_cookie_name;

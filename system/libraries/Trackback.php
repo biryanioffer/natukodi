@@ -2,7 +2,7 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP
+ * An open source app development framework for PHP
  *
  * This content is released under the MIT License (MIT)
  *
@@ -306,7 +306,7 @@ class CI_Trackback {
 		// Transfer the data
 		fputs($fp, 'POST '.$path." HTTP/1.0\r\n");
 		fputs($fp, 'Host: '.$target['host']."\r\n");
-		fputs($fp, "Content-type: application/x-www-form-urlencoded\r\n");
+		fputs($fp, "Content-type: app/x-www-form-urlencoded\r\n");
 		fputs($fp, 'Content-length: '.strlen($data)."\r\n");
 		fputs($fp, "Connection: close\r\n\r\n");
 		fputs($fp, $data);

@@ -2,7 +2,7 @@
 /**
  * CodeIgniter
  *
- * An open source application development framework for PHP
+ * An open source app development framework for PHP
  *
  * This content is released under the MIT License (MIT)
  *
@@ -150,7 +150,7 @@ if ( ! function_exists('load_class'))
 
 		$name = FALSE;
 
-		// Look for the class first in the local application/libraries folder
+		// Look for the class first in the local app/libraries folder
 		// then in the native system/libraries folder
 		foreach (array(APPPATH, BASEPATH) as $path)
 		{
@@ -344,7 +344,7 @@ if ( ! function_exists('is_https'))
 	/**
 	 * Is HTTPS?
 	 *
-	 * Determines if the application is accessed via an encrypted
+	 * Determines if the app is accessed via an encrypted
 	 * (HTTPS) connection.
 	 *
 	 * @return	bool
@@ -395,7 +395,7 @@ if ( ! function_exists('show_error'))
 	 *
 	 * This function lets us invoke the exception class and
 	 * display errors using the standard error template located
-	 * in application/views/errors/error_general.php
+	 * in app/views/errors/error_general.php
 	 * This function will send the error page directly to the
 	 * browser and exit.
 	 *
