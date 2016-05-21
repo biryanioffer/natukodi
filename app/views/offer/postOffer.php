@@ -347,16 +347,7 @@
                                     <input type="file" id="branding-img" class="btn-sm btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="" name="img" data-original-title="Upload Store or Service image EX: Banner image / Logo / Product picture / Business title image">
                                  </span>
                               </div>
-                           </div>
-						    <div class="form-group">
-                              <label for="city" class="col-md-4 control-label">Ads in your account</label>
-                              <div class="col-md-6">
-                                 <select id="" class="form-control" disabled>
-									  <option><p class="label">You have Ads worth 500 Rs. (Expiry Date: 12/18/2015)</p></option>
-									  <option><p class="label">You Don't have Ads in your account</p></option>									  
-									</select>
-                              </div>
-                           </div>
+                           </div>						    
 						     <div class="form-group">
                               <label for="city" class="col-md-4 control-label">Select store locations / stores where you want to advertise your post&nbsp;<span class="badge">5</span> </label>
                               <div class="col-md-6">
@@ -384,7 +375,7 @@
                            <!-- Button -->                                        
                            <div class="col-md-offset-4 col-md-8">
                              
-                              <button id="ad-submit" type="submit" class="btn btn-theme submit_but_class"><i class="icon-hand-right"></i>Submit</button>
+                              <button id="ad-submit" type="submit" class="btn btn-theme submit_but_class"><i class="icon-hand-right"></i>Preview</button>
                            </div>
                         </div>
 						   
