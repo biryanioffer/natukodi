@@ -66,6 +66,7 @@
                               <a id="gplus-login" href="https://accounts.google.com/Login" class="btn btn-success gplus-login"><img src="<?php echo site_url('app/assets/images/googleplus.png');?>"/>Login with Google</a>
                            </div>
                         </div>
+                        <!-- Sample comment by Uma kanth-->
                         <div class="form-group">
                            <div class="col-md-12 control">
                               <div class="dont-ac" >
