@@ -20,7 +20,7 @@
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu">
                            <li><a href="login">Login / Signup</a></li>
-                           <li><a href="sign_up">My Account</a></li>
+                           <li><a href="Profile">My Account</a></li>
                            <li><a href="login">Logout</a></li>
                         </ul>
                      </div>
