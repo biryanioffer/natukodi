@@ -1,15 +1,11 @@
 <?php include 'app/views/includes/head.php';?>
-<title>Offerciti | Login</title>
+<title>Offerciti | Signup</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Offerciti offline discounts" />
 	<meta name="keywords" content="Offers, discounts" />
 	<meta name="author" content="www.offerciti.com" />
 	
-	 <script>
-	 $(document).ready(function () {
-           $('.selectpicker').selectpicker();
-         });
-	 </script>
+	
 	
 	 
 </head>
@@ -95,48 +91,17 @@
                            <input type="text" class="form-control date-pic" id="dob" placeholder="Date of Birth">
                         </div>
                      </div>
-                   
-                     
                     
-                   
                      <div class="form-group">
-                        <label for="area" class="col-md-4 control-label">*Area/Location</label>
+                        <label for="pin-code" class="col-md-4 control-label">*Location / Address</label>
                         <div class="col-md-6">
-                           <select class="selectpicker" data-live-search="true"   title="Area/Location">
-                              <option>AmeerPet</option>
-                              <option>Kukatapally</option>
-                              <option>GachiBowli</option>
-                              <option>Lingampally</option>
-                           </select>
-                        </div>
-                     </div>
-					   <div class="form-group">
-                        <label for="city" class="col-md-4 control-label">*City</label>
-                        <div class="col-md-6">
-                           <select class="selectpicker" data-live-search="true"   title="City">
-                              <option>Hyderabad</option>
-                              <option>Hyderabad</option>
-                              <option>Hyderabad</option>
-                              <option>Hyderabad</option>
-                           </select>
-                        </div>
-                     </div>
-					  <div class="form-group">
-                        <label for="state" class="col-md-4 control-label">*State</label>
-                        <div class="col-md-6">
-                           <input type="text" class="form-control" id="state"  placeholder="State">
-                        </div>
-                     </div>
-                     <div class="form-group">
-                        <label for="pin-code" class="col-md-4 control-label">Landmark</label>
-                        <div class="col-md-6">
-                           <input type="text" class="form-control" id="pin-code" placeholder="Landmark">
+                           <input type="text" class="form-control" id="pin-code" placeholder="Ex: JNTU, KPHB, Hyderabad, Telangana">
                         </div>
                      </div>
                      <div class="form-group">
                         <!-- Button -->                                        
                         <div class="col-md-offset-4 col-md-8">
-                           <a href="thankYou.php" id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</a>
+                           <a href="thank_you" id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</a>
                         </div>
                      </div>
                   </form>

@@ -27,7 +27,7 @@
                <div class="panel panel-info" id="loginform-panel" >
                   <div class="panel-heading">
                      <div class="panel-title">Login</div>
-                     <div class="forgot-pwd"><a href="../merchant/login.php" id="Advertiser-login">Are you an Advertiser?</a></div>
+                     <div class="forgot-pwd"><a href="merchant_login" id="Advertiser-login">Are you an Advertiser?</a></div>
                   </div>
                   <div style="padding-top:30px" class="panel-body" >
                      <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
@@ -66,11 +66,12 @@
                               <a id="gplus-login" href="https://accounts.google.com/Login" class="btn btn-success gplus-login"><img src="<?php echo site_url('app/assets/images/googleplus.png');?>"/>Login with Google</a>
                            </div>
                         </div>
+                        <!-- Sample comment by Uma kanth-->
                         <div class="form-group">
                            <div class="col-md-12 control">
                               <div class="dont-ac" >
                                  Don't have an account! 
-                                 <a href="signup.html" id="create-ac-btn">
+                                 <a href="sign_up" id="create-ac-btn">
                                  Sign Up Here
                                  </a>
                               </div>
