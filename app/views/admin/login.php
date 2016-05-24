@@ -49,7 +49,7 @@
 <div id="login-container">
     <!-- Login Header -->
     <h1 class="h2 text-light text-center push-top-bottom animation-slideDown">
-        <i class="fa fa-cube"></i> <strong>Welcome to AppUI</strong>
+        <img src="<?php echo site_url('app/assets/images/offerciti-logo.png');?>"> <strong>admincon</strong>
     </h1>
     <!-- END Login Header -->
 
@@ -61,7 +61,7 @@
                 <a href="page_ready_reminder.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="Forgot your password?"><i class="fa fa-exclamation-circle"></i></a>
                 <a href="page_ready_register.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="Create new account"><i class="fa fa-plus"></i></a>
             </div>
-            <h2>Please Login</h2>
+            <h2>Login</h2>
         </div>
         <!-- END Login Title -->
 
@@ -94,11 +94,6 @@
     </div>
     <!-- END Login Block -->
 
-    <!-- Footer -->
-    <footer class="text-muted text-center animation-pullUp">
-        <small><span id="year-copy"></span> &copy; <a href="http://goo.gl/RcsdAh" target="_blank">AppUI 2.6</a></small>
-    </footer>
-    <!-- END Footer -->
 </div>
 <!-- END Login Container -->
 

@@ -35,7 +35,16 @@ class console extends CI_Controller {
 	}
 	public function profile()
 	{
-		$this->load->view('user/profile');
+		$this->load->view('user/user_profile');
+	}
+	public function user_change_password()
+	{
+		$this->load->view('user/changepassword');
+	}
+	
+	public function favourites()
+	{
+		$this->load->view('user/favourites');
 	}
 	public function thank_you()
 	{
