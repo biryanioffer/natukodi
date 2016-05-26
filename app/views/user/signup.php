@@ -29,6 +29,7 @@
                </div>
                <div class="panel-body" id="first_section" >
                   <!--<form id="signupform" class="form-horizontal" role="form">-->
+				   <form id="userSignUpFrm" class="form-horizontal" role="form" method="POST" action="<?php echo base_url()?>index.php/console/usersave">
                      <div id="signupalert" style="display:none" class="alert alert-danger">
                         <p>Error:</p>
                         <span></span>
@@ -83,6 +84,7 @@
                         <label  class="col-md-4 control-label">*Gender</label>
                         <div class="col-md-2">
 							<span class="input-blue radio">
+							   <input type="radio" id="Male" value="" name="gender" checked>
 							   <label for="Male">Male</label>
 							</span>
                         </div>
@@ -100,6 +102,7 @@
                            <input type="text" class="form-control date-pic" id="dob" required name="dob" placeholder="Date of Birth">
                         </div>
                      </div>
+<!-- <<<<<<< HEAD -->
                                    
                     
                    
@@ -131,10 +134,13 @@
                            <input  name="state" type="text" class="form-control" id="state" required   placeholder="State">
                         </div>
                      </div>
+<!--=======
                     
+>>>>>>> origin/development -->
                      <div class="form-group">
                         <label for="pin-code" class="col-md-4 control-label">*Location / Address</label>
                         <div class="col-md-6">
+<!--<<<<<<< HEAD -->
                            <input type="text" class="form-control" id="landmark" name="landmark" required  placeholder="Landmark">
                         </div>
                      </div>
@@ -142,14 +148,19 @@
                         <label for="pin-code" class="col-md-4 control-label">Zip Code</label>
                         <div class="col-md-6">
                            <input type="text" class="form-control" id="zip_code" name="zip_code" required  placeholder="Zip Code">
+<!-- =======
                            <input type="text" class="form-control" id="pin-code" placeholder="Ex: JNTU, KPHB, Hyderabad, Telangana">
+>>>>>>> origin/development -->
                         </div>
                      </div>
                      <div class="form-group">
                         <!-- Button -->                                        
                         <div class="col-md-offset-4 col-md-8">
+<!-- <<<<<<< HEAD-->
                             <input type="submit" id="register" name="register" value="Sign Up">
+<!--=======
                            <a href="thank_you" id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</a>
+>>>>>>> origin/development --> 
                         </div>
                      </div>
                   </form>
