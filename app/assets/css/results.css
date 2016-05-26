@@ -497,7 +497,20 @@ a.list-group-item:hover {
 	margin: 20px 0 0 0;
 	display:none;
 	}
+.user-stores .fav-store-ad-list
+{
+	margin:0;
+	padding: 0;
+}
 
+.user-stores .user-fav-store-delete
+{
+	position: absolute;
+	right:0;
+	padding: 5px;
+	background-color:#fff;
+	z-index:2;
+}
 
 /* media queries */
 
@@ -570,6 +583,18 @@ a.list-group-item:hover {
         float: right;
     }
 	
+	.user-stores .vendor-info-wrap h5.vendor-name
+{
+font-size: 11px;	
+}
+
+
+.user-stores.vendor-card {
+    padding: 0;
+    width: 10%;
+    float: left;
+}
+	
 	
 	ul.breadcrumb-res.breadcrumb
 	{
@@ -598,6 +623,7 @@ a.list-group-item:hover {
         font-size: 11px;
         font-weight: normal;
     }
+	
     /* media queries ends */
 }
 @media screen and (max-width: 419px) {
@@ -2091,6 +2117,17 @@ width: 100% !important;
 {
 line-height: initial;
 }
+	.user-stores .vendor-info-wrap h5.vendor-name
+{
+font-size: 11px;	
+}
+
+
+.user-stores .vendor-card {
+    padding: 0;
+    float: left;
+}
+
 .form-map .form-group .col-sm-4 
 {
 padding: 0px;
@@ -2311,9 +2348,36 @@ max-height: 100% !important;
 position: relative !important;
 }
 
+.user-fav-main
+{
+	margin-top: 50px;
+}
+.user-fav-cont{
+	padding:0;
+	border: 0;
+}
+.user-fav-cont .res-wrap{
+	float: none;
+}
+
+.user-fav-cont .ui-tabs-nav{
+	background: transparent;
+	border:0;
+}
+
+.user-fav-main .ui-tabs .ui-tabs-panel {
+    
+    background: none;
+    border: 1px solid #AAAAAA;
+    margin-left: 3px;
+}
 
 
-
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited,
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor
+{
+	outline:none;
+}
 
 /* Prodcut gallery and otehres added newly */
 
@@ -2654,6 +2718,15 @@ width: 18px;
 {
 font-size: 11px;
 font-weight: normal;
+}
+
+
+
+
+.user-stores .vendor-card {
+    padding: 0;
+    width: 100%;
+    float: left;
 }
 
 .advertiser-more-cont .gallery-wrap .col-xs-6.thumb
