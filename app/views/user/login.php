@@ -4,10 +4,6 @@
 	<meta name="description" content="Offerciti offline discounts" />
 	<meta name="keywords" content="Offers, discounts" />
 	<meta name="author" content="www.offerciti.com" />
-	
-	 
-	
-	 
 </head>
 
 <body>	
@@ -27,18 +23,29 @@
                <div class="panel panel-info" id="loginform-panel" >
                   <div class="panel-heading">
                      <div class="panel-title">Login</div>
-                     <div class="forgot-pwd"><a href="../merchant/login.php" id="Advertiser-login">Are you an Advertiser?</a></div>
+                     <div class="forgot-pwd"><a href="merchant_login" id="Advertiser-login">Are you an Advertiser?</a></div>
                   </div>
                   <div style="padding-top:30px" class="panel-body" >
                      <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                     <form id="loginform" class="form-horizontal" role="form">
+                   <!--  <form id="loginform" class="form-horizontal" role="form">-->
+				    <?php if(validation_errors()) { ?>
+    <div class="alert alert-warning">
+        <?php echo validation_errors(); ?>
+    </div>
+    <?php }else if($this->session->flashdata('msg')){ ?>
+    <div class="alert alert-warning">
+        <?php echo $this->session->flashdata('msg'); ?>
+    </div>
+    <?php }?>
+        
+        <?php echo form_open('index.php/console/validateuser','id="loginForm" class="form-horizontal" role="form" method="post" autocomplete="off"')?>
                         <div style="margin-bottom: 25px" class="input-group">
                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                           <input id="login-username" type="email" class="form-control" name="username" value="" placeholder="Enter your Email Address">                                        
+                           <input id="login-username" type="email" class="form-control" required name="email" value="" placeholder="Enter your Email Address">                                        
                         </div>
                         <div style="margin-bottom: 25px" class="input-group">
                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                           <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                           <input id="login-password" type="password" class="form-control" required  name="password" placeholder="password">
                         </div>
                         <div class="input-group">
                            <span class="input-blue checkbox">
@@ -50,20 +57,21 @@
                         <div style="margin-top:10px" class="form-group">
                            <!-- Button -->
                            <div class="col-sm-12 controls user-login-btn-wrap">
-                              <a id="btn-login" href="#" class="btn btn-theme">Login  </a>                                     
+                              <!--<a id="btn-login" href="#" class="btn btn-theme">Login  </a> -->
+							   <input type="submit" name="submit" value="Login">
                            </div>
                         </div>
                         <p class="or-wrap">OR</p>
                         <div class="form-group social-login-wrap">
                            <!-- Button -->
                            <div class="col-sm-12 controls">
-                              <a id="fb-login" href="https://www.facebook.com/login/" class="btn btn-success fb-login"><img src="<?php echo site_url('app/assets/images/fb.png');?>"/>Login with Facebook</a>
+                              <a id="fb-login" href="https://www.facebook.com/login/" class="btn btn-success fb-login"><img src="<?php echo base_url()?>app/assets/images/fb.png"/>Login with Facebook</a>
                            </div>
                         </div>
                         <div class="form-group social-login-wrap">
                            <!-- Button -->
                            <div class="col-sm-12 controls">
-                              <a id="gplus-login" href="https://accounts.google.com/Login" class="btn btn-success gplus-login"><img src="<?php echo site_url('app/assets/images/googleplus.png');?>"/>Login with Google</a>
+                              <a id="gplus-login" href="https://accounts.google.com/Login" class="btn btn-success gplus-login"><img src="<?php echo base_url()?>app/assets/images/googleplus.png"/>Login with Google</a>
                            </div>
                         </div>
                         <!-- Sample comment by Uma kanth-->
@@ -71,7 +79,7 @@
                            <div class="col-md-12 control">
                               <div class="dont-ac" >
                                  Don't have an account! 
-                                 <a href="signup.html" id="create-ac-btn">
+                                 <a href="sign_up" id="create-ac-btn">
                                  Sign Up Here
                                  </a>
                               </div>
