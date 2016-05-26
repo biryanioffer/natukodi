@@ -102,7 +102,8 @@
                            <input type="text" class="form-control date-pic" id="dob" required name="dob" placeholder="Date of Birth">
                         </div>
                      </div>
-<!-- <<<<<<< HEAD -->
+<!--<<<<<<< HEAD
+ <<<<<<< HEAD -->
                                    
                     
                    
@@ -151,16 +152,26 @@
 <!-- =======
                            <input type="text" class="form-control" id="pin-code" placeholder="Ex: JNTU, KPHB, Hyderabad, Telangana">
 >>>>>>> origin/development -->
+<!-- =======                
+                     <div class="form-group">
+                        <label for="pin-code" class="col-md-4 control-label">*Location / Address</label>
+                        <div class="col-md-6">
+                           <input type="text" class="form-control" id="pin-code" placeholder="Ex: JNTU, KPHB, Hyderabad, Telangana">
+>>>>>>> origin/development -->
                         </div>
                      </div>
                      <div class="form-group">
                         <!-- Button -->                                        
                         <div class="col-md-offset-4 col-md-8">
-<!-- <<<<<<< HEAD-->
+<!--<<<<<<< HEAD
+ <<<<<<< HEAD-->
                             <input type="submit" id="register" name="register" value="Sign Up">
 <!--=======
                            <a href="thank_you" id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</a>
 >>>>>>> origin/development --> 
+<!-- =======
+                           <a href="thank_you" id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</a>
+>>>>>>> origin/development -->
                         </div>
                      </div>
                   </form>
