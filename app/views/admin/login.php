@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if IE 9]>
+<html class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
 
     <title>AppUI - Web App Bootstrap Admin Template</title>
 
-    <meta name="description" content="AppUI is a Web App Bootstrap Admin Template created by pixelcave and published on Themeforest">
+    <meta name="description"
+          content="AppUI is a Web App Bootstrap Admin Template created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
 
@@ -49,7 +52,7 @@
 <div id="login-container">
     <!-- Login Header -->
     <h1 class="h2 text-light text-center push-top-bottom animation-slideDown">
-        <img src="<?php echo site_url('app/assets/images/offerciti-logo.png');?>"> <strong>admincon</strong>
+        <img src="<?php echo site_url('app/assets/images/offerciti-logo.png'); ?>"> <strong>admincon</strong>
     </h1>
     <!-- END Login Header -->
 
@@ -58,8 +61,10 @@
         <!-- Login Title -->
         <div class="block-title">
             <div class="block-options pull-right">
-                <a href="page_ready_reminder.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="Forgot your password?"><i class="fa fa-exclamation-circle"></i></a>
-                <a href="page_ready_register.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="Create new account"><i class="fa fa-plus"></i></a>
+                <a href="page_ready_reminder.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip"
+                   data-placement="left" title="Forgot your password?"><i class="fa fa-exclamation-circle"></i></a>
+                <a href="page_ready_register.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip"
+                   data-placement="left" title="Create new account"><i class="fa fa-plus"></i></a>
             </div>
             <h2>Login</h2>
         </div>
@@ -69,12 +74,14 @@
         <form id="form-login" action="index.html" method="post" class="form-horizontal">
             <div class="form-group">
                 <div class="col-xs-12">
-                    <input type="text" id="login-email" name="login-email" class="form-control" placeholder="Your email..">
+                    <input type="text" id="login-email" name="login-email" class="form-control"
+                           placeholder="Your email..">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-xs-12">
-                    <input type="password" id="login-password" name="login-password" class="form-control" placeholder="Your password..">
+                    <input type="password" id="login-password" name="login-password" class="form-control"
+                           placeholder="Your password..">
                 </div>
             </div>
             <div class="form-group form-actions">
@@ -86,7 +93,9 @@
                     Remember Me?
                 </div>
                 <div class="col-xs-4 text-right">
-                    <button type="submit" class="btn btn-effect-ripple btn-sm btn-primary"><i class="fa fa-check"></i> Let's Go</button>
+                    <button type="submit" class="btn btn-effect-ripple btn-sm btn-primary"><i class="fa fa-check"></i>
+                        Let's Go
+                    </button>
                 </div>
             </div>
         </form>
@@ -105,6 +114,8 @@
 
 <!-- Load and execute javascript code used only in this page -->
 <script src="js/pages/readyLogin.js"></script>
-<script>$(function(){ ReadyLogin.init(); });</script>
+<script>$(function () {
+        ReadyLogin.init();
+    });</script>
 </body>
 </html>

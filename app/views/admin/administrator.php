@@ -12,38 +12,45 @@
     <div class="form-group">
         <label class="col-md-3 control-label" for="val-username">First name <span class="text-danger">*</span></label>
         <div class="col-md-6">
-            <input type="text" id="val-firstname" name="val-firstname" class="form-control" placeholder="Enter your first name..">
+            <input type="text" id="val-firstname" name="val-firstname" class="form-control"
+                   placeholder="Enter your first name..">
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-3 control-label" for="val-lastname">Last name <span class="text-danger">*</span></label>
         <div class="col-md-6">
-            <input type="text" id="val-lastname" name="val-lastname" class="form-control" placeholder="Enter your last name..">
+            <input type="text" id="val-lastname" name="val-lastname" class="form-control"
+                   placeholder="Enter your last name..">
         </div>
     </div>
 
     <div class="form-group">
         <label class="col-md-3 control-label" for="val-email">Email <span class="text-danger">*</span></label>
         <div class="col-md-6">
-            <input type="text" id="val-email" name="val-email" class="form-control" placeholder="Enter your valid email..">
+            <input type="text" id="val-email" name="val-email" class="form-control"
+                   placeholder="Enter your valid email..">
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-3 control-label" for="val-username">Username <span class="text-danger">*</span></label>
         <div class="col-md-6">
-            <input type="text" id="val-username" name="val-username" class="form-control" placeholder="Choose a nice username..">
+            <input type="text" id="val-username" name="val-username" class="form-control"
+                   placeholder="Choose a nice username..">
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-3 control-label" for="val-password">Password <span class="text-danger">*</span></label>
         <div class="col-md-6">
-            <input type="password" id="val-password" name="val-password" class="form-control" placeholder="Choose a good one..">
+            <input type="password" id="val-password" name="val-password" class="form-control"
+                   placeholder="Choose a good one..">
         </div>
     </div>
     <div class="form-group">
-        <label class="col-md-3 control-label" for="val-confirm-password">Confirm Password <span class="text-danger">*</span></label>
+        <label class="col-md-3 control-label" for="val-confirm-password">Confirm Password <span
+                class="text-danger">*</span></label>
         <div class="col-md-6">
-            <input type="password" id="val-confirm-password" name="val-confirm-password" class="form-control" placeholder="..and confirm it to be safe!">
+            <input type="password" id="val-confirm-password" name="val-confirm-password" class="form-control"
+                   placeholder="..and confirm it to be safe!">
         </div>
     </div>
     <div class="form-group">
@@ -71,4 +78,6 @@
 </form>
 
 <script src="js/pages/formsValidation.js"></script>
-<script>$(function() { FormsValidation.init(); });</script>
+<script>$(function () {
+        FormsValidation.init();
+    });</script>
