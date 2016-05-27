@@ -158,7 +158,6 @@
                         <!-- Button -->
                         <div class="col-md-offset-4 col-md-8">
                             <input type="submit" id="signup" name="signup" value="Sign Up" class="btn btn-info">
-                            <!--<a id="register" name="register" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</a>-->
                         </div>
                     </div>
                 </form>
