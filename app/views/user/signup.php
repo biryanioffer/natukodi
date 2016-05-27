@@ -4,10 +4,7 @@
 	<meta name="description" content="Offerciti offline discounts" />
 	<meta name="keywords" content="Offers, discounts" />
 	<meta name="author" content="www.offerciti.com" />
-	
-	
-	
-	 
+
 </head>
 
 <body>	
@@ -18,7 +15,6 @@
              <?php include 'app/views/includes/top-nav.php';?>
 				
             </section>
-            
          </header>
 			<!-- END .header -->
          <!-- user signup starts -->
@@ -28,8 +24,7 @@
                   <div class="panel-title">Sign Up</div>
                </div>
                <div class="panel-body" id="first_section" >
-                  <!--<form id="signupform" class="form-horizontal" role="form">-->
-				   <form id="userSignUpFrm" class="form-horizontal" role="form" method="POST" action="<?php echo base_url()?>index.php/console/usersave">
+				   <form id="userSignUpForm" class="form-horizontal" role="form" method="POST" action="<?php echo base_url()?>index.php/console/usersave">
                      <div id="signupalert" style="display:none" class="alert alert-danger">
                         <p>Error:</p>
                         <span></span>
@@ -84,16 +79,15 @@
                         <label  class="col-md-4 control-label">*Gender</label>
                         <div class="col-md-2">
 							<span class="input-blue radio">
-							   <input type="radio" id="Male" value="" name="gender" checked>
+							   <input type="radio" id="Male" value="M" name="gender" checked>
 							   <label for="Male">Male</label>
 							</span>
                         </div>
                         <div class="col-md-3">
                           <span class="input-blue radio">
-							   <input type="radio" id="Female" name="gender">
+							   <input type="radio" id="Female" value="F" name="gender">
 							   <label for="Female">Female</label>
 							</span>
-
                         </div>
                      </div>
                      <div class="form-group">
@@ -102,11 +96,13 @@
                            <input type="text" class="form-control date-pic" id="dob" required name="dob" placeholder="Date of Birth">
                         </div>
                      </div>
-<!--<<<<<<< HEAD
- <<<<<<< HEAD -->
-                                   
-                    
-                   
+					   <div class="form-group">
+						   <label for="pin-code" class="col-md-4 control-label">*Location / Address</label>
+						   <div class="col-md-6">
+							   <input type="text" class="form-control" id="pin-code" placeholder="Ex: JNTU, KPHB, Hyderabad, Telangana">
+						   </div>
+					   </div>
+    <!--
                      <div class="form-group">
                         <label for="area" class="col-md-4 control-label">*Area/Location</label>
                         <div class="col-md-6">
@@ -135,13 +131,9 @@
                            <input  name="state" type="text" class="form-control" id="state" required   placeholder="State">
                         </div>
                      </div>
-<!--=======
-                    
->>>>>>> origin/development -->
                      <div class="form-group">
                         <label for="pin-code" class="col-md-4 control-label">*Location / Address</label>
                         <div class="col-md-6">
-<!--<<<<<<< HEAD -->
                            <input type="text" class="form-control" id="landmark" name="landmark" required  placeholder="Landmark">
                         </div>
                      </div>
@@ -149,29 +141,12 @@
                         <label for="pin-code" class="col-md-4 control-label">Zip Code</label>
                         <div class="col-md-6">
                            <input type="text" class="form-control" id="zip_code" name="zip_code" required  placeholder="Zip Code">
-<!-- =======
-                           <input type="text" class="form-control" id="pin-code" placeholder="Ex: JNTU, KPHB, Hyderabad, Telangana">
->>>>>>> origin/development -->
-<!-- =======                
-                     <div class="form-group">
-                        <label for="pin-code" class="col-md-4 control-label">*Location / Address</label>
-                        <div class="col-md-6">
-                           <input type="text" class="form-control" id="pin-code" placeholder="Ex: JNTU, KPHB, Hyderabad, Telangana">
->>>>>>> origin/development -->
-                        </div>
-                     </div>
+                     -->
                      <div class="form-group">
                         <!-- Button -->                                        
                         <div class="col-md-offset-4 col-md-8">
-<!--<<<<<<< HEAD
- <<<<<<< HEAD-->
-                            <input type="submit" id="register" name="register" value="Sign Up">
-<!--=======
-                           <a href="thank_you" id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</a>
->>>>>>> origin/development --> 
-<!-- =======
-                           <a href="thank_you" id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</a>
->>>>>>> origin/development -->
+                       		<input type="submit" id="signup" name="signup" value="Sign Up" class="btn btn-info">
+                       		<!--<a id="register" name="register" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>Sign Up</a>-->
                         </div>
                      </div>
                   </form>
@@ -179,7 +154,6 @@
             </div>
          </div>
          <!-- user signup ends -->
-
 </div>
 
 <!-- footer starts -->
@@ -222,10 +196,6 @@ jQuery("#contact_no").blur(function(){
    jQuery(this).removeClass('error')
 });
 
-
-
-
-
 jQuery(document).ready(function ($) {
 	
 	$(document).on('click', '#myCheckbox0', function () {
@@ -260,13 +230,7 @@ $(document).on('click', '#register', function () {
 	var contact_number = $("#contact_number").val();
 	
 	var company = $("#company").val();
-	
-	
-	
 
-	
-	
-	
 	if(email == '' || !isValidEmailAddress( email ) )
 	{
 		first_block_error = 1;
@@ -315,9 +279,6 @@ $(document).on('click', '#register', function () {
 	}
 	}
 	
-
-	
-	
 	if(first_name == '')
 	{
 		first_block_error = 1;
@@ -347,12 +308,7 @@ $(document).on('click', '#register', function () {
 	{
 		$("#contact_number").removeClass('error');
 	}
-	
-	
-	
-	
-	
-	
+
 	var terms = 0;	
 	
 	if(first_block_error == 1 )
@@ -364,7 +320,6 @@ $(document).on('click', '#register', function () {
 	
 	if( first_block_error == 0  )
 	{
-		
 		$("#actionbtn").html("Processing... Please wait...");
 		$("#freg").ajaxForm({success:
                         function (res) {	
