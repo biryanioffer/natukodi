@@ -11,7 +11,7 @@
                 Up
                 <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li><a href="merchant_login">Login / Signup</a></li>
+                <li><a href="merchant_login">Login / Sign Up</a></li>
                 <li><a href="posts">My Account</a></li>
                 <li><a href="merchant_login">Logout</a></li>
             </ul>

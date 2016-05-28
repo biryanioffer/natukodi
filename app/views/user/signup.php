@@ -27,7 +27,7 @@
             </div>
             <div class="panel-body" id="first_section">
                 <form id="userSignUpForm" class="form-horizontal" role="form" method="POST"
-                      action="<?php echo base_url() ?>index.php/console/usersave">
+                      action="<?php echo base_url() ?>console/usersave">
                     <div id="signupalert" style="display:none" class="alert alert-danger">
                         <p>Error:</p>
                         <span></span>

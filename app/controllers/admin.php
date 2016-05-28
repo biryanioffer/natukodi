@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class admin extends CI_Controller {
+class Admin extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,6 +18,15 @@ class admin extends CI_Controller {
 	 * map to /index.php/admin/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+		$this->load->library('session');
+	}
+
 	public function index()
 	{
 		$this->load->view('admin/common/head');
@@ -78,33 +87,6 @@ class admin extends CI_Controller {
 	}
 	public function service_areas()
 	{
-		/* Connect to the mySQL database - config values can be found at:
-      /app/config/database.php */
-		$dbconnect = $this->load->database();
-
-
-		/* Load the database model:
-          /app/models/simple_model.php */
-		$this->load->model('Service_areas_model');
-
-
-		/* Create a table if it doesn't exist already */
-		//$this->Service_areas_model->create_table();
-
-
-		/* Call the "insert_item" entry */
-		//$this->Service_areas_model->insert_item('Hello from Runnable!');
-
-		/* Retrieve the last item  */
-		/*print '<pre>';
-		print_r($this->Service_areas_model->get_last_item());
-		print '</pre>';*/
-
-		/* Retrieve and print the row count */
-		/*$rowcount = $this->Service_areas_model->get_row_count();
-		print '<strong>Row count: ' . $rowcount . '</strong>';*/
-        
-
 		$this->load->view('admin/common/head');
 		$this->load->view('admin/common/side-nav');
 		$this->load->view('admin/common/top-bar');

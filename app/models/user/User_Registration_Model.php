@@ -2,7 +2,7 @@
 /**
 * Users model here for getting roles and data
 */
-class Users_Model extends CI_Model {
+class User_Registration_Model extends CI_Model {
 
 	function __construct() {
 		parent::__construct();

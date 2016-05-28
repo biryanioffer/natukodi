@@ -1,21 +1,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class console extends CI_Controller
+class Console extends CI_Controller
 {
     /**
      * Index Page for this controller.
      *
      * Maps to the following URL
-     *        http://example.com/index.php/console
+     *        http://example.com/console
      *    - or -
-     *        http://example.com/index.php/console/index
+     *        http://example.com/console/index
      *    - or -
      * Since this controller is set as the default controller in
      * config/routes.php, it's displayed at http://example.com/
      *
      * So any other public methods not prefixed with an underscore will
-     * map to /index.php/console/<method_name>
+     * map to /console/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
     function __construct()
@@ -25,16 +25,16 @@ class console extends CI_Controller
         $this->load->helper('form');
         $this->load->library('form_validation');
         $this->load->library('session');
-        $this->load->model(array('Users_Model'));
+        $this->load->model(array('user/User_Registration_Model'));
     }
 
     public function usersave()
     {
-        $cnt = $this->Users_Model->user_email_exists($_REQUEST["email"]);
+        $cnt = $this->User_Registration_Model->user_email_exists($_REQUEST["email"]);
         if ($cnt == 1) {
             echo "1";
         } else {
-            $this->Users_Model->save_user($_REQUEST);
+            $this->User_Registration_Model->save_user($_REQUEST);
 
             /*$this->load->view('user/thankYou');
             echo '<div class="col-md-12 col-sm-12" ><label style="color:green">Your are  successfully registered.
@@ -46,14 +46,14 @@ Activation link has been sent to your email.</label>
 
     public function merchantsave()
     {
-        $cnt = $this->Users_Model->email_exists($_REQUEST["email"]);
-        $cnt2 = $this->Users_Model->username_exists($_REQUEST["email"]);
+        $cnt = $this->User_Registration_Model->email_exists($_REQUEST["email"]);
+        $cnt2 = $this->User_Registration_Model->username_exists($_REQUEST["email"]);
         if ($cnt == 1) {
             echo "1";
         } else if ($cnt2 == 1) {
             echo "3";
         } else {
-            $this->Users_Model->save_merchant($_REQUEST);
+            $this->User_Registration_Model->save_merchant($_REQUEST);
             echo '<div class="col-md-12 col-sm-12" ><label style="color:green">Your are  successfully registered.
 Admin Approval Pending.</label>             
             </div>';
@@ -66,9 +66,9 @@ Admin Approval Pending.</label>
         $this->form_validation->set_rules('email', 'Username', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
         if ($this->form_validation->run() == FALSE) {
-            redirect('index.php/console/merchant_login');
+            redirect('console/merchant_login');
         } else {
-            redirect('index.php/console/merchant_profile');
+            redirect('console/merchant_profile');
         }
     }
 
@@ -77,9 +77,9 @@ Admin Approval Pending.</label>
         $this->form_validation->set_rules('email', 'Username', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database_user');
         if ($this->form_validation->run() == FALSE) {
-            redirect('index.php/console/login');
+            redirect('console/login');
         } else {
-            redirect('index.php/console/profile');
+            redirect('console/profile');
         }
     }
 
