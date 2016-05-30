@@ -39,7 +39,7 @@
                         </div>
                     <?php } ?>
 
-                    <?php echo form_open('index.php/console/validateuser', 'id="loginForm" class="form-horizontal" role="form" method="post" autocomplete="off"') ?>
+                    <?php echo form_open('index.php/console/validate_user', 'id="loginForm" class="form-horizontal" role="form" method="post" autocomplete="off"') ?>
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                         <input id="login-username" type="email" class="form-control" required name="email" value=""

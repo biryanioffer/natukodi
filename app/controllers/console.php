@@ -28,7 +28,7 @@ class Console extends CI_Controller
         $this->load->model(array('user/User_Registration_Model'));
     }
 
-    public function usersave()
+    public function user_save()
     {
         $cnt = $this->User_Registration_Model->user_email_exists($_REQUEST["email"]);
         if ($cnt == 1) {
@@ -44,7 +44,7 @@ Activation link has been sent to your email.</label>
         exit;
     }
 
-    public function merchantsave()
+    public function merchant_save()
     {
         $cnt = $this->User_Registration_Model->email_exists($_REQUEST["email"]);
         $cnt2 = $this->User_Registration_Model->username_exists($_REQUEST["email"]);
@@ -54,14 +54,14 @@ Activation link has been sent to your email.</label>
             echo "3";
         } else {
             $this->User_Registration_Model->save_merchant($_REQUEST);
-            echo '<div class="col-md-12 col-sm-12" ><label style="color:green">Your are  successfully registered.
+            echo '<div class="col-md-12 col-sm-12" ><label style="color:green">Your are successfully registered.
 Admin Approval Pending.</label>             
             </div>';
         }
         exit;
     }
 
-    public function validate()
+    public function validate_merchant()
     {
         $this->form_validation->set_rules('email', 'Username', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database');
@@ -72,7 +72,7 @@ Admin Approval Pending.</label>
         }
     }
 
-    public function validateuser()
+    public function validate_user()
     {
         $this->form_validation->set_rules('email', 'Username', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_database_user');
@@ -135,6 +135,7 @@ Admin Approval Pending.</label>
         return false;
     }
 
+    // ---- URIs -----
     public function index()
     {
         $this->load->view('index');
