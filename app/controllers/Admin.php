@@ -25,13 +25,15 @@ class Admin extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->load->library('session');
+		$this->load->model(array('admin/Business_Categories_Model'));
 	}
 
+	// ---- controller functions -----
+
+	// ---- URIs -----
 	public function index()
 	{
 		$this->load->view('admin/common/head');
-		//$this->load->view('admin/common/side-nav');
-		//$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/login');
 		$this->load->view('admin/common/footer');
 	}

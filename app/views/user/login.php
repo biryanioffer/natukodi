@@ -12,7 +12,6 @@
         <!-- top nav section -->
         <section class="top-sec-nav">
             <?php include 'app/views/includes/top-nav.php'; ?>
-
         </section>
 
     </header>

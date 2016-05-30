@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<!--[if IE 9]>
-<html class="no-js lt-ie10"> <![endif]-->
-<!--[if gt IE 9]><!-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
 <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>AppUI - Web App Bootstrap Admin Template</title>
+    <title>OfferCiti - Admincon</title>
 
-    <meta name="description"
-          content="AppUI is a Web App Bootstrap Admin Template created by pixelcave and published on Themeforest">
-    <meta name="author" content="pixelcave">
-    <meta name="robots" content="noindex, nofollow">
-
+    <meta name="description" content="Offerciti Admincon"/>
+    <meta name="author" content="www.offerciti.com"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
 
     <!-- Icons -->
     <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-    <link rel="shortcut icon" href="<?php echo site_url('app/assets/admin/img/favicon.png') ?>">
+    <link rel="icon" href="<?php echo site_url('app/assets/images/offerciti-favicon.png'); ?>" type="image/png"
+          sizes="16x16">
     <link rel="apple-touch-icon" href="<?php echo site_url('app/assets/admin/img/icon57.png') ?>" sizes="57x57">
     <link rel="apple-touch-icon" href="<?php echo site_url('app/assets/admin/img/icon72.png') ?>" sizes="72x72">
     <link rel="apple-touch-icon" href="<?php echo site_url('app/assets/admin/img/icon76.png') ?>" sizes="76x76">
