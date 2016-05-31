@@ -5,7 +5,7 @@
  */
 
 var FormsValidation = function() {
-
+console.log("In form validation");
     return {
         init: function() {
             /*
@@ -29,6 +29,11 @@ var FormsValidation = function() {
                     e.closest('.help-block').remove();
                 },
                 rules: {
+                    'val-category-name': {
+                        required: true,
+                        minlength: 3
+                    }
+                    /*,
                     'val-username': {
                         required: true,
                         minlength: 3
@@ -70,9 +75,14 @@ var FormsValidation = function() {
                     },
                     'val-terms': {
                         required: true
-                    }
+                    }*/
                 },
                 messages: {
+                    'val-category-name': {
+                        required: 'Please enter a category name',
+                        minlength: 'Category name must consist of at least 3 characters'
+                    }
+                    /*
                     'val-username': {
                         required: 'Please enter a username',
                         minlength: 'Your username must consist of at least 3 characters'
@@ -93,7 +103,7 @@ var FormsValidation = function() {
                     'val-digits': 'Please enter only digits!',
                     'val-number': 'Please enter a number!',
                     'val-range': 'Please enter a number between 1 and 5!',
-                    'val-terms': 'You must agree to the service terms!'
+                    'val-terms': 'You must agree to the service terms!'*/
                 }
             });
         }

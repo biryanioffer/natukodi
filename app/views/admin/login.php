@@ -12,15 +12,15 @@
             <div class="block-options pull-right">
                 <a href="page_ready_reminder.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip"
                    data-placement="left" title="Forgot your password?"><i class="fa fa-exclamation-circle"></i></a>
-                <a href="page_ready_register.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip"
-                   data-placement="left" title="Create new account"><i class="fa fa-plus"></i></a>
+                <!--<a href="page_ready_register.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip"
+                   data-placement="left" title="Create new account"><i class="fa fa-plus"></i></a>-->
             </div>
             <h2>Login</h2>
         </div>
         <!-- END Login Title -->
 
         <!-- Login Form -->
-        <form id="form-login" action="index.html" method="post" class="form-horizontal">
+        <form id="form-login" action="login" method="post" class="form-horizontal">
             <div class="form-group">
                 <div class="col-xs-12">
                     <input type="text" id="login-email" name="login-email" class="form-control"
@@ -55,8 +55,10 @@
 </div>
 <!-- END Login Container -->
 
+<?php include 'app/views/admin/common/footer.php' ?>
+
 <!-- Load and execute javascript code used only in this page -->
-<script src="js/pages/readyLogin.js"></script>
+<script src="<?php echo site_url('app/assets/admin/js/pages/readyLogin.js') ?>"></script>
 <script>$(function () {
         ReadyLogin.init();
     });</script>

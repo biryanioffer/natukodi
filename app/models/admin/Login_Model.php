@@ -3,7 +3,7 @@
 /**
  * Users model here for getting roles and data
  */
-class Business_Categories_Model extends CI_Model
+class Login_Model extends CI_Model
 {
     function __construct()
     {
