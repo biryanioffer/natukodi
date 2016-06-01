@@ -63,8 +63,23 @@
     <script src="<?php echo site_url('app/assets/bootstrap/js/bootstrap.js'); ?>"></script>
     <script src="<?php echo site_url('app/assets/js/header.js'); ?>"></script>
     <script src="<?php echo site_url('app/assets/js/ion.rangeSlider.js'); ?>"></script>
-
-
+	<!-- Form Validation  -->
+	<script src="<?php echo site_url('app/assets/js/jquery.js'); ?>"></script>
+    <script src="<?php echo site_url('app/assets/js/jquery.validate.js'); ?>"></script>
+    <script src="<?php echo site_url('app/assets/js/validations.js'); ?>"></script>
+	<!-- End of  Form Validation  -->
+	
+<!-- Google Place -->
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places" type="text/javascript"></script>
+<script type="text/javascript">
+   function initialize() {
+   
+      var input = document.getElementById('googleLocation');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+   }
+   google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<!-- End of Google Place -->
     <!-- common libs end -->
     <script>
         $(document).ready(function () {

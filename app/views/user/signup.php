@@ -27,7 +27,7 @@
             </div>
             <div class="panel-body" id="first_section">
                 <form id="userSignUpForm" class="form-horizontal" role="form" method="POST"
-                      action="<?php echo base_url() ?>console/user_save">
+                      action="<?php echo base_url() ?>index.php/console/user_save">
                     <div id="signupalert" style="display:none" class="alert alert-danger">
                         <p>Error:</p>
                         <span></span>
@@ -109,9 +109,8 @@
                     </div>
                     <div class="form-group">
                         <label for="pin-code" class="col-md-4 control-label">*Location / Address</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" id="pin-code"
-                                   placeholder="Ex: JNTU, KPHB, Hyderabad, Telangana">
+                        <div class="col-md-6"><input id="googleLocation" name="googleLocation" type="text" size="50" placeholder="Ex: JNTU, KPHB, Hyderabad, Telangana" autocomplete="on" class="form-control">
+                            
                         </div>
                     </div>
                     <!--

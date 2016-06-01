@@ -70,19 +70,12 @@
                         <div class="panel-title">Change Password</div>
                     </div>
                     <div class="panel-body">
-                        <form id="signupform" class="form-horizontal" role="form" action="<?php echo base_url() ?>index.php/console/user_change_password" method="post">
+                        <form id="signupform" class="form-horizontal" role="form" action="<?php echo base_url() ?>index.php/console/user_new_password" method="post">
                             <div id="signupalert" style="display:none" class="alert alert-danger">
                                 <p>Error:</p>
                                 <span></span>
                             </div>
-                            <div class="form-group">
-                                <label for="current_password" class="col-md-4 control-label">*Current Password</label>
-                                <div class="col-md-6">
-                                    <input type="password" class="form-control required password" id="current_password"
-                                           name="cps" value="" maxlength="15" >
-
-                                </div>
-                            </div>
+                            <input type="hidden" name="email" value="<?php echo $_GET['email']; ?>">
                             <div class="form-group">
                                 <label for="new_password" class="col-md-4 control-label">*New Password</label>
                                 <div class="col-md-6">
