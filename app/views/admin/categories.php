@@ -5,8 +5,17 @@
             <div class="col-sm-6">
                 <div class="header-section">
                     <h1>MAIN CATEGORIES</h1>
+                    <!-- Trigger the modal with a button -->
+                    <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal"
+                            title="Create new category">
+                        <i class="fa fa-plus">Category</i></button>
+                    <!--<a data-target="#myModal" data-toggle="tooltip" title="Add Administrator" class="btn btn-effect-ripple btn-xs btn-info"><i class="fa fa-plus"></i></a>-->
                 </div>
             </div>
+           <!-- <div class="col-sm-6 pull-left">
+                <a href="page_ready_register.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip"
+                   data-placement="left" title="Create new category"><i class="fa fa-plus"></i></a>
+            </div>-->
             <div class="col-sm-6 hidden-xs">
                 <div class="header-section">
                     <ul class="breadcrumb breadcrumb-top">
@@ -101,5 +110,20 @@
         </div>
     </div>
     <!-- END Datatables Block -->
-
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Create</h4>
+                </div>
+                <div class="modal-body">
+                    <?php include 'category.php'; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Modal Block -->
 </div>

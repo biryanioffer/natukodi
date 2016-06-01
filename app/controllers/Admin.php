@@ -25,17 +25,64 @@ class Admin extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->load->library('session');
-		$this->load->model(array('admin/Business_Categories_Model'));
+		$this->load->model(array('admin/Login_Model'));
 	}
 
 	// ---- controller functions -----
+	public function login()
+	{
+		$this->form_validation->set_rules('login-email', 'Username', 'trim|required');
+		$this->form_validation->set_rules('login-password', 'Password', 'trim|required|callback_check_database_user');
+		if ($this->form_validation->run() == FALSE) {
+			redirect('admin/index');
+		} else {
+			redirect('admin/administrators');
+		}
+	}
 
+	public function check_database_user()
+	{
+		$email = $this->input->post('login-email');
+		$password = $this->input->post('login-password');
+		$this->db->where('email', $email);
+		$this->db->where('password', $password);        // Run the query
+		$query = $this->db->get('administrators');
+		// Let's check if there are any results
+		if ($query->num_rows() > 0) {
+			// If there is a user, then create session data
+			$row = $query->row();
+			# echo "<pre>"; print_r($row); exit;
+			$data = array(
+				'id' => $row->id,
+				'email' => $row->email,
+				'Login' => TRUE
+			);
+			$this->session->set_userdata($data);
+			return true;
+		}
+		// If the previous process did not validate
+		// then return false.
+		$this->form_validation->set_message('check_database', 'Please check your login credentials.');
+		return false;
+	}
+
+	public function create_category()
+	{
+		$cnt = $this->Business_Categories_Model->is_category_exists($_REQUEST["val-category-name"]);
+		if ($cnt == 1) {
+			echo "1";
+		} else {
+			$this->Business_Categories_Model->create_category($_REQUEST);
+		}
+		exit;
+	}
+	
 	// ---- URIs -----
 	public function index()
 	{
 		$this->load->view('admin/common/head');
 		$this->load->view('admin/login');
-		$this->load->view('admin/common/footer');
+		//$this->load->view('admin/common/footer');
 	}
 
 	//*** Admin Management ***
@@ -46,6 +93,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/administrators');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 	public function administrator()
 	{
@@ -62,6 +110,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/categories');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 	public function category()
 	{
@@ -78,6 +127,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/sub_categories');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 	public function sub_category()
 	{
@@ -94,6 +144,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/service_areas');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 	public function service_area()
 	{
@@ -112,6 +163,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/users');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 	public function user()
 	{
@@ -128,6 +180,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/user_likes');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 	public function user_ratings()
 	{
@@ -136,6 +189,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/user_ratings');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 	public function user_favourites()
 	{
@@ -144,6 +198,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/user_favourites');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 
 	//*** Merchant Management ***
@@ -154,6 +209,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/merchants');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 	public function merchant()
 	{
@@ -170,6 +226,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/merchant_branches');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 	public function merchant_business_categories()
 	{
@@ -178,6 +235,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/merchant_business_categories');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 	public function merchant_notifications()
 	{
@@ -186,6 +244,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/merchant_notifications');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 	public function merchant_transactions()
 	{
@@ -194,6 +253,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/merchant_transactions');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 
 	//*** Offer Management ***
@@ -204,6 +264,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/offers');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 	public function offer_sub_categories()
 	{
@@ -212,6 +273,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/offer_sub_categories');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 	public function offer_image_gallery()
 	{
@@ -220,5 +282,6 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/offer_image_gallery');
 		$this->load->view('admin/common/footer');
+		$this->load->view('admin/common/table-template-end');
 	}
 }

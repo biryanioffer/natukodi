@@ -3,7 +3,8 @@
     <!-- Sidebar Brand -->
     <div id="sidebar-brand" class="themed-background">
         <a href="index.html" class="sidebar-title">
-            <i class="fa fa-cube"></i> <span class="sidebar-nav-mini-hide">Offer<strong>Citi</strong></span>
+            <!--<i class="fa fa-cube"></i>-->
+            <span class="sidebar-nav-mini-hide">Offer<strong>Citi</strong></span>
         </a>
     </div>
     <!-- END Sidebar Brand -->
