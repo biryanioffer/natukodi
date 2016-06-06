@@ -1,4 +1,4 @@
-body {font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;line-height: 1.42857143;color: #333;}
+body {font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;line-height: 1.42857143;color: #333; font-size:11px;}
 h1
 {
 margin: 0px;
@@ -2060,7 +2060,7 @@ width: 100%;
 .ad-sign-tabs-wrap .nav-pills>li+li , .ad-sign-tabs-wrap  .nav-pills>li{
        margin-left: 2px;
        background-color: #FFCB01;
-       width: 24%;
+       width: 19%;
        border-left: 2px solid #000;
 }
 
