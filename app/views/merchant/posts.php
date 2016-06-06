@@ -182,12 +182,12 @@
                                                 <th>Likes</th>
                                                 <th>Rating</th>
                                                 <th>Views</th>
-                                                <th><img src="../assets/images/social/Facebook.png"></th>
-                                                <th><img src="../assets/images/social/Twitter.png"></th>
-                                                <th><img src="../assets/images/social/Google+.png"></th>
-                                                <th><img src="../assets/images/social/Email.png"></th>
-                                                <th><img src="../assets/images/social/whatsapp.png"></th>
-                                                <th><img src="../assets/images/social/sms.png"></th>
+                                                <th><img src="<?php echo site_url('app/assets/images/social/Facebook.png'); ?>"></th>
+                                                <th><img src="<?php echo site_url('app/assets/images/social/Twitter.png'); ?>"></th>
+                                                <th><img src="<?php echo site_url('app/assets/images/social/Google+.png'); ?>"></th>
+                                                <th><img src="<?php echo site_url('app/assets/images/social/Email.png'); ?>"></th>
+                                                <th><img src="<?php echo site_url('app/assets/images/social/whatsapp.png'); ?>"></th>
+                                                <th><img src="<?php echo site_url('app/assets/images/social/sms.png'); ?>"></th>
                                             </tr>
                                             </thead>
                                             <tbody>
