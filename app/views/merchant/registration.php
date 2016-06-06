@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="panel-body">
-                <form id="signupform" class="form-horizontal" role="form">
+                 <form id="signupform" class="form-horizontal" role="form">
                     <div id="signupalert" style="display:none" class="alert alert-danger">
                         <p>Error:</p>
                         <span></span>
@@ -65,7 +65,7 @@
                         <div class="form-group">
                             <label for="email" class="col-md-4 control-label">*Store Name</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="email" placeholder="First Name">
+                                <input type="text" class="form-control" id="email" placeholder="Store Name">
                             </div>
 
                         </div>
@@ -104,40 +104,38 @@
                                 <input type="text" class="form-control" id="email" placeholder="Email Id">
                             </div>
                         </div>
-
-
+						
+						<div class="form-group">
+                            <label for="area" class="col-md-4 control-label">Landline</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="landline" placeholder="Landline Number">
+                            </div>
+                        </div>
+						
+						<div class="form-group">
+                            <label for="email" class="col-md-4 control-label">*Location / Address</label>
+                            <div class="col-md-6">
+                                <input id="googleLocation" name="googleLocation" type="text" size="50" placeholder="Ex: JNTU, KPHB, Hyderabad, Telangana" autocomplete="on" class="form-control">
+                            </div>
+                        </div>
+						
                         <div class="form-group">
                             <label for="area" class="col-md-4 control-label">*Area/Location</label>
                             <div class="col-md-6">
-                                <select class="selectpicker" data-live-search="true" title="Area/Location">
-                                    <option>AmeerPet</option>
-                                    <option>Kukatapally</option>
-                                    <option>GachiBowli</option>
-                                    <option>Lingampally</option>
-                                </select>
+                                <input type="text" class="form-control" id="area" placeholder="Area" disabled>
                             </div>
-                        </div>
+                        </div>						
 
                         <div class="form-group">
                             <label for="city" class="col-md-4 control-label">*City</label>
                             <div class="col-md-6">
-                                <select class="selectpicker" data-live-search="true" title="City">
-                                    <option>Hyderabd</option>
-                                    <option>Vijayawada</option>
-                                    <option>Warangal</option>
-                                    <option>Tirupati</option>
-                                </select>
+                                <input type="text" class="form-control" id="city" placeholder="City" disabled>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="state" class="col-md-4 control-label">*State</label>
                             <div class="col-md-6">
-                                <select class="selectpicker" data-live-search="true" title="State">
-                                    <option>Andhra Pradesh</option>
-                                    <option>Telangana</option>
-                                    <option>Karnataka</option>
-                                    <option>Tamilnadu</option>
-                                </select>
+                                <input type="text" class="form-control" id="ara" placeholder="state" disabled>
                             </div>
                         </div>
 
