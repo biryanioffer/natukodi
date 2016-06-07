@@ -108,7 +108,7 @@ if(isset($_SESSION['email'])){
                     <div class="form-group">
                         <label for="dob" class="col-md-4 control-label">*Date of Birth</label>
                         <div class="col-md-4">
-                            <input type="text" class="form-control date-pic" id="dob" required name="dob"
+                            <input type="text" class="form-control date-pic" readonly id="dob" required name="dob"
                                    placeholder="Date of Birth">
                         </div>
                     </div>
