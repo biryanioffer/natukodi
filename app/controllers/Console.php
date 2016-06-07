@@ -317,28 +317,18 @@ public function forgotpassword()
 		$to=$email;	
 
 		 if ($num > 0) {
-		$subject = "Login Details";			
-			 $message = "	
-			<html>
-			<head>
-			<title>HTML email</title>
-			</head>
-			<body>
-			<table width='300'>		
-
-			<th> Please click the below link to change the Password:  </th>
-
-			<td><a href='http://hydinfo.com/offercity/console/user_new_password?email=$to'>click here</a></td>
-
-			</tr>
-
-			</table>
-
-			</body>
-
-			</html>
-
-			";		
+		$subject = "Forgot Password";			
+			 $message =" 
+			 <table width='100%'>	
+				<tr>
+					<th><img src='http://dev.offerciti.com/app/assets/images/offerciti-logo.png'></th>
+				</tr>			 
+				<tr>
+					<th>Please click the below link to Reset Your Offerciti  Password: </th>
+				</tr>
+					<th><strong><a href='http://dev.offerciti.com/console/user_new_password?email=$to'>Click Here</a></strong> </th>
+				</tr>
+			</table> ";		
 
 			$headers = "MIME-Version: 1.0" . "\r\n";
 

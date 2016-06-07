@@ -117,7 +117,7 @@ if(isset($_SESSION['email'])){
 
                            <span class="input-blue checkbox">
 
-                           <input type="checkbox" id="checkbox1">
+                           <input type="checkbox" name="remember_me" id="remember_me">
 
                            <label for="checkbox1">Remember Me</label>
 
