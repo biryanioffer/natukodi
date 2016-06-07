@@ -289,10 +289,10 @@ Admin Approval Pending.</label>
  public function logout()
 
     { 
-
+			unset($_SESSION['email']);
             $this->session->unset_userdata('email');
 
-            $this->load->view('index');
+            $this->load->view('user/login');
 
     }
 
@@ -338,13 +338,7 @@ public function forgotpassword()
 
 			</html>
 
-			";
-
-			
-
-			
-
-			
+			";		
 
 			$headers = "MIME-Version: 1.0" . "\r\n";
 
@@ -445,6 +439,7 @@ public function forgotpassword()
 			{
 			$udob=$dob;	
 			}
+		 
 			$gender=$this->input->post('gender');
 			$phone=$this->input->post('phone');
 			$query = $this->db->query("update users set area='$area',city='$city',state='$state',contact_number='$phone',dob='$udob',gender='$gender' where  id='$id' ");

@@ -37,11 +37,13 @@ $(document).ready(function() {
 		$(function() {
 	$("#start-date, #dob").datepicker({
 	changeMonth: true,
-	changeYear: true
+	changeYear: true,
+	dateFormat:'dd/mm/yy'
 	});
 	$("#end-date").datepicker({
 	changeMonth: true,
-	changeYear: true
+	changeYear: true,
+	dateFormat:'dd/mm/yy'
 	});
 	});
 

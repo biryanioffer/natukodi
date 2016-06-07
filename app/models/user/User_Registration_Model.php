@@ -65,14 +65,14 @@ class User_Registration_Model extends CI_Model {
 	// Inserting User Details into 'user' Table into DB 
 	public function save_user($REQUEST)
 	{
-				//print_r($REQUEST);
+				// print_r($REQUEST); die;
 				$location=explode(",",$REQUEST['googleLocation']);				$mdob=explode("/",$REQUEST['dob']);				$udob=$mdob[2]."-".$mdob[0]."-".$mdob[1];
 				//print_r($location);
 				$data = array(
 				 "title" => $REQUEST['user_title'],				
 				"first_name" => $REQUEST['first_name'],
 				"last_name" => $REQUEST['last_name'],
-				"dob" => $udob,	
+				"dob" => $REQUEST['dob'],	
 				"contact_number" => $REQUEST['contact_number'],	
 				"email" => $REQUEST['email'],	
 				"password" => $REQUEST['password'],
