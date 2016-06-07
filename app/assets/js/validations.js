@@ -7,7 +7,7 @@
 			rules: {
 				first_name: {
 					required: true,
- 					minlength: 3
+					minlength: 3
 				},
 				last_name: {
 					required: true,

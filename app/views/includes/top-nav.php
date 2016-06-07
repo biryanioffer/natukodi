@@ -1,3 +1,4 @@
+<?php error_reporting(0); ?>
 <nav class="row nav-top">
     <div class="web-menu-wrap">
         <a href="#" id="fav">
@@ -16,14 +17,23 @@
                 <li><a href="merchant_login">Logout</a></li>
             </ul>
         </div>
-        <div class="dropdown user-login-cont">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login / Sign Up
+        <div class="dropdown user-login-cont"> 
+		<?php if($_SESSION['email']!='' && $_SESSION['Login']==1){?>
+			<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Account
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="profile">My Account</a></li>
+                <li><a href="logout">Logout</a></li>
+            </ul>
+
+			<?php } else{ ?>
+			 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login / Sign Up
                 <span class="caret"></span></button>
             <ul class="dropdown-menu">
                 <li><a href="login">Login / Sign Up</a></li>
-                <li><a href="profile">My Account</a></li>
-                <li><a href="login">Logout</a></li>
+                
             </ul>
+			<?php }?>
         </div>
     </div>
     <div class="mob-menu-wrap">

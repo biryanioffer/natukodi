@@ -34,7 +34,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h6 class="panel-title">
-                                    Subbu Pedagadi
+                                                                      <?php echo $result[0]->first_name ?> <?php echo $result[0]->last_name ?>
                                 </h6>
                             </div>
                             <div id="collapse1" class="panel-collapse collapse in">

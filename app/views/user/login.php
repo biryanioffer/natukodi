@@ -1,4 +1,9 @@
-<?php include 'app/views/includes/head.php'; ?>
+<?php 
+include 'app/views/includes/head.php'; 
+if(isset($_SESSION['email'])){
+	header("Location:profile");
+}else{
+?>
 
 <title>Offerciti | Login</title>
 
@@ -261,7 +266,7 @@
 
 
 <!-- footer starts -->
-
+<?php }?>
 
 
 <?php include 'app/views/includes/footer.php' ?>

@@ -44,7 +44,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h6 class="panel-title">
-                                    Subbu Pedagadi
+                                   <?php echo $result[0]->first_name ?> <?php echo $result[0]->last_name ?>
                                 </h6>
                             </div>
                             <div id="collapse1" class="panel-collapse collapse in">
@@ -139,7 +139,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                             <div class="form-group">
                                 <label for="pin-code" class="col-md-4 control-label">*Location / Address</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="searchTextField"  value="<?php echo $result[0]->landmark; ?>"
+                                    <input type="text" class="form-control" id="searchTextField" 									value="<?php echo $result[0]->area." ,".$result[0]->city.",".$result[0]->state; ?>"
                                            placeholder="Ex: JNTU, KPHB, Hyderabad, Telangana" name="landmark">
                                 </div>
                             </div>

@@ -73,14 +73,7 @@ class Console extends CI_Controller
             $this->User_Registration_Model->save_user($_REQUEST);
 
              redirect('index.php/console/thank_you');
-
-            /*$this->load->view('user/thankYou');
-
-            echo '<div class="col-md-12 col-sm-12" ><label style="color:green">Your are  successfully registered.
-
-Activation link has been sent to your email.</label>             
-
-            </div>';*/
+ 
 
         }
 
@@ -293,6 +286,15 @@ Admin Approval Pending.</label>
         $this->load->view('user/login');
 
     }
+ public function logout()
+
+    { 
+
+            $this->session->unset_userdata('email');
+
+            $this->load->view('index');
+
+    }
 
 public function forgotpassword()
 
@@ -312,31 +314,17 @@ public function forgotpassword()
 
 		$num=count($query->result());
 
-		$to=$email;
-
-		
+		$to=$email;	
 
 		 if ($num > 0) {
-
-		$subject = "Login Details";
-
-			
-
+		$subject = "Login Details";			
 			 $message = "	
-
 			<html>
-
 			<head>
-
 			<title>HTML email</title>
-
 			</head>
-
 			<body>
-
-			<table width='300'>
-
-			
+			<table width='300'>		
 
 			<th> Please click the below link to change the Password:  </th>
 
@@ -441,34 +429,25 @@ public function forgotpassword()
 		if($_POST)
 
 		{
-
-			$landmark=$this->input->post('landmark');
-
+		 
+			$location=explode(",",$_POST['landmark']);
+				$area= $location[0];
+				$city= $location[1];
+				$state=$location[2];
 			$dob=$this->input->post('dob');
 
 			if($this->data['result'][0]->dob!=$dob)
-
 			{
-
 			$mdob=explode("/",$dob);
-
 			$udob=$mdob[2]."-".$mdob[0]."-".$mdob[1];
-
 			}
-
 			else
-
 			{
-
 			$udob=$dob;	
-
 			}
-
 			$gender=$this->input->post('gender');
-
 			$phone=$this->input->post('phone');
-
-			$query = $this->db->query("update users  set landmark='$landmark',contact_number='$phone',dob='$udob',gender='$gender' where  id='$id' ");
+			$query = $this->db->query("update users set area='$area',city='$city',state='$state',contact_number='$phone',dob='$udob',gender='$gender' where  id='$id' ");
 
 		echo "<script>alert('Profile Updated Successfuly')</script>";
 
@@ -560,7 +539,7 @@ public function forgotpassword()
 
 		
 
-        $this->load->view('user/changepassword');
+        $this->load->view('user/changepassword',$this->data);
 
     }
 
