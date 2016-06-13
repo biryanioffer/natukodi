@@ -1,10 +1,10 @@
-<form id="form-validation" action="<?php echo base_url() ?>admin/create_category" method="post"
+<form id="oc-form" action="create_category" method="post"
       class="form-horizontal form-bordered">
     <div class="form-group">
-        <label class="col-md-3 control-label" for="val-category-name">Category Name <span
+        <label class="col-md-3 control-label" for="category-name">Category Name <span
                 class="text-danger">*</span></label>
         <div class="col-md-6">
-            <input type="text" id="val-category-name" name="val-category-name" class="form-control"
+            <input type="text" id="category-name" name="category-name" class="form-control"
                    placeholder="Enter new category name..">
         </div>
     </div>
@@ -15,7 +15,3 @@
         </div>
     </div>
 </form>
-
-<!-- Load and execute javascript code used only in this page -->
-<script src="<?php echo site_url('app/assets/admin/js/pages/formsValidation.js') ?>"></script>
-<script>$(function() { FormsValidation.init(); });</script>

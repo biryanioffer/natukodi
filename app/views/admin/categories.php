@@ -4,18 +4,13 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="header-section">
-                    <h1>MAIN CATEGORIES</h1>
+                    <h1>Categories</h1>
                     <!-- Trigger the modal with a button -->
-                    <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal"
+                    <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#createModal"
                             title="Create new category">
                         <i class="fa fa-plus">Category</i></button>
-                    <!--<a data-target="#myModal" data-toggle="tooltip" title="Add Administrator" class="btn btn-effect-ripple btn-xs btn-info"><i class="fa fa-plus"></i></a>-->
                 </div>
             </div>
-           <!-- <div class="col-sm-6 pull-left">
-                <a href="page_ready_register.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip"
-                   data-placement="left" title="Create new category"><i class="fa fa-plus"></i></a>
-            </div>-->
             <div class="col-sm-6 hidden-xs">
                 <div class="header-section">
                     <ul class="breadcrumb breadcrumb-top">
@@ -50,9 +45,11 @@
                     <td><span class="label label-warning">In Active</span></td>
                     <td class="text-center">23/04/2016</td>
                     <td class="text-center">
-                        <a href="javascript:void(0)" data-toggle="tooltip" title="Edit User"
+                        <!--<button type="button" class="btn btn-effect-ripple btn-xs btn-success" data-toggle="modal" data-target="#editModal"
+                                title="Edit Category"><i class="fa fa-pencil"></i></button>-->
+                        <a href="get_category" data-toggle="tooltip" title="Edit Category"
                            class="btn btn-effect-ripple btn-xs btn-success"><i class="fa fa-pencil"></i></a>
-                        <a href="javascript:void(0)" data-toggle="tooltip" title="Delete User"
+                        <a href="javascript:void(0)" data-toggle="tooltip" title="Delete Category"
                            class="btn btn-effect-ripple btn-xs btn-danger"><i class="fa fa-times"></i></a>
                     </td>
                 </tr>
@@ -80,38 +77,13 @@
                            class="btn btn-effect-ripple btn-xs btn-danger"><i class="fa fa-times"></i></a>
                     </td>
                 </tr>
-                <tr>
-                    <td class="text-center">4</td>
-                    <td><strong>Books</strong></td>
-                    <td><span class="label label-success">Active</span></td>
-                    <td class="text-center">23/04/2016</td>
-                    <td class="text-center">
-                        <a href="javascript:void(0)" data-toggle="tooltip" title="Edit User"
-                           class="btn btn-effect-ripple btn-xs btn-success"><i class="fa fa-pencil"></i></a>
-                        <a href="javascript:void(0)" data-toggle="tooltip" title="Delete User"
-                           class="btn btn-effect-ripple btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center">5</td>
-                    <td><strong>Footware</strong></td>
-                    <td><span class="label label-success">Active</span></td>
-                    <td class="text-center">23/04/2016</td>
-                    <td class="text-center">
-                        <a href="javascript:void(0)" data-toggle="tooltip" title="Edit User"
-                           class="btn btn-effect-ripple btn-xs btn-success"><i class="fa fa-pencil"></i></a>
-                        <a href="javascript:void(0)" data-toggle="tooltip" title="Delete User"
-                           class="btn btn-effect-ripple btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                    </td>
-                </tr>
-
                 </tbody>
             </table>
         </div>
     </div>
     <!-- END Datatables Block -->
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
+    <!-- Create Modal -->
+    <div id="createModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -120,7 +92,24 @@
                     <h4 class="modal-title">Create</h4>
                 </div>
                 <div class="modal-body">
-                    <?php include 'category.php'; ?>
+                    <?php include 'create_category.php'; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Modal Block -->
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Create</h4>
+                </div>
+                <div class="modal-body">
+                    <?php include 'edit_category.php'; ?>
                 </div>
             </div>
         </div>

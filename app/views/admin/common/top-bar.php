@@ -45,11 +45,11 @@
             <!-- END Search Form -->
 
             <!-- Alternative Sidebar Toggle Button -->
-            <li>
+          <!--  <li>
                 <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar-alt');this.blur();">
                     <i class="gi gi-settings"></i>
                 </a>
-            </li>
+            </li>-->
             <!-- END Alternative Sidebar Toggle Button -->
 
             <!-- User Dropdown -->
@@ -62,39 +62,19 @@
                         <strong>ADMINISTRATOR</strong>
                     </li>
                     <li>
-                        <a href="page_app_email.html">
-                            <i class="fa fa-inbox fa-fw pull-right"></i>
-                            Inbox
-                        </a>
-                    </li>
-                    <li>
                         <a href="page_app_social.html">
                             <i class="fa fa-pencil-square fa-fw pull-right"></i>
                             Profile
                         </a>
                     </li>
                     <li>
-                        <a href="page_app_media.html">
-                            <i class="fa fa-picture-o fa-fw pull-right"></i>
-                            Media Manager
-                        </a>
-                    </li>
-                    <li class="divider">
-                    <li>
-                    <li>
-                        <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar-alt');">
-                            <i class="gi gi-settings fa-fw pull-right"></i>
-                            Settings
+                        <a href="page_app_email.html">
+                            <i class="fa fa-inbox fa-fw pull-right"></i>
+                            Inbox
                         </a>
                     </li>
                     <li>
-                        <a href="page_ready_lock_screen.html">
-                            <i class="gi gi-lock fa-fw pull-right"></i>
-                            Lock Account
-                        </a>
-                    </li>
-                    <li>
-                        <a href="page_ready_login.html">
+                        <a href="logout">
                             <i class="fa fa-power-off fa-fw pull-right"></i>
                             Log out
                         </a>

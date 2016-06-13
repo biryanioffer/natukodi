@@ -1,57 +1,49 @@
 <?php
 
 /**
- * Users model here for getting roles and data
+ * Login model holds all all login and logout methods 
  */
-class Login_Model extends CI_Model
+class Login_Model extends Admin_Main_Model
 {
-    function __construct()
+    public function verify_admin($REQUEST)
     {
-        parent::__construct();
-        $this->load->library('session');
-        $this->load->database();
-    }
-
-    // --- Get all categories from DB ---
-    public function get_categories()
-    {
-        $this->db->select('category_id', 'category_name', 'status', 'created_date');
-        $query = $this->db->get('business_categories');
-
+        $this->db->where('user_name', $REQUEST['username']);
+        $this->db->where('password', $REQUEST['password']);
+        $query = $this->db->get('administrators');
+        // Let's check if there are any results
         if ($query->num_rows() > 0) {
-            return 1;
+            // If there is a user, then create session data
+            $row = $query->row();
+            # echo "<pre>"; print_r($row); exit;
+            $data = array(
+                'id' => $row->id,
+                'email' => $row->email,
+                'Login' => TRUE
+            );
+            $this->session->set_userdata($data);
+            return true;
         } else {
-            return 0;
-        }
-        redirect('admin/categories');
-    }
-
-    // --- Verify whether category name already exist in DB ---
-    public function is_category_exists($category_name)
-    {
-        $this->db->select('category_id');
-        $this->db->where('category_name', $category_name);
-        $query = $this->db->get('business_categories');
-
-        if ($query->num_rows() > 0) {
-            return 1;
-        } else {
-            return 0;
+            // If the previous process did not validate
+            // then return false.
+            //$this->form_validation->set_message('check_database', 'Please check your login credentials.');
+            return false;
         }
     }
 
-    // --- Inserting new category into 'business_categories' table in DB ---
-    public function create_category($REQUEST)
+    public function is_logged_in_admin()
     {
-        //print_r($REQUEST);
-        $data = array(
-            "category_name" => $REQUEST['val-category-name'],
-            "status" => 1,
-            "created_date" => date('Y-m-d H:i:s')
-        );
-        if ($this->db->insert("business_categories", $data)) {
-            redirect('admin/categories');
+        if($this->session->userdata('email') == ''){
+            header("Location:index");
+            return false;
+        }else{
+            return true;
         }
-        return 1;
+    }
+
+    public function clear_session_data()
+    {
+        $session_data = array('id' => '', 'email' => '', 'Login' => '');
+        $this->session->unset_userdata($session_data);
+        session_unset();
     }
 }

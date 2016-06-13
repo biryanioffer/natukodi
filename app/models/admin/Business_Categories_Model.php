@@ -3,15 +3,8 @@
 /**
  * Users model here for getting roles and data
  */
-class Business_Categories_Model extends CI_Model
+class Business_Categories_Model extends Admin_Main_Model
 {
-    function __construct()
-    {
-        parent::__construct();
-        $this->load->library('session');
-        $this->load->database();
-    }
-
     // --- Get all categories from DB ---
     public function get_categories()
     {
@@ -33,25 +26,37 @@ class Business_Categories_Model extends CI_Model
         $this->db->where('category_name', $category_name);
         $query = $this->db->get('business_categories');
 
-        if ($query->num_rows() > 0) {
-            return 1;
-        } else {
-            return 0;
-        }
+        return ($query->num_rows() > 0);
     }
 
     // --- Inserting new category into 'business_categories' table in DB ---
     public function create_category($REQUEST)
     {
-        //print_r($REQUEST);
-        $data = array(
-            "category_name" => $REQUEST['val-category-name'],
-            "status" => 1,
-            "created_date" => date('Y-m-d H:i:s')
-        );
-        if ($this->db->insert("business_categories", $data)) {
-            redirect('admin/categories');
+        if(!$this->is_category_exists($REQUEST['category-name'])){
+            $data = array(
+                "category_name" => $REQUEST['category-name'],
+                "status" => 1,
+                "created_date" => date('Y-m-d H:i:s')
+            );
+            return ($this->db->insert("business_categories", $data));
+        } else {
+            echo "<script>alert('Category with same name already exist!')</script>";
+            return false;
         }
-        return 1;
+    }
+
+    public function update_category($REQUEST)
+    {
+        if(!$this->is_category_exists($REQUEST['category-name'])){
+            $data = array(
+                "category_name" => $REQUEST['category-name'],
+                "status" => 1,
+                "created_date" => date('Y-m-d H:i:s')
+            );
+            return ($this->db->insert("business_categories", $data));
+        } else {
+            echo "<script>alert('Category with same name already exist!')</script>";
+            return false;
+        }
     }
 }

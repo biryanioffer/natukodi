@@ -12,25 +12,23 @@
             <div class="block-options pull-right">
                 <a href="page_ready_reminder.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip"
                    data-placement="left" title="Forgot your password?"><i class="fa fa-exclamation-circle"></i></a>
-                <!--<a href="page_ready_register.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip"
-                   data-placement="left" title="Create new account"><i class="fa fa-plus"></i></a>-->
             </div>
             <h2>Login</h2>
         </div>
         <!-- END Login Title -->
 
         <!-- Login Form -->
-        <form id="form-login" action="login" method="post" class="form-horizontal">
+        <form id="oc-form" action="login" method="post" class="form-horizontal">
             <div class="form-group">
                 <div class="col-xs-12">
-                    <input type="text" id="login-email" name="login-email" class="form-control"
-                           placeholder="Your email..">
+                    <input type="text" id="username" name="username" class="form-control"
+                           placeholder="Your username.." value="admin">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-xs-12">
-                    <input type="password" id="login-password" name="login-password" class="form-control"
-                           placeholder="Your password..">
+                    <input type="password" id="password" name="password" class="form-control"
+                           placeholder="Your password.." value="12345">
                 </div>
             </div>
             <div class="form-group form-actions">
@@ -58,9 +56,9 @@
 <?php include 'app/views/admin/common/footer.php' ?>
 
 <!-- Load and execute javascript code used only in this page -->
-<script src="<?php echo site_url('app/assets/admin/js/pages/readyLogin.js') ?>"></script>
+<script src="<?php echo site_url('app/assets/admin/js/pages/validation.js') ?>"></script>
 <script>$(function () {
-        ReadyLogin.init();
+        Validation.init();
     });</script>
 </body>
 </html>
