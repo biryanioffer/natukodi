@@ -2746,3 +2746,111 @@ top: 7px !important;
 
 }
 /* media queries ends */
+
+/*post offer css */
+
+
+
+.ac-label {
+   font-weight: 700;
+   position: relative;
+   padding: .5em 1em;
+   margin-bottom: .5em;
+   display: block;
+   cursor: pointer;
+   background-color: whiteSmoke;
+   transition: background-color .15s ease-in-out;
+   }
+   .ac-input:checked + label, .ac-label:hover {
+   background-color: #999;
+   }
+   .ac-label:after, .ac-input:checked + .ac-label:after {
+   content: "+";
+   position: absolute;
+   display: block;
+   right: 0;
+   top: 0;
+   width: 2em;
+   height: 100%;
+   line-height: 3.25em;
+   text-align: center;
+   background-color: #e5e5e5;
+   transition: background-color .15s ease-in-out;
+   }
+   .ac-label:hover:after, .ac-input:checked + .ac-label:after {
+   background-color: #b5b5b5;
+   }
+   .ac-input:checked + .ac-label:after {
+   content: "-";
+   }
+   .ac-input {
+   display: none;
+   }
+   .ac-sub-cat-lvl-2, .ac-sub-cat-lvl-3 {
+   opacity: 0;
+   height: 0;
+   margin-bottom: .5em;
+   transition: opacity .5s ease-in-out;
+   overflow: hidden;
+   }
+   .ac-input:checked ~ .ac-sub-cat-lvl-2, .ac-sub .ac-input:checked ~ .ac-sub-cat-lvl-3 {
+   opacity: 1;
+   height: auto;
+   }
+   .ac-sub .ac-label {
+   background: none;
+   font-weight: 600;
+   padding: .5em 2em;
+   margin-bottom: 0;
+   }
+   .ac-sub .ac-label:checked {
+   background: none;
+   border-bottom: 1px solid whitesmoke;
+   }
+   .ac-sub .ac-label:after, .ac-sub .ac-input:checked + .ac-label:after {
+   left: 0;
+   background: none;
+   }
+   .ac-sub .ac-input:checked + label, .ac-sub .ac-label:hover {
+   background: none;
+   }
+   .ac-sub-cat-lvl-3 {
+   padding: 0 1em 0 3em;
+   }
+   .select-offers-sub-category .ac-sub .ac-label {
+   background-color: #b5b5b5 !important;
+   }
+   .select-offers-sub-category .select-offers-sub-category-wrap label
+   {
+   width: 100%;
+   background-color:rgb(255, 203, 1);
+       /*margin-bottom: 0;*/
+   }
+   .select-offers-sub-category .select-offers-sub-category-wrap .ac-sub-cat-lvl-3 label
+   {
+   background-color:transparent;
+   }
+   .select-offers-sub-category .ac-lbl-lvl-2 .input-blue,
+   .select-offers-sub-category .ac-lbl-lvl-1 .input-blue
+   {
+   background-color:transparent;
+   border-radius:0;
+   position: relative;
+   }
+   .select-offers-sub-category .ac-lbl-lvl-2 label,
+   .select-offers-sub-category .ac-lbl-lvl-1 .input-blue
+   {
+   background-color:transparent;
+   width: auto;
+   }
+   .select-offers-sub-category .ac-lbl-lvl-2 .checkbox,
+   .select-offers-sub-category .ac-lbl-lvl-1 .input-blue
+   {
+   width:100%;
+   float:none;
+   }
+   .select-offers-sub-category .ac-lbl-lvl-1 label
+   {
+   width:auto;
+   }
+/*post offers end */
