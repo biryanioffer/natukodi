@@ -38,19 +38,32 @@
                             </div>
                             <div id="collapse1" class="panel-collapse collapse in">
                                 <div class="panel-body">
-                                    <form id="freeadvertiserloginform" class="form-horizontal" role="form">
+                                    <form id="oc-form" action="login_merchant" method="post" class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <input type="text" id="username" name="username" class="form-control"
+                                                       placeholder="Your username.." value="admin">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <input type="password" id="password" name="password" class="form-control"
+                                                       placeholder="Your password.." value="12345">
+                                            </div>
+                                        </div>
+                                        <!--
                                         <div style="margin-bottom: 25px" class="input-group">
                                             <span class="input-group-addon"><i
                                                     class="glyphicon glyphicon-user"></i></span>
-                                            <input id="login-username" type="email" class="form-control" name="username"
-                                                   value="" placeholder="Enter your Email Address">
+                                            <input id="username" type="email" class="form-control" name="username"
+                                                   placeholder="Enter your Email Address">
                                         </div>
                                         <div style="margin-bottom: 25px" class="input-group">
                                             <span class="input-group-addon"><i
-                                                    class="glyphicon glyphicon-lock"></i></span>
-                                            <input id="login-password" type="password" class="form-control"
+                                                   class="glyphicon glyphicon-lock"></i></span>
+                                            <input id="password" type="password" class="form-control"
                                                    name="password" placeholder="password">
-                                        </div>
+                                        </div>-->
                                         <div class="input-group">
                                        <span class="input-blue checkbox">
                                        <input type="checkbox" id="checkbox1"/>
@@ -62,7 +75,10 @@
                                         <div style="margin-top:10px" class="form-group">
                                             <!-- Button -->
                                             <div class="col-sm-12 controls user-login-btn-wrap">
-                                                <a id="btn-login" href="posts" class="btn btn-theme">Login </a>
+                                                <button type="submit" class="btn btn-effect-ripple btn-sm btn-primary"><i class="fa fa-check"></i>
+                                                    Let's Go
+                                                </button>
+                                                <!--<a id="btn-login" href="posts" class="btn btn-theme">Login </a>-->
                                             </div>
                                         </div>
                                         <div class="form-group">

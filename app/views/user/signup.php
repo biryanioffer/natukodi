@@ -32,7 +32,7 @@ if(isset($_SESSION['email'])){
             </div>
             <div class="panel-body" id="first_section">
                 <form id="userSignUpForm" class="form-horizontal" role="form" method="POST"
-                      action="<?php echo base_url() ?>index.php/console/user_save">
+                      action="<?php echo base_url() ?>app/register_user">
                     <div id="signupalert" style="display:none" class="alert alert-danger">
                         <p>Error:</p>
                         <span></span>

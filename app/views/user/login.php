@@ -91,13 +91,13 @@ if(isset($_SESSION['email'])){
 
 
 
-                    <?php echo form_open('index.php/console/validate_user', 'id="loginForm" class="form-horizontal" role="form" method="post" autocomplete="off"') ?>
+                    <?php echo form_open('app/login_user', 'id="loginForm" class="form-horizontal" role="form" method="post" autocomplete="off"') ?>
 
                     <div style="margin-bottom: 25px" class="input-group">
 
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 
-                        <input id="login-username" type="email" class="form-control" required name="email" value=""
+                        <input id="email" type="email" class="form-control" required name="email" value="kishorefx@gmail.com"
 
                                placeholder="Enter your Email Address">
 
@@ -107,9 +107,9 @@ if(isset($_SESSION['email'])){
 
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 
-                        <input id="login-password" type="password" class="form-control" required name="password"
+                        <input id="password" type="password" class="form-control" required name="password"
 
-                               placeholder="password">
+                               placeholder="password" value="admin123">
 
                     </div>
 

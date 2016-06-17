@@ -266,7 +266,7 @@ class Admin extends CI_Controller {
 		}
 	}
 
-	// ---- controller functions -----
+	// ***** controller functions *****
 	public function login()
 	{
 		if($this->Login_Model->verify_admin($_REQUEST)){
