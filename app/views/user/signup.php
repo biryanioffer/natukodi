@@ -31,8 +31,9 @@ if(isset($_SESSION['email'])){
                 <div class="panel-title">Sign Up</div>
             </div>
             <div class="panel-body" id="first_section">
-                <form id="userSignUpForm" class="form-horizontal" role="form" method="POST"
-                      action="<?php echo base_url() ?>app/register_user">
+                <form id="oc-form" action="register_user" method="post" class="form-horizontal">
+                <!--<form id="userSignUpForm" class="form-horizontal" role="form" method="POST"
+                      action="</?php echo base_url() ?>app/register_user">
                     <div id="signupalert" style="display:none" class="alert alert-danger">
                         <p>Error:</p>
                         <span></span>
@@ -47,7 +48,7 @@ if(isset($_SESSION['email'])){
                                 <option value="Miss.">Miss</option>
                             </select>
                         </div>
-                    </div>
+                    </div>-->
                     <div class="form-group">
                         <label for="first-name" class="col-md-4 control-label">*First Name </label>
                         <div class="col-md-6">
@@ -118,48 +119,8 @@ if(isset($_SESSION['email'])){
                             
                         </div>
                     </div>
-                    <!--
-                                     <div class="form-group">
-                                        <label for="area" class="col-md-4 control-label">*Area/Location</label>
-                                        <div class="col-md-6">
-                                           <select id="area" name="area" class="selectpicker" data-live-search="true" required    title="Area/Location">
-                                              <option value="AmeerPet">AmeerPet</option>
-                                              <option value="Kukatapally">Kukatapally</option>
-                                              <option value="GachiBowli">GachiBowli</option>
-                                              <option value="Lingampally">Lingampally</option>
-                                           </select>
-                                        </div>
-                                     </div>
-                                       <div class="form-group">
-                                        <label for="city" class="col-md-4 control-label">*City</label>
-                                        <div class="col-md-6">
-                                           <select id="city" name="city" class="selectpicker" required  data-live-search="true" title="City">
-                                              <option value="Hyderabad">Hyderabad</option>
-                                              <option value="Hyderabad">Hyderabad</option>
-                                              <option value="Hyderabad">Hyderabad</option>
-                                              <option value="Hyderabad">Hyderabad</option>
-                                           </select>
-                                        </div>
-                                     </div>
-                                      <div class="form-group">
-                                        <label for="state" class="col-md-4 control-label">*State</label>
-                                        <div class="col-md-6">
-                                           <input  name="state" type="text" class="form-control" id="state" required   placeholder="State">
-                                        </div>
-                                     </div>
-                                     <div class="form-group">
-                                        <label for="pin-code" class="col-md-4 control-label">*Location / Address</label>
-                                        <div class="col-md-6">
-                                           <input type="text" class="form-control" id="landmark" name="landmark" required  placeholder="Landmark">
-                                        </div>
-                                     </div>
-                                     <div class="form-group">
-                                        <label for="pin-code" class="col-md-4 control-label">Zip Code</label>
-                                        <div class="col-md-6">
-                                           <input type="text" class="form-control" id="zip_code" name="zip_code" required  placeholder="Zip Code">
-                                     -->
                     <div class="form-group">
-                        <!-- Button -->
+                        <!-- Submit Button -->
                         <div class="col-md-offset-4 col-md-8">
                             <input type="submit" id="signup" name="signup" value="Sign Up" class="btn btn-info">
                         </div>
@@ -172,8 +133,10 @@ if(isset($_SESSION['email'])){
 </div>
 
 <!-- footer starts -->
+
 <?php }?>
-<?php include 'app/views/includes/footer.php' ?>
+<!--
+</?php include 'app/views/includes/footer.php' ?>
 
 <style>
     .error {
@@ -354,7 +317,7 @@ if(isset($_SESSION['email'])){
         })
 
     })
-</script>
+</script>-->
 
 
    

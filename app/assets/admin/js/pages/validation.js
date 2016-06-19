@@ -11,8 +11,7 @@ var Validation = function() {
             /*
              *  Jquery Validation, Check out more examples and documentation at https://github.com/jzaefferer/jquery-validation
              */
-
-            /* Login form - Initialize Validation */
+            /* common validations for all input forms - Initialize Validation */
             $('#oc-form').validate({
                 errorClass: 'help-block animation-slideUp', // You can change the animation class for a different entrance animation - check animations page
                 errorElement: 'div',
@@ -28,14 +27,14 @@ var Validation = function() {
                     e.closest('.help-block').remove();
                 },
                 rules: {
-                   /* 'login-email': {
+                    'first_name': {
                         required: true,
-                        email: true
+                        minlength: 3
                     },
-                    'login-password': {
+                    'last_name': {
                         required: true,
-                        minlength: 5
-                    },*/
+                        minlength: 3
+                    },
                     'category-name': {
                         required: true,
                         minlength: 5
@@ -81,14 +80,14 @@ var Validation = function() {
                     },
                     'terms': {
                         required: true
+                    },
+                    googleLocation: {
+                        required: true
                     }
                 },
                 messages: {
-                    /*'login-email': 'Please enter your account\'s email',
-                    'login-password': {
-                        required: 'Please provide your password',
-                        minlength: 'Your password must be at least 5 characters long'
-                    },*/
+                    first_name: 'Please enter your first name',
+                    last_name: 'Please enter your last name',
                     'category-name': {
                         required: 'Please provide new category name',
                         minlength: 'Category name must be at least 5 characters long'
@@ -113,7 +112,8 @@ var Validation = function() {
                     'digits': 'Please enter only digits!',
                     'number': 'Please enter a number!',
                     'range': 'Please enter a number between 1 and 5!',
-                    'terms': 'You must agree to the service terms!'
+                    'terms': 'You must agree to the service terms!',
+                    'googleLocation': 'Please enter a Address / location'
                 }
             });
         }

@@ -42,10 +42,16 @@ class App extends CI_Controller
 	public function login()
 	{
 		$this->load->view('user/login');
+		$this->load->view('includes/footer');
+		$this->load->view('includes/form-validation-script');
+		$this->load->view('includes/template-end');
 	}
 	public function sign_up()
 	{
 		$this->load->view('user/signup');
+		$this->load->view('includes/footer');
+		$this->load->view('includes/form-validation-script');
+		$this->load->view('includes/template-end');
 	}
 	public function profile()
 	{
@@ -148,6 +154,21 @@ class App extends CI_Controller
 	{
 		$this->User_Login_Model->clear_session_data();
 		redirect('app/login');
+	}
+
+	/*
+	 * USER Signup and inserting a new Record into DB
+	 * */
+	public function register_user()
+	{
+		$cnt = $this->User_Registration_Model->user_email_exists($_REQUEST["email"]);
+		if ($cnt == 1) {
+			echo "1";
+		} else {
+			$this->User_Registration_Model->save_user($_REQUEST);
+			redirect('app/thank_you');
+		}
+		exit;
 	}
 	// ***** USER workflow controller functions END *****
 

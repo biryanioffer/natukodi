@@ -4,8 +4,6 @@
 <meta name="description" content="Offerciti offline discounts"/>
 <meta name="keywords" content="Offers, discounts"/>
 <meta name="author" content="www.offerciti.com"/>
-
-
 </head>
 
 <body>
