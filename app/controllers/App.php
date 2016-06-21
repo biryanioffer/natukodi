@@ -75,11 +75,16 @@ class App extends CI_Controller
 	}
 	public function thank_you()
 	{
+		$this->load->view('includes/head');
 		$this->load->view('user/thankYou');
+		$this->load->view('includes/footer');
+		$this->load->view('includes/template-end');
 	}
 	public function offers()
 	{
+		$this->load->view('includes/head');
 		$this->load->view('offer/results');
+		$this->load->view('includes/template-end');
 	}
 	public function more_details()
 	{

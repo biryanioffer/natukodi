@@ -1,4 +1,3 @@
-<?php include 'app/views/includes/head.php'; ?>
 <title>Offerciti | Results</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Offerciti offline discounts"/>
