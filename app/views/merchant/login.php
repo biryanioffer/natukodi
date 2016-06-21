@@ -39,7 +39,7 @@
                             <div id="collapse1" class="panel-collapse collapse in">
                                 <div class="panel-body">
                                     <form id="oc-form" action="login_merchant" method="post" class="form-horizontal">
-                                        <div class="form-group">
+                                       <div class="form-group">
                                             <div class="col-xs-12">
                                                 <input type="text" id="username" name="username" class="form-control"
                                                        placeholder="Your username.." value="admin">
@@ -51,8 +51,8 @@
                                                        placeholder="Your password.." value="12345">
                                             </div>
                                         </div>
-                                        <!--
-                                        <div style="margin-bottom: 25px" class="input-group">
+
+                                        <!--<div style="margin-bottom: 25px" class="input-group">
                                             <span class="input-group-addon"><i
                                                     class="glyphicon glyphicon-user"></i></span>
                                             <input id="username" type="email" class="form-control" name="username"
@@ -75,10 +75,9 @@
                                         <div style="margin-top:10px" class="form-group">
                                             <!-- Button -->
                                             <div class="col-sm-12 controls user-login-btn-wrap">
-                                                <button type="submit" class="btn btn-effect-ripple btn-sm btn-primary"><i class="fa fa-check"></i>
-                                                    Let's Go
+                                                <button type="submit" class="btn btn-theme">
+                                                    Login
                                                 </button>
-                                                <!--<a id="btn-login" href="posts" class="btn btn-theme">Login </a>-->
                                             </div>
                                         </div>
                                         <div class="form-group">

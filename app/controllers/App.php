@@ -48,15 +48,23 @@ class App extends CI_Controller
 	}
 	public function sign_up()
 	{
-		$this->load->view('user/signup');
-		$this->load->view('includes/footer');
-		$this->load->view('includes/form-validation-script');
-		$this->load->view('includes/template-end');
+		if($this->User_Login_Model->is_logged_in_user()) {
+			redirect('app/profile');
+		} else {
+			$this->load->view('user/signup');
+			$this->load->view('includes/footer');
+			$this->load->view('includes/form-validation-script');
+			$this->load->view('includes/template-end');
+		}
 	}
 	public function profile()
 	{
 		if($this->User_Login_Model->is_logged_in_user()) {
+			$this->load->view('includes/head');
 			$this->load->view('user/profile');
+			$this->load->view('includes/footer');
+			$this->load->view('includes/form-validation-script');
+			$this->load->view('includes/template-end');
 		}
 	}
 	public function favourites()
@@ -85,7 +93,11 @@ class App extends CI_Controller
 	}
 	public function register()
 	{
+		$this->load->view('includes/head');
 		$this->load->view('merchant/registration');
+		$this->load->view('includes/footer');
+		$this->load->view('includes/form-validation-script');
+		$this->load->view('includes/template-end');
 	}
 	public function merchant_profile()
 	{
@@ -101,38 +113,59 @@ class App extends CI_Controller
 	}
 	public function offer_post()
 	{
-		if($this->Merchant_Login_Model->is_logged_in_merchant()) {
+		if ($this->Merchant_Login_Model->is_logged_in_merchant()) {
+			$this->load->view('includes/head');
 			$this->load->view('offer/postOffer');
+			$this->load->view('includes/footer');
+			$this->load->view('includes/form-validation-script');
+			$this->load->view('includes/template-end');
 		}
 	}
 	public function posts()
 	{
-		if($this->Merchant_Login_Model->is_logged_in_merchant()) {
+		if ($this->Merchant_Login_Model->is_logged_in_merchant()) {
+			$this->load->view('includes/head');
 			$this->load->view('merchant/posts');
+			$this->load->view('includes/footer');
+			$this->load->view('includes/template-end');
 		}
 	}
 	public function wallet()
 	{
-		if($this->Merchant_Login_Model->is_logged_in_merchant()) {
+		if ($this->Merchant_Login_Model->is_logged_in_merchant()) {
+			$this->load->view('includes/head');
 			$this->load->view('merchant/wallet');
+			$this->load->view('includes/footer');
+			$this->load->view('includes/template-end');
 		}
 	}
 	public function branches()
 	{
-		if($this->Merchant_Login_Model->is_logged_in_merchant()) {
+		if ($this->Merchant_Login_Model->is_logged_in_merchant()) {
+			$this->load->view('includes/head');
 			$this->load->view('merchant/branches');
+			$this->load->view('includes/footer');
+			$this->load->view('includes/form-validation-script');
+			$this->load->view('includes/template-end');
 		}
 	}
 	public function notifications()
 	{
 		if($this->Merchant_Login_Model->is_logged_in_merchant()) {
+			$this->load->view('includes/head');
 			$this->load->view('merchant/notifications');
+			$this->load->view('includes/footer');
+			$this->load->view('includes/template-end');
 		}
 	}
 	public function support()
 	{
 		if($this->Merchant_Login_Model->is_logged_in_merchant()) {
+			$this->load->view('includes/head');
 			$this->load->view('merchant/support');
+			$this->load->view('includes/footer');
+			$this->load->view('includes/form-validation-script');
+			$this->load->view('includes/template-end');
 		}
 	}
 	public function merchant_thank_you()

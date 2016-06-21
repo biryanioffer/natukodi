@@ -36,12 +36,7 @@ class User_Login_Model extends Main_Model
 
     public function is_logged_in_user()
     {
-        if($this->session->userdata('email') == ''){
-            header("Location:login");
-            return false;
-        }else{
-            return true;
-        }
+        return ($this->session->userdata('email') == '');
     }
 
     public function clear_session_data()

@@ -83,6 +83,12 @@ var Validation = function() {
                     },
                     googleLocation: {
                         required: true
+                    },
+                    subject: {
+                        required: true
+                    },
+                    description: {
+                        required: true
                     }
                 },
                 messages: {
@@ -113,7 +119,9 @@ var Validation = function() {
                     'number': 'Please enter a number!',
                     'range': 'Please enter a number between 1 and 5!',
                     'terms': 'You must agree to the service terms!',
-                    'googleLocation': 'Please enter a Address / location'
+                    'googleLocation': 'Please enter a Address / location',
+                    'subject': 'Please provide subject',
+                    'description': 'Please provide description',
                 }
             });
         }

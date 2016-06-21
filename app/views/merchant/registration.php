@@ -1,15 +1,11 @@
-<?php include('app/views/includes/head.php'); ?>
 <title>Offerciti | Advertiser Signup</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Offerciti offline discounts"/>
 <meta name="keywords" content="Offers, discounts"/>
 <meta name="author" content="www.offerciti.com"/>
-
-
 </head>
 
 <body>
-
 <form class="form-inline" role="form">
    <div class="modal fade signup-otp-pop" id="myModal" role="dialog">
       <div class="modal-dialog">
@@ -42,7 +38,6 @@
          <?php include('app/views/includes/top-nav.php'); ?>
 
       </section>
-
    </header>
    <!-- END .header -->
    <div id="signupbox" style="margin-top:50px"
@@ -56,7 +51,7 @@
             </div>
          </div>
          <div class="panel-body">
-            <form id="signupform" class="form-horizontal" role="form">
+            <form id="oc-form" class="form-horizontal" role="form">
                <div id="signupalert" style="display:none" class="alert alert-danger">
                   <p>Error:</p>
                   <span></span>
@@ -67,7 +62,6 @@
                      <div class="col-md-6">
                         <input type="text" class="form-control" id="email" placeholder="Store Name">
                      </div>
-
                   </div>
                   <div class="form-group">
                      <label for="email" class="col-md-4 control-label">*Contact Person</label>
@@ -101,7 +95,7 @@
                   <div class="form-group">
                      <label for="email" class="col-md-4 control-label">*Email Id</label>
                      <div class="col-md-6">
-                        <input type="text" class="form-control" id="email" placeholder="Email Id">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Email address">
                      </div>
                   </div>
 
@@ -140,7 +134,7 @@
                   </div>
 
                   <div class="col-md-offset-4 col-md-8">
-                     <button type="button" class="btn btn btn-theme" data-toggle="modal" data-target="#myModal">
+                     <button type="submit" class="btn btn btn-theme"> <!--data-toggle="modal" data-target="#myModal" *** don't remove this-->
                         Next
                      </button>
                   </div>
@@ -148,12 +142,5 @@
          </div>
       </div>
    </div>
-
-
 </div>
-
 </div>
-
-<!-- footer starts -->
-
-<?php include('app/views/includes/footer.php') ?>

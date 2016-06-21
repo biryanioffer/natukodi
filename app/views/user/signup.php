@@ -1,5 +1,5 @@
-<?php 
-include 'app/views/includes/head.php'; 
+<?php
+include 'app/views/includes/head.php';
 if(isset($_SESSION['email'])){
 	header("Location:profile");
 }else{
