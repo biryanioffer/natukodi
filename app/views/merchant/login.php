@@ -1,13 +1,9 @@
-<?php include('app/views/includes/head.php'); ?>
 <title>Offerciti | Advertiser Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Offerciti offline discounts"/>
 <meta name="keywords" content="Offers, discounts"/>
 <meta name="author" content="www.offerciti.com"/>
-
-
 </head>
-
 <body>
 <div class="container-fluid">
     <header>
@@ -16,7 +12,6 @@
             <?php include('app/views/includes/top-nav.php'); ?>
 
         </section>
-
     </header>
     <!-- END .header -->
     <div class="login-main-wrap animated fadeInDown" data-animate="fadeInDown">
@@ -136,10 +131,4 @@
             </div>
         </div>
     </div>
-
 </div>
-
-<!-- footer starts -->
-
-<?php include('app/views/includes/footer.php'); ?>
-   

@@ -1,28 +1,20 @@
-<?php include('app/views/includes/head.php'); ?>
 <title>Offerciti | Change Password</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Offerciti offline discounts"/>
 <meta name="keywords" content="Offers, discounts"/>
 <meta name="author" content="www.offerciti.com"/>
-
-
 </head>
 
 <body>
 <div class="container-fluid vendor-dshbrd">
     <!-- sms overlay starts -->
-
-
     <header>
         <!-- top nav section -->
         <section class="top-sec-nav">
             <?php include('app/views/includes/top-nav.php'); ?>
-
         </section>
         <!-- top nav section ends -->
-
     </header>
-
     <div class="store-ac-main-wrap animated fadeIn" data-animate="fadeIn">
         <div id="store-ac-wrap-inner" style="margin-top:50px;" class="mainbox  col-md-10 col-md-offset-1">
             <div class="panel panel-info">
@@ -129,7 +121,3 @@
             <!-- Support ends -->
         </div>
     </div>
-    <?php include('app/views/includes/footer.php'); ?>
-
-
-</div>

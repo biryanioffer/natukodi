@@ -35,6 +35,7 @@ class App extends CI_Controller
 
 	public function index()
 	{
+		$this->load->view('includes/head');
 		$this->load->view('index');
 	}
 
@@ -66,11 +67,17 @@ class App extends CI_Controller
 			$this->load->view('includes/form-validation-script');
 			$this->load->view('includes/template-end');
 		}
+		else{
+			redirect('app/login');
+		}
 	}
 	public function favourites()
 	{
 		if($this->User_Login_Model->is_logged_in_user()) {
+			$this->load->view('includes/head');
 			$this->load->view('user/favourites');
+			$this->load->view('includes/footer');
+			$this->load->view('includes/template-end');
 		}
 	}
 	public function thank_you()
@@ -88,13 +95,20 @@ class App extends CI_Controller
 	}
 	public function more_details()
 	{
+		$this->load->view('includes/head');
 		$this->load->view('offer/offerMoreDetails');
+		$this->load->view('includes/footer');
+		$this->load->view('includes/template-end');
 	}
 
 	//	*** MERCHANT WORKFLOW ***
 	public function merchant_login()
 	{
+		$this->load->view('includes/head');
 		$this->load->view('merchant/login');
+		$this->load->view('includes/footer');
+		$this->load->view('includes/form-validation-script');
+		$this->load->view('includes/template-end');
 	}
 	public function register()
 	{
@@ -107,13 +121,18 @@ class App extends CI_Controller
 	public function merchant_profile()
 	{
 		if($this->Merchant_Login_Model->is_logged_in_merchant()) {
+			$this->load->view('includes/head');
 			$this->load->view('merchant/profile');
 		}
 	}
 	public function merchant_change_password()
 	{
 		if($this->Merchant_Login_Model->is_logged_in_merchant()) {
+			$this->load->view('includes/head');
 			$this->load->view('merchant/changePassword');
+			$this->load->view('includes/footer');
+			$this->load->view('includes/form-validation-script');
+			$this->load->view('includes/template-end');
 		}
 	}
 	public function offer_post()
@@ -175,7 +194,10 @@ class App extends CI_Controller
 	}
 	public function merchant_thank_you()
 	{
+		$this->load->view('includes/head');
 		$this->load->view('merchant/thankYou');
+		$this->load->view('includes/footer');
+		$this->load->view('includes/template-end');
 	}
 
 	// ***** USER workflow controller functions *****

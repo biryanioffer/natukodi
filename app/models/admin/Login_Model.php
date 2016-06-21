@@ -18,7 +18,7 @@ class Login_Model extends Admin_Main_Model
             $data = array(
                 'id' => $row->id,
                 'email' => $row->email,
-                'Login' => TRUE
+                'adminLogin' => true
             );
             $this->session->set_userdata($data);
             return true;
@@ -32,17 +32,17 @@ class Login_Model extends Admin_Main_Model
 
     public function is_logged_in_admin()
     {
-        if($this->session->userdata('email') == ''){
+        if($this->session->userdata('adminLogin')){
+            return true;
+        }else{
             header("Location:index");
             return false;
-        }else{
-            return true;
         }
     }
 
     public function clear_session_data()
     {
-        $session_data = array('id' => '', 'email' => '', 'Login' => '');
+        $session_data = array('id' => '', 'email' => '', 'adminLogin' => false);
         $this->session->unset_userdata($session_data);
         session_unset();
     }

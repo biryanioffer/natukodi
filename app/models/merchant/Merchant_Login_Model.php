@@ -21,8 +21,8 @@ class Merchant_Login_Model extends Main_Model
             $data = array(
                 'id' => $row->id,
                 'email' => $row->email,
-                'Login' => TRUE,
-                'isMerchant' => 1
+                'login' => true,
+                'isMerchant' => true
             );
             $this->session->set_userdata($data);
             return true;
@@ -36,7 +36,7 @@ class Merchant_Login_Model extends Main_Model
 
     public function is_logged_in_merchant()
     {
-        if($this->session->userdata('isMerchant')){
+        if($this->session->userdata('login') && $this->session->userdata('isMerchant')){
             return true;
         }else{
             header("Location:merchant_login");
@@ -46,7 +46,7 @@ class Merchant_Login_Model extends Main_Model
 
     public function clear_session_data()
     {
-        $session_data = array('id' => '', 'email' => '', 'Login' => '');
+        $session_data = array('id' => '', 'email' => '', 'login' => false, 'isMerchant' => false);
         $this->session->unset_userdata($session_data);
         session_unset();
     }

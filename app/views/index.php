@@ -1,4 +1,3 @@
-<?php include 'app/views/includes/head.php'; ?>
 <title>Offerciti | Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Offerciti offline discounts"/>
@@ -14,7 +13,6 @@
                 <!-- top nav section -->
                 <section class="top-sec-nav">
                     <?php include 'app/views/includes/top-nav.php'; ?>
-
                 </section>
                 <!-- top nav section ends -->
                 <!-- top  nav categories starts -->
@@ -23,16 +21,10 @@
                 <!-- top nav categories ends -->
             </header>
             <!-- END .header -->
-
             <div id="fh5co-main">
-
                 <div class="container-fluid">
-
                     <div class="row">
-
                         <div id="fh5co-board" data-columns>
-
-
                             <div class="item">
                                 <div class="animate-box">
                                     <a href="more_details"><img
@@ -379,8 +371,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="fh5co-bg-section cta" id="fh5co-cta"
                      style="background-image: url(assets/images/hero_bg.jpg); background-attachment: fixed;">
                     <div class="fh5co-overlay"></div>
@@ -405,7 +395,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div id="fh5co-features-2" data-section="design">
                     <div class="fh5co-features-2-content">
                         <div class="container">
@@ -455,7 +444,6 @@
                                                 favourite stores. Now find every discount and sales information which is
                                                 available in the local market.</p>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-md-pull-4 fh5co-image animate-object features-2-animate-2">
@@ -464,13 +452,10 @@
                                              class="" alt="Outline Free HTML5 Responsive Bootstrap Template">
                                     </p>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
-
                 <div id="fh5co-counter" class="fh5co-bg-section animated"
                      style="background-image: url(assets/images/hm-ad-bg.png); background-attachment: fixed;">
                     <div class="fh5co-overlay count-wrap-hm"></div>
@@ -483,13 +468,11 @@
                                             <span class="fh5co-counter js-counter" data-from="0" data-to="100864"
                                                   data-speed="5000" data-refresh-interval="50"></span>
                                             <span class="fh5co-counter-label">Offers</span>
-
                                         </div>
                                         <div class="col-md-3 text-center">
                                             <span class="fh5co-counter js-counter" data-from="0" data-to="86864"
                                                   data-speed="5000" data-refresh-interval="50"></span>
                                             <span class="fh5co-counter-label">Customers</span>
-
                                         </div>
                                         <div class="col-md-3 text-center">
                                             <span class="fh5co-counter js-counter" data-from="0" data-to="1453"
@@ -507,12 +490,9 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
         <!-- footer starts -->
-
         <?php include 'app/views/includes/footer.php' ?>
 
         <script src="<?php echo site_url('app/assets/js/modernizr-2.6.2.min.js'); ?>"></script>
@@ -535,5 +515,3 @@
         <!-- Main JS -->
         <script src="<?php echo site_url('app/assets/js/main.js'); ?>"></script>
         <script src="<?php echo site_url('app/assets/js/salvattore.min.js'); ?>"></script>
-   
-   

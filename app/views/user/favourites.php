@@ -1,4 +1,3 @@
-<?php include 'app/views/includes/head.php'; ?>
 <title>Offerciti | Favourites</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Offerciti offline discounts"/>
@@ -469,6 +468,4 @@
         </div>
         <!-- user Favourite offers ends -->
     </div>
-</div>
-<?php include 'app/views/includes/footer.php' ?>
 </div>

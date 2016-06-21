@@ -21,8 +21,7 @@ class User_Login_Model extends Main_Model
             $data = array(
                 'id' => $row->id,
                 'email' => $row->email,
-                'Login' => TRUE,
-                'isMerchant' => 0
+                'login' => true
             );
             $this->session->set_userdata($data);
             return true;
@@ -36,12 +35,12 @@ class User_Login_Model extends Main_Model
 
     public function is_logged_in_user()
     {
-        return ($this->session->userdata('email') == '');
+        return $this->session->userdata('login');
     }
 
     public function clear_session_data()
     {
-        $session_data = array('id' => '', 'email' => '', 'Login' => '');
+        $session_data = array('id' => '', 'email' => '', 'login' => '');
         $this->session->unset_userdata($session_data);
         session_unset();
     }
