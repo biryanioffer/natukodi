@@ -4,10 +4,15 @@
  * User: kishore
  * Date: 08/06/16
  * Time: 4:48 PM
- * Login model holds all login and logout methods belongs to user
+ * This class contains login, store loggedin user data in session & clear session methods belongs to end user
  */
 class User_Login_Model extends Main_Model
 {
+    /*
+     * Verify user is registered earlier or not
+     * If he is registered user, then store his info into session and return true
+     * Else return false
+     */
     public function verify_user($REQUEST)
     {
         $this->db->where('email', $REQUEST['email']);
@@ -17,7 +22,6 @@ class User_Login_Model extends Main_Model
         if ($query->num_rows() > 0) {
             // If there is a user, then create session data
             $row = $query->row();
-            # echo "<pre>"; print_r($row); exit;
             $data = array(
                 'id' => $row->id,
                 'email' => $row->email,
@@ -26,21 +30,26 @@ class User_Login_Model extends Main_Model
             $this->session->set_userdata($data);
             return true;
         } else {
-            // If the previous process did not validate
-            // then return false.
-            //$this->form_validation->set_message('check_database', 'Please check your login credentials.');
             return false;
         }
     }
 
+    /*
+     * Verify whether user is logged in already or not
+     * If yes, return true
+     * Else return false
+     */
     public function is_logged_in_user()
     {
         return $this->session->userdata('login');
     }
 
+    /*
+     * Clear all the session data, when user logout
+     */
     public function clear_session_data()
     {
-        $session_data = array('id' => '', 'email' => '', 'login' => '');
+        $session_data = array('id' => '', 'email' => '', 'login' => false);
         $this->session->unset_userdata($session_data);
         session_unset();
     }

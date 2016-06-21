@@ -4,10 +4,15 @@
  * User: kishore
  * Date: 08/06/16
  * Time: 4:48 PM
- * Login model holds all login and logout methods belongs to merchant
+ * This class contains login, store loggedin merchant data in session & clear session methods belongs to merchant
  */
 class Merchant_Login_Model extends Main_Model
 {
+    /*
+     * Verify merchant is registered earlier or not
+     * If he is registered merchant, then store his info into session and return true
+     * Else return false
+     */
     public function verify_merchant($REQUEST)
     {
         $this->db->where('user_name', $REQUEST['username']);
@@ -17,7 +22,6 @@ class Merchant_Login_Model extends Main_Model
         if ($query->num_rows() > 0) {
             // If there is a user, then create session data
             $row = $query->row();
-            # echo "<pre>"; print_r($row); exit;
             $data = array(
                 'id' => $row->id,
                 'email' => $row->email,
@@ -27,13 +31,15 @@ class Merchant_Login_Model extends Main_Model
             $this->session->set_userdata($data);
             return true;
         } else {
-            // If the previous process did not validate
-            // then return false.
-            //$this->form_validation->set_message('check_database', 'Please check your login credentials.');
             return false;
         }
     }
 
+    /*
+     * Verify whether merchant is logged in already or not
+     * If yes, return true
+     * Else navigate him to login page and return false
+     */
     public function is_logged_in_merchant()
     {
         if($this->session->userdata('login') && $this->session->userdata('isMerchant')){
@@ -44,6 +50,9 @@ class Merchant_Login_Model extends Main_Model
         }
     }
 
+    /*
+     * Clear all the session data, when merchant logout
+     */
     public function clear_session_data()
     {
         $session_data = array('id' => '', 'email' => '', 'login' => false, 'isMerchant' => false);
