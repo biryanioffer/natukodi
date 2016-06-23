@@ -22,9 +22,18 @@
             //  Merchant login options available for non-logged-in users or logged-in merchants only
             ?>
             <div class="dropdown user-login-cont">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Merchant Login /
-                    Sign
-                    Up
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    <?php
+                    if (!$_SESSION['login']) {
+                        //  Show Login/Sign up label to non-logged in merchants
+                        ?>
+                        Merchant Login / Sign Up
+                    <?php } else {
+                        //  Show Hello + business name to logged in merchants
+                        ?>
+                        Hello <?php echo $_SESSION['name'] ?>
+                    <?php }
+                    ?>
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <?php
@@ -52,7 +61,18 @@
             //  Don't show user Login options to logged-in merchants
             ?>
             <div class="dropdown user-login-cont">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login / Sign Up
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    <?php
+                    if (!$_SESSION['login']) {
+                    //  Show Login/Sign up label to non-logged in users
+                    ?>
+                    Login / Sign Up
+                    <?php } else {
+                    //  Show Hello + First name to logged in users
+                    ?>
+                        Hello <?php echo $_SESSION['name'] ?>
+                    <?php }
+                    ?>
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <?php
@@ -75,6 +95,8 @@
         }
         ?>
     </div>
+
+    <!-- TODO: add above conditions for mobile view as well -->
     <div class="mob-menu-wrap">
         <a id="mobile-menu" class="mobile-menu">
             <img src="<?php echo site_url('app/assets/images/mob-menu-off.png'); ?>">
