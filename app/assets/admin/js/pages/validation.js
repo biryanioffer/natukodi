@@ -81,7 +81,7 @@ var Validation = function() {
                     'terms': {
                         required: true
                     },
-                    googleLocation: {
+                    location: {
                         required: true
                     },
                     subject: {
@@ -119,7 +119,7 @@ var Validation = function() {
                     'number': 'Please enter a number!',
                     'range': 'Please enter a number between 1 and 5!',
                     'terms': 'You must agree to the service terms!',
-                    'googleLocation': 'Please enter a Address / location',
+                    'location': 'Please enter a Address / location',
                     'subject': 'Please provide subject',
                     'description': 'Please provide description',
                 }

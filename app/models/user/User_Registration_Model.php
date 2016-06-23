@@ -17,6 +17,29 @@ class User_Registration_Model extends Main_Model
     }
 
     /**
+     * Get user details
+     * @params user_id
+     * returns user object
+     */
+    public function get_user($id)
+    {
+        $query = $this->db->query("select * from users where id='$id'");
+        return $query->result();
+    }
+
+    /**
+     * Update user profile
+     * @params $REQUEST
+     * returns boolean
+     */
+    public function update_user($id, $data)
+    {
+        $this->db->set($data);
+        $this->db->where("id", $id);
+        return $this->db->update("users", $data);
+    }
+
+    /**
      * Inserting new user into user table
      */
     public function save_user($REQUEST)

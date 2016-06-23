@@ -53,5 +53,8 @@ class User_Login_Model extends Main_Model
         $session_data = array('id' => '', 'name' => '', 'email' => '', 'login' => false);
         $this->session->unset_userdata($session_data);
         session_unset();
+
+        //  Closing connection
+        //$this->db->close();
     }
 }
