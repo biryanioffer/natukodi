@@ -47,13 +47,25 @@ var Validation = function() {
                         required: true,
                         email: true
                     },
+                    'current-password': {
+                        required: true,
+                        minlength: 5
+                    },
                     'password': {
+                        required: true,
+                        minlength: 5
+                    },
+                    'new-password': {
                         required: true,
                         minlength: 5
                     },
                     'confirm-password': {
                         required: true,
                         equalTo: '#password'
+                    },
+                    'confirm-new-password': {
+                        required: true,
+                        equalTo: '#new-password'
                     },
                     'suggestions': {
                         required: true,
@@ -103,13 +115,24 @@ var Validation = function() {
                         minlength: 'Your username must consist of at least 3 characters'
                     },
                     email: 'Please enter a valid email address',
+                    'current-password': {
+                        required: 'Please provide current password',
+                        minlength: 'Your password must be at least 5 characters long'
+                    },
                     password: {
                         required: 'Please provide a password',
                         minlength: 'Your password must be at least 5 characters long'
                     },
+                    'new-password': {
+                        required: 'Please provide a new password',
+                        minlength: 'Your password must be at least 5 characters long',
+                    },
                     'confirm-password': {
                         required: 'Please provide a password',
-                        minlength: 'Your password must be at least 5 characters long',
+                        equalTo: 'Please enter the same password as above'
+                    },
+                    'confirm-new-password': {
+                        required: 'Please provide a password',
                         equalTo: 'Please enter the same password as above'
                     },
                     'suggestions': 'What can we do to become better?',

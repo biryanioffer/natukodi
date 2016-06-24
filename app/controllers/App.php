@@ -23,7 +23,7 @@ class App extends CI_Controller
         parent::__construct();
         $this->load->helper('url');
         $this->load->helper('form');
-       // $this->base_url('assets/admin/js/pages/notificationService.js');
+        // $this->base_url('assets/admin/js/pages/notificationService.js');
         $this->load->library('form_validation');
         $this->load->library('session');
         $this->load->model(array('Main_Model'));
@@ -31,8 +31,10 @@ class App extends CI_Controller
         $this->load->model(array('merchant/Merchant_Login_Model', 'merchant/Merchant_Registration_Model'));
     }
 
-    public function notify($msg) {
-        echo "<script>alert('Error occured, please contact administrator...')</script>";
+    public function notify($msg, $type)
+    {
+        echo $msg;
+        //echo "<script>alert('Error occured, please contact administrator...')</script>";
         /*@TODO: display notification instead alert...
          * echo "<script src=\"assets/admin/js/plugins.js\"></script>
 <script>$.bootstrapGrowl('<h4><strong>Notification</strong></h4> <p>msg</p>', {
@@ -93,8 +95,9 @@ class App extends CI_Controller
             redirect('app/login');
         }
     }
-    
-    public function update_user_profile(){
+
+    public function update_user_profile()
+    {
         if ($this->User_Login_Model->is_logged_in_user()) {
             $location = explode(",", $_REQUEST['location']);
             /*$mdob = explode("/", $_REQUEST['dob']);
@@ -111,24 +114,26 @@ class App extends CI_Controller
                 "state" => $location[2],
                 "last_updated" => date('Y-m-d H:i:s'),
             );
-            if($this->User_Registration_Model->update_user($this->session->userdata('id'), $data)){
-                //@Todo: display success message 'Your profile updated successfully'
+            if ($this->User_Registration_Model->update_user($this->session->userdata('id'), $data)) {
+                $this->notify('Your profile updated successfully!', 'success');
                 redirect('app/profile');
-            }
-            else {
-                //@Todo: display error message
+            } else {
+                $this->notify('Your profile cannot be updated!', 'danger');
             }
         }
     }
 
-    public function change_password() {
+    /*
+     * Navigate to change password page
+     */
+    public function change_password()
+    {
         if ($this->User_Login_Model->is_logged_in_user()) {
-            //	getting user details...
-            //$result = $this->User_Registration_Model->get_user($this->session->userdata('id'));
-            //$this->data['result'] = $result[0];
-            //	navigating user to cahnge password page...
+            //	to display user name in the page...
+            $this->data['user_name'] = $this->session->userdata('first_name') . " " . $this->session->userdata('last_name');
+            //	navigating user to change password page...
             $this->load->view('includes/head');
-            $this->load->view('user/change_password');
+            $this->load->view('user/change_password', $this->data);
             $this->load->view('includes/footer');
             $this->load->view('includes/form-validation-script');
             $this->load->view('includes/template-end');
@@ -137,11 +142,42 @@ class App extends CI_Controller
         }
     }
 
-    public function update_password() {
+    /*
+     * Updates user password into the DB...
+     */
+    public function update_password()
+    {
+        if ($this->User_Login_Model->is_logged_in_user()) {
+            $current_password = $_REQUEST['current-password'];
+            $new_password = $_REQUEST['new-password'];
 
+            if ($current_password == $new_password) {
+                $this->notify('New passsword should not equals to current password!', 'warning');
+                //redirect('app/change_password');
+                exit;
+            }
+            if ($current_password != $this->session->userdata('password')) {
+                $this->notify('Invalid Current password!', 'danger');
+                //redirect('app/change_password');
+                exit;
+            };
+            $data = array(
+                "password" => $new_password,
+                "last_updated" => date('Y-m-d H:i:s')
+            );
+            if ($this->User_Registration_Model->update_user($this->session->userdata('id'), $data)) {
+                $this->session->set_userdata('password', $new_password);
+                $this->notify('Your password updated successfully!', 'success');
+                //redirect('app/change_password');
+            } else {
+                $this->notify('Your password cannot be updated!', 'danger');
+                //redirect('app/change_password');
+            }
+        }
     }
 
-    public function favourites() {
+    public function favourites()
+    {
         if ($this->User_Login_Model->is_logged_in_user()) {
             $this->load->view('includes/head');
             $this->load->view('user/favourites');
@@ -150,7 +186,8 @@ class App extends CI_Controller
         }
     }
 
-    public function thank_you() {
+    public function thank_you()
+    {
         $this->load->view('includes/head');
         $this->load->view('user/thankYou');
         $this->load->view('includes/footer');
@@ -287,9 +324,8 @@ class App extends CI_Controller
         if ($this->User_Login_Model->verify_user($_REQUEST)) {
             redirect('app/profile');
         } else {
-            $this->notify('Invalid credentials...');
-           //echo "<script>alert('Invalid credentials')</script>";
-           //redirect('app/login');
+            $this->notify('Invalid credentials...', 'danger');
+            //redirect('app/login');
         }
     }
 
@@ -322,7 +358,7 @@ class App extends CI_Controller
         if ($this->Merchant_Login_Model->verify_merchant($_REQUEST)) {
             redirect('app/merchant_profile');
         } else {
-            echo "<script>alert('Invalid credentials')</script>";
+            $this->notify('Invalid credentials', 'danger');
             redirect('app/merchant_login');
         }
     }

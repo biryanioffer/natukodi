@@ -26,6 +26,7 @@ class User_Login_Model extends Main_Model
                 'id' => $row->id,
                 'name' => $row->first_name,
                 'email' => $row->email,
+                'password' => $row->password,
                 'login' => true
             );
             $this->session->set_userdata($data);
@@ -50,7 +51,7 @@ class User_Login_Model extends Main_Model
      */
     public function clear_session_data()
     {
-        $session_data = array('id' => '', 'name' => '', 'email' => '', 'login' => false);
+        $session_data = array('id' => '', 'name' => '', 'email' => '', 'password' => '', 'login' => false);
         $this->session->unset_userdata($session_data);
         session_unset();
 
