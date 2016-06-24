@@ -1,10 +1,3 @@
-<?php
-include 'app/views/includes/head.php';
-if (isset($_SESSION['email'])){
-    header("Location:profile");
-}else{
-?>
-
 <title>Offerciti | Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Offerciti offline discounts"/>
@@ -67,8 +60,17 @@ if (isset($_SESSION['email'])){
                     <div style="margin-top:10px" class="form-group">
                         <!-- Button -->
                         <div class="col-sm-12 controls user-login-btn-wrap">
-                            <!--<a id="btn-login" href="#" class="btn btn-theme">Login  </a> -->
                             <input type="submit" name="submit" class="btn btn-theme" value="Login">
+
+                            <!--@TODO: testing notifications.. will be removed... Growl Notifications Content -->
+                            <!-- Notifications functionality is initialized in js/pages/uiProgress.js -->
+                           <!-- <button onclick="NotificationService.showMessage('success', 'Sample success message...');" type="button" class="btn btn-effect-ripple btn-success btn-growl" data-growl="success"><i class="fa fa-fw fa-check-circle"></i> Success</button>
+                            <button onclick="NotificationService.showMessage('info', 'Sample info message...');" type="button" class="btn btn-effect-ripple btn-info btn-growl" data-growl="info"><i class="fa fa-fw fa-info-circle"></i> Info</button>
+                            <button onclick="NotificationService.showMessage('warning', 'Sample warning message...');" type="button" class="btn btn-effect-ripple btn-warning btn-growl" data-growl="warning"><i class="fa fa-fw fa-exclamation-circle"></i> Warning</button>
+                            <button onclick="NotificationService.showMessage('danger', 'Sample danger message...');" type="button" class="btn btn-effect-ripple btn-danger btn-growl" data-growl="danger"><i class="fa fa-fw fa-times-circle"></i> Danger</button>-->
+                            <!-- END Growl Notifications Content -->
+
+
                         </div>
                     </div>
                     <p class="or-wrap">OR</p>
@@ -132,8 +134,6 @@ if (isset($_SESSION['email'])){
         </div>
     </div>
 </div>
-<!-- footer starts -->
-<?php } ?>
 
    
 

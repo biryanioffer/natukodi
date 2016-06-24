@@ -53,12 +53,12 @@
                                                     class="glyphicon glyphicon-user"></span>Profile </a>
                                         </div>
                                         <div class="col-sm-2">
-                                            <a id="" href="user_change_password"
+                                            <a id="" href="change_password"
                                                class="btn btn-theme btn-theme-block"><span
                                                     class="glyphicon glyphicon-lock"></span>Change Password</a>
                                         </div>
                                         <div class="col-sm-2">
-                                            <a id="" href="favourites" class="btn btn-theme-dark btn-theme-dark"><span
+                                            <a id="" href="#" class="btn btn-theme-dark btn-theme-dark"><span
                                                     class="glyphicon glyphicon-heart"></span>Favourites</a>
                                         </div>
                                     </div>

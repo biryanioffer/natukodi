@@ -36,7 +36,8 @@ var UiProgress = function() {
             });
 
             /* Grawl Notifications with Bootstrap-growl plugin, check out more examples at http://ifightcrime.github.io/bootstrap-growl/ */
-            $('.btn-growl').on('click', function(){
+            //$('.btn-growl').on('click', function(){
+                $('#success_btn').on('click', function(){
                 var growlType = $(this).data('growl');
 
                 $.bootstrapGrowl('<h4><strong>Notification</strong></h4> <p>Content..</p>', {

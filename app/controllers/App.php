@@ -23,13 +23,24 @@ class App extends CI_Controller
         parent::__construct();
         $this->load->helper('url');
         $this->load->helper('form');
+       // $this->base_url('assets/admin/js/pages/notificationService.js');
         $this->load->library('form_validation');
         $this->load->library('session');
         $this->load->model(array('Main_Model'));
-        $this->load->model(array('user/User_Login_Model'));
-        $this->load->model(array('user/User_Registration_Model'));
-        $this->load->model(array('merchant/Merchant_Login_Model'));
-        $this->load->model(array('merchant/Merchant_Registration_Model'));
+        $this->load->model(array('user/User_Login_Model', 'user/User_Registration_Model'));
+        $this->load->model(array('merchant/Merchant_Login_Model', 'merchant/Merchant_Registration_Model'));
+    }
+
+    public function notify($msg) {
+        echo "<script>alert('Error occured, please contact administrator...')</script>";
+        /*@TODO: display notification instead alert...
+         * echo "<script src=\"assets/admin/js/plugins.js\"></script>
+<script>$.bootstrapGrowl('<h4><strong>Notification</strong></h4> <p>msg</p>', {
+                type: 'warning',
+                delay: 3000,
+                allow_dismiss: true,
+                offset: {from: 'top', amount: 20}
+            });</script>";*/
     }
 
     // ---- URIs -----
@@ -43,10 +54,15 @@ class App extends CI_Controller
     //	*** USER WORKFLOW ***
     public function login()
     {
-        $this->load->view('user/login');
-        $this->load->view('includes/footer');
-        $this->load->view('includes/form-validation-script');
-        $this->load->view('includes/template-end');
+        if ($this->User_Login_Model->is_logged_in_user()) {
+            redirect('app/index');
+        } else {
+            $this->load->view('includes/head');
+            $this->load->view('user/login');
+            $this->load->view('includes/footer');
+            $this->load->view('includes/form-validation-script');
+            $this->load->view('includes/template-end');
+        }
     }
 
     public function sign_up()
@@ -96,16 +112,36 @@ class App extends CI_Controller
                 "last_updated" => date('Y-m-d H:i:s'),
             );
             if($this->User_Registration_Model->update_user($this->session->userdata('id'), $data)){
+                //@Todo: display success message 'Your profile updated successfully'
                 redirect('app/profile');
             }
             else {
-                //  display error message
+                //@Todo: display error message
             }
         }
-    } 
+    }
 
-    public function favourites()
-    {
+    public function change_password() {
+        if ($this->User_Login_Model->is_logged_in_user()) {
+            //	getting user details...
+            //$result = $this->User_Registration_Model->get_user($this->session->userdata('id'));
+            //$this->data['result'] = $result[0];
+            //	navigating user to cahnge password page...
+            $this->load->view('includes/head');
+            $this->load->view('user/change_password');
+            $this->load->view('includes/footer');
+            $this->load->view('includes/form-validation-script');
+            $this->load->view('includes/template-end');
+        } else {
+            redirect('app/login');
+        }
+    }
+
+    public function update_password() {
+
+    }
+
+    public function favourites() {
         if ($this->User_Login_Model->is_logged_in_user()) {
             $this->load->view('includes/head');
             $this->load->view('user/favourites');
@@ -114,8 +150,7 @@ class App extends CI_Controller
         }
     }
 
-    public function thank_you()
-    {
+    public function thank_you() {
         $this->load->view('includes/head');
         $this->load->view('user/thankYou');
         $this->load->view('includes/footer');
@@ -252,9 +287,9 @@ class App extends CI_Controller
         if ($this->User_Login_Model->verify_user($_REQUEST)) {
             redirect('app/profile');
         } else {
-            //$this->session->set_flashdata("email_sent","Email sent successfully.");
-            echo "<script>alert('Invalid credentials')</script>";
-            //redirect('app/login');
+            $this->notify('Invalid credentials...');
+           //echo "<script>alert('Invalid credentials')</script>";
+           //redirect('app/login');
         }
     }
 

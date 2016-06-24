@@ -98,12 +98,12 @@ var Validation = function() {
                         required: 'Please provide new category name',
                         minlength: 'Category name must be at least 5 characters long'
                     },
-                    'username': {
+                    username: {
                         required: 'Please enter a username',
                         minlength: 'Your username must consist of at least 3 characters'
                     },
-                    'email': 'Please enter a valid email address',
-                    'password': {
+                    email: 'Please enter a valid email address',
+                    password: {
                         required: 'Please provide a password',
                         minlength: 'Your password must be at least 5 characters long'
                     },
