@@ -1,11 +1,3 @@
-<?php
-?>
-/**
- * Created by PhpStorm.
- * User: kishore
- * Date: 24/06/16
- * Time: 2:47 PM
- */
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 <script type="text/javascript">
     function initialize() {

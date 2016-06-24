@@ -102,9 +102,21 @@
             <img src="<?php echo site_url('app/assets/images/mob-menu-off.png'); ?>">
         </a>
         <div class="list-group mobile-menu-list">
-            <a href="#" class="list-group-item">Favourites</a>
+            <!-- 'Favourites' option visible to logged-in users or merchants only -->
+            <?php
+            if ($_SESSION['login']) {
+                ?>
+                <a href="#" class="list-group-item">
+                    Favourites
+                </a>
+            <?php }
+            ?>
+
+            <!-- 'Shortlist' option visible to everyone -->
             <a href="#" class="list-group-item">Shortlist</a>
-            <a href="merchant_login" class="list-group-item">Post A Free Ad</a>
+
+            <!-- Don't show merchant login options in mobile -->
+            <!--<a href="merchant_login" class="list-group-item">Post A Free Ad</a>
             <div class="dropdown user-login-cont">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Merchant Login /
                     Sign Up
@@ -113,15 +125,47 @@
                     <li><a href="posts">My Account</a></li>
                     <li><a href="merchant_login">Logout</a></li>
                 </ul>
-            </div>
-            <div class="dropdown user-login-cont">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login / Sign Up
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="profile">My Account</a></li>
-                    <li><a href="login">Logout</a></li>
-                </ul>
-            </div>
+            </div>-->
+
+            <!-- user login options-->
+            <?php
+            if (!$_SESSION['isMerchant']) {
+                //  Don't show user Login options to logged-in merchants
+                ?>
+                <div class="dropdown user-login-cont">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <?php
+                        if (!$_SESSION['login']) {
+                            //  Show Login/Sign up label to non-logged in users
+                            ?>
+                            Login / Sign Up
+                        <?php } else {
+                            //  Show Hello + First name to logged in users
+                            ?>
+                            Hello <?php echo $_SESSION['name'] ?>
+                        <?php }
+                        ?>
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <?php
+                        if (!$_SESSION['login']) {
+                            //  Show Login/Sign up option to non-logged in users
+                            ?>
+                            <li><a href="login">Login / Sign Up</a></li>
+
+                        <?php } else {
+                            //  Show My Account and Logout options to logged in users
+                            ?>
+                            <li><a href="profile">My Account</a></li>
+                            <li><a href="logout">Logout</a></li>
+                            <?php
+                        }
+                        ?>
+                    </ul>
+                </div>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </nav>
