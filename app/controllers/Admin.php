@@ -57,10 +57,14 @@ class Admin extends CI_Controller {
     public function categories()
 	{
 		if($this->Login_Model->is_logged_in_admin()){
+			//	getting user details...
+			$this->data['categories'] = $this->Business_Categories_Model->get_categories();
+
+			//	navigating to Categories grid ...
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
 			$this->load->view('admin/common/top-bar');
-			$this->load->view('admin/categories');
+			$this->load->view('admin/categories', $this->data);
 			$this->load->view('admin/common/footer');
 			$this->load->view('admin/common/template-end');
 		}

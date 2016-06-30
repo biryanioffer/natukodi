@@ -35,7 +35,7 @@ include 'app/views/includes/head.php';
             <div class="panel-title">Reset Password</div>
           </div>
           <div class="panel-body">
-            <form id="signupform" class="form-horizontal" role="form" action="<?php echo base_url() ?>index.php/console/user_new_password" method="post">
+            <form id="signupform" class="form-horizontal" action="create_password" method="post">
               <div id="signupalert" style="display:none" class="alert alert-danger">
                 <p>Error:</p>
                 <span></span> </div>

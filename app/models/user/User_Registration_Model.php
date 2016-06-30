@@ -66,9 +66,6 @@ class User_Registration_Model extends Main_Model
             "last_updated" => date('Y-m-d H:i:s'),
             "status" => 1
         );
-        if ($this->db->insert("users", $data)) {
-            redirect('index.php/console/thank_you');
-        }
-        return 1;
+        return $this->db->insert("users", $data);
     }
 }

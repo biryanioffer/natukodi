@@ -31,7 +31,7 @@ class App extends CI_Controller
         $this->load->model(array('merchant/Merchant_Login_Model', 'merchant/Merchant_Registration_Model'));
     }
 
-    public function notify($msg, $type)
+    public function notify($msg, $type='info')
     {
         echo $msg;
         //echo "<script>alert('Error occured, please contact administrator...')</script>";
@@ -152,7 +152,7 @@ class App extends CI_Controller
             $new_password = $_REQUEST['new-password'];
 
             if ($current_password == $new_password) {
-                $this->notify('New passsword should not equals to current password!', 'warning');
+                $this->notify('New password should not equals to current password!', 'warning');
                 //redirect('app/change_password');
                 exit;
             }
@@ -176,8 +176,79 @@ class App extends CI_Controller
         }
     }
 
-    public function favourites()
-    {
+    //	*** Forgot Password and Reset Link to Email ***
+    public function send_reset_link() {
+        $email = $this->input->post('emailid');
+        $this->data['flash'] = '';
+        if ($_POST) {
+            $query = $this->db->query("select * from users where email='$email'");
+            //$query->result();
+            $num = count($query->result());
+            $to = $email;
+            if ($num > 0) {
+                $subject = "Forgot Password";
+                $message = " 
+				 <table width='100%'>	
+					<tr>
+						<th><img src='http://dev.offerciti.com/app/assets/images/offerciti-logo.png'></th>
+					</tr>			 
+					<tr>
+						<th>Please click the below link to Reset Your Offerciti Password: </th>
+					</tr>
+						<th><strong><a href='http://dev.offerciti.com/console/user_new_password?email=$to'>Click Here</a></strong> </th>
+					</tr>
+				</table> ";
+                $headers = "MIME-Version: 1.0" . "\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                // More headers
+                $headers .= 'From: ' . "info@offerciti.com<Offer Citi>" . "\r\n";
+                if (mail($to, $subject, $message, $headers)) {
+                    $this->notify('Email sent to your email address!');
+                   // redirect('app/login');
+                } else {
+                    $this->notify('Email cannot be send!');
+                }
+            } else {
+                $this->notify('Email address not found!');
+            }
+        }
+        //redirect('app/login');
+    }
+
+    /*
+     * Reset New Password when user Click on Forgot password mail
+     */
+    public function create_password() {
+        $email = $this->input->post('email');
+        //$this->db->where('id', $id);
+        // Run the query
+        // $this->data['result'] = $this->db->get('');
+        $query = $this->db->query("select * from users where email='$email'");
+        $this->data['result'] = $query->result();
+        if ($_POST) {
+            //$cps=$this->input->post('cps');
+            $ncps = $this->input->post('ncps');
+            $cncps = $this->input->post('cncps');
+            if ($ncps == $cncps) {
+                //$query = $this->db->query("update users  set password='$ncps' where  email='$email'");
+                $this->notify('Password updated successfully!');
+            } else {
+                $this->notify('New password and confirm password are does not match');
+            }
+        }
+        redirect('app/new_password');
+    }
+
+    public function new_password() {
+        if ($this->User_Login_Model->is_logged_in_user()) {
+            $this->load->view('includes/head');
+            $this->load->view('user/newpassword');
+            $this->load->view('includes/footer');
+            $this->load->view('includes/template-end');
+        }
+    }
+
+    public function favourites() {
         if ($this->User_Login_Model->is_logged_in_user()) {
             $this->load->view('includes/head');
             $this->load->view('user/favourites');
@@ -186,23 +257,20 @@ class App extends CI_Controller
         }
     }
 
-    public function thank_you()
-    {
+    public function thank_you() {
         $this->load->view('includes/head');
         $this->load->view('user/thankYou');
         $this->load->view('includes/footer');
         $this->load->view('includes/template-end');
     }
 
-    public function offers()
-    {
+    public function offers() {
         $this->load->view('includes/head');
         $this->load->view('offer/results');
         $this->load->view('includes/template-end');
     }
 
-    public function more_details()
-    {
+    public function more_details() {
         $this->load->view('includes/head');
         $this->load->view('offer/offerMoreDetails');
         $this->load->view('includes/footer');
@@ -210,8 +278,7 @@ class App extends CI_Controller
     }
 
     //	*** MERCHANT WORKFLOW ***
-    public function merchant_login()
-    {
+    public function merchant_login() {
         $this->load->view('includes/head');
         $this->load->view('merchant/login');
         $this->load->view('includes/footer');
@@ -219,8 +286,7 @@ class App extends CI_Controller
         $this->load->view('includes/template-end');
     }
 
-    public function register()
-    {
+    public function register() {
         $this->load->view('includes/head');
         $this->load->view('merchant/registration');
         $this->load->view('includes/footer');
@@ -228,16 +294,14 @@ class App extends CI_Controller
         $this->load->view('includes/template-end');
     }
 
-    public function merchant_profile()
-    {
+    public function merchant_profile() {
         if ($this->Merchant_Login_Model->is_logged_in_merchant()) {
             $this->load->view('includes/head');
             $this->load->view('merchant/profile');
         }
     }
 
-    public function merchant_change_password()
-    {
+    public function merchant_change_password() {
         if ($this->Merchant_Login_Model->is_logged_in_merchant()) {
             $this->load->view('includes/head');
             $this->load->view('merchant/changePassword');
@@ -247,8 +311,7 @@ class App extends CI_Controller
         }
     }
 
-    public function offer_post()
-    {
+    public function offer_post() {
         if ($this->Merchant_Login_Model->is_logged_in_merchant()) {
             $this->load->view('includes/head');
             $this->load->view('offer/postOffer');
@@ -258,8 +321,7 @@ class App extends CI_Controller
         }
     }
 
-    public function posts()
-    {
+    public function posts() {
         if ($this->Merchant_Login_Model->is_logged_in_merchant()) {
             $this->load->view('includes/head');
             $this->load->view('merchant/posts');
@@ -268,8 +330,7 @@ class App extends CI_Controller
         }
     }
 
-    public function wallet()
-    {
+    public function wallet() {
         if ($this->Merchant_Login_Model->is_logged_in_merchant()) {
             $this->load->view('includes/head');
             $this->load->view('merchant/wallet');
@@ -278,8 +339,7 @@ class App extends CI_Controller
         }
     }
 
-    public function branches()
-    {
+    public function branches() {
         if ($this->Merchant_Login_Model->is_logged_in_merchant()) {
             $this->load->view('includes/head');
             $this->load->view('merchant/branches');
@@ -289,8 +349,7 @@ class App extends CI_Controller
         }
     }
 
-    public function notifications()
-    {
+    public function notifications() {
         if ($this->Merchant_Login_Model->is_logged_in_merchant()) {
             $this->load->view('includes/head');
             $this->load->view('merchant/notifications');
@@ -299,8 +358,7 @@ class App extends CI_Controller
         }
     }
 
-    public function support()
-    {
+    public function support() {
         if ($this->Merchant_Login_Model->is_logged_in_merchant()) {
             $this->load->view('includes/head');
             $this->load->view('merchant/support');
@@ -310,8 +368,7 @@ class App extends CI_Controller
         }
     }
 
-    public function merchant_thank_you()
-    {
+    public function merchant_thank_you() {
         $this->load->view('includes/head');
         $this->load->view('merchant/thankYou');
         $this->load->view('includes/footer');
@@ -319,8 +376,7 @@ class App extends CI_Controller
     }
 
     // ***** USER workflow controller functions *****
-    public function login_user()
-    {
+    public function login_user() {
         if ($this->User_Login_Model->verify_user($_REQUEST)) {
             redirect('app/profile');
         } else {
@@ -329,8 +385,7 @@ class App extends CI_Controller
         }
     }
 
-    public function logout()
-    {
+    public function logout() {
         $this->User_Login_Model->clear_session_data();
         redirect('app/login');
     }
@@ -338,23 +393,23 @@ class App extends CI_Controller
     /*
      * USER Signup and inserting a new Record into DB
      */
-    public function register_user()
-    {
-        $cnt = $this->User_Registration_Model->user_email_exists($_REQUEST["email"]);
-        if ($cnt == 1) {
-            echo "1";
+    public function register_user() {
+        if ($this->User_Registration_Model->user_email_exists($_REQUEST["email"])) {
+            $this->notify('Email already exist!');
+            exit;
         } else {
-            $this->User_Registration_Model->save_user($_REQUEST);
-            redirect('app/thank_you');
+            if ($this->User_Registration_Model->save_user($_REQUEST)) {
+                redirect('app/thank_you');
+            } else {
+                $this->notify('Error, please contact administrator!');
+            }
         }
-        exit;
     }
     // ***** USER workflow controller functions END *****
 
 
     // ***** Merchant workflow controller functions *****
-    public function login_merchant()
-    {
+    public function login_merchant() {
         if ($this->Merchant_Login_Model->verify_merchant($_REQUEST)) {
             redirect('app/merchant_profile');
         } else {
@@ -363,8 +418,7 @@ class App extends CI_Controller
         }
     }
 
-    public function logout_merchant()
-    {
+    public function logout_merchant() {
         $this->Merchant_Login_Model->clear_session_data();
         redirect('app/merchant_login');
     }

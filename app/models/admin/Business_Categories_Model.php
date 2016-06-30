@@ -8,15 +8,9 @@ class Business_Categories_Model extends Admin_Main_Model
     // --- Get all categories from DB ---
     public function get_categories()
     {
-        $this->db->select('category_id', 'category_name', 'status', 'created_date');
+        $this->db->select('category_id, category_name, status, created_date');
         $query = $this->db->get('business_categories');
-
-        if ($query->num_rows() > 0) {
-            return 1;
-        } else {
-            return 0;
-        }
-        redirect('admin/categories');
+        return $query->result();
     }
 
     // --- Verify whether category name already exist in DB ---

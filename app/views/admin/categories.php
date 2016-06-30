@@ -31,19 +31,30 @@
             <table id="example-datatable" class="table table-striped table-bordered table-vcenter">
                 <thead>
                 <tr>
-                    <th class="text-center" style="width: 50px;">ID</th>
+                    <th class="text-right" style="width: 50px;">ID</th>
                     <th>CATEGORY NAME</th>
-                    <th style="width: 120px;">STATUS</th>
+                    <th class="text-center" style="width: 120px;">STATUS</th>
                     <th style="width: 120px;">CREATED ON</th>
                     <th class="text-center" style="width: 75px;"><i class="fa fa-flash"></i></th>
                 </tr>
                 </thead>
                 <tbody>
+                <?php foreach ($categories as $category) { ?>
                 <tr>
-                    <td class="text-center">1</td>
-                    <td><strong>Clothing</strong></td>
-                    <td><span class="label label-warning">In Active</span></td>
-                    <td class="text-center">23/04/2016</td>
+                    <td class="text-right"><?php echo $category->category_id; ?></td>
+                    <td><strong><?php echo $category->category_name; ?></strong></td>
+                    <td class="text-center">
+                        <?php if($category->status) {
+                            ?>
+                            <span class="label label-success">Active</span>
+                            <?php
+                        } else { ?>
+                            <span class="label label-warning">In Active</span>
+                        <?php
+                        }
+                        ?>
+                    </td>
+                    <td class="text-center"><?php echo $category->created_date; ?></td>
                     <td class="text-center">
                         <!--<button type="button" class="btn btn-effect-ripple btn-xs btn-success" data-toggle="modal" data-target="#editModal"
                                 title="Edit Category"><i class="fa fa-pencil"></i></button>-->
@@ -53,30 +64,7 @@
                            class="btn btn-effect-ripple btn-xs btn-danger"><i class="fa fa-times"></i></a>
                     </td>
                 </tr>
-                <tr>
-                    <td class="text-center">2</td>
-                    <td><strong>Furniture</strong></td>
-                    <td><span class="label label-warning">In Active</span></td>
-                    <td class="text-center">20/04/2016</td>
-                    <td class="text-center">
-                        <a href="javascript:void(0)" data-toggle="tooltip" title="Edit User"
-                           class="btn btn-effect-ripple btn-xs btn-success"><i class="fa fa-pencil"></i></a>
-                        <a href="javascript:void(0)" data-toggle="tooltip" title="Delete User"
-                           class="btn btn-effect-ripple btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center">3</td>
-                    <td><strong>Bicycles</strong></td>
-                    <td><span class="label label-success">Active</span></td>
-                    <td class="text-center">13/03/2016</td>
-                    <td class="text-center">
-                        <a href="javascript:void(0)" data-toggle="tooltip" title="Edit User"
-                           class="btn btn-effect-ripple btn-xs btn-success"><i class="fa fa-pencil"></i></a>
-                        <a href="javascript:void(0)" data-toggle="tooltip" title="Delete User"
-                           class="btn btn-effect-ripple btn-xs btn-danger"><i class="fa fa-times"></i></a>
-                    </td>
-                </tr>
+                <?php } ?>
                 </tbody>
             </table>
         </div>

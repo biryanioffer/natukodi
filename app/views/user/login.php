@@ -110,21 +110,21 @@
                     <div class="panel-title">Forgot password</div>
                 </div>
                 <div class="panel-body">
-                    <form id="forgot-credentials-form" class="form-horizontal" role="form" method="post"
-                          action="<?php echo base_url() ?>index.php/console/forgotpassword">
+                    <form id="oc-form" class="form-horizontal" role="form" method="post"
+                          action="send_reset_link">
                         <p>Please enter your email id below. We will send you a link to reset your password.</p>
                         <div class="form-group forgot-cre">
                             <label for="contact-email" class="col-xs-3 control-label">*Email</label>
                             <div class="col-xs-9">
-                                <input type="email" class="form-control" id="contact-email" placeholder="Enter Email"
-                                       name="emailid" required>
+                                <input id="email" name="email" type="email" class="form-control"
+                                       placeholder="Registered Email...">
                             </div>
                         </div>
                         <div class="form-group send-email-wrap">
                             <!-- Button -->
                             <div class="col-xs-12 controls">
-                                <button id="forgot-credentials-submit" type="submit" class="btn btn-theme-dark">Send
-                                    email
+                                <button id="forgot-credentials-submit" type="submit" class="btn btn-theme-dark">
+                                    Send email
                                 </button>
                             </div>
                         </div>
@@ -134,6 +134,3 @@
         </div>
     </div>
 </div>
-
-   
-
