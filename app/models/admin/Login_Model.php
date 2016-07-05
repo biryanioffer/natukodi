@@ -6,7 +6,7 @@
  * Time: 4:48 PM
  * This class contains login, store loggedin administrators data in session & clear session methods belongs to administrators
  */
-class Login_Model extends Admin_Main_Model
+class Login_Model extends Main_Model
 {
     /*
      * Verify admin credentials in DB

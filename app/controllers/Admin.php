@@ -15,19 +15,39 @@ class Admin extends CI_Controller {
 	 * map to /admin/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	function __construct()
-	{
+	function __construct() {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->load->library('session');
-		$this->load->model(array('admin/Admin_Main_Model'));
+		$this->load->model(array('Main_Model'));
+
 		$this->load->model(array('admin/Login_Model'));
         $this->load->model(array('admin/Business_Categories_Model'));
 	}
 
-	// ---- URIs -----
+	/**
+	 * Global method to notify users error/warning/info messages based on type
+	 */
+	public function notify($msg, $type='info') {
+		echo $msg;
+		//$data["notification"] = $msg;
+		//echo "<script>alert('Error occured, please contact administrator...')</script>";
+		/*@TODO: display notification instead alert...
+         * echo "<script src=\"assets/admin/js/plugins.js\"></script>
+        <script>$.bootstrapGrowl('<h4><strong>Notification</strong></h4> <p>msg</p>', {
+                type: 'warning',
+                delay: 3000,
+                allow_dismiss: true,
+                offset: {from: 'top', amount: 20}
+            });</script>";*/
+	}
+
+	// **** Admin module URIs ****
+	/*
+	 * Default page when access http://offerciti.com/admin
+	 */
 	public function index()
 	{
 		$this->load->view('admin/common/head');
@@ -54,29 +74,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/administrator');
 		$this->load->view('admin/common/footer');
 	}
-    public function categories()
-	{
-		if($this->Login_Model->is_logged_in_admin()){
-			//	getting user details...
-			$this->data['categories'] = $this->Business_Categories_Model->get_categories();
 
-			//	navigating to Categories grid ...
-			$this->load->view('admin/common/head');
-			$this->load->view('admin/common/side-nav');
-			$this->load->view('admin/common/top-bar');
-			$this->load->view('admin/categories', $this->data);
-			$this->load->view('admin/common/footer');
-			$this->load->view('admin/common/template-end');
-		}
-	}
-	public function load_category()
-	{
-		$this->load->view('admin/common/head');
-		$this->load->view('admin/common/side-nav');
-		$this->load->view('admin/common/top-bar');
-		$this->load->view('admin/edit_category');
-		$this->load->view('admin/common/footer');
-	}
     public function sub_categories()
 	{
 		if($this->Login_Model->is_logged_in_admin()) {
@@ -270,79 +268,133 @@ class Admin extends CI_Controller {
 		}
 	}
 
-	// ***** controller functions *****
+	// ***** Controller functions *****
+	/*
+	 * Checks DB whether valid admin or not
+	 * Store admin info in session and navigates to administrators summary
+	 */
 	public function login()
 	{
 		if($this->Login_Model->verify_admin($_REQUEST)){
 			redirect('admin/administrators');
 		} else {
-			echo "<script>alert('Invalid credentials')</script>";
+			$this->notify('Invalid credentials');
 			redirect('admin/index');
 		}
 	}
 
+	/*
+	 * Clears all session variables
+	 * Logs out from application and redirects to login page
+	 */
 	public function logout()
 	{
 		$this->Login_Model->clear_session_data();
 		redirect('admin/index');
 	}
 
-	public function get_all_categories()
-	{
-		//	to display in the grid
-	}
+	/*
+	 * Loads all categories to display in summary page
+	 */
+	public function categories() {
+		if($this->Login_Model->is_logged_in_admin()){
+			//	get all categories...
+			$data['categories'] = $this->Business_Categories_Model->get_categories();
 
-	public function create_category()
-	{
-		if($this->Business_Categories_Model->create_category($_REQUEST)) {
-			redirect('admin/categories');
-			echo "<script>alert('New Category created successfully!')</script>";
-		} else {
-			echo "<script>alert('Category cannot be saved!')</script>";
+			//	navigating to Categories grid ...
+			$this->load->view('admin/common/head');
+			$this->load->view('admin/common/side-nav');
+			$this->load->view('admin/common/top-bar');
+			$this->load->view('admin/categories', $data);
+			$this->load->view('admin/common/footer');
+			$this->load->view('admin/common/template-end');
 		}
 	}
 
-	public function update_category()
-	{
-		if($this->Business_Categories_Model->update_category($_REQUEST)) {
-			redirect('admin/categories');
-			echo "<script>alert('Category updated successfully!')</script>";
+	/*
+	 * Load a category by category id to display in Edit modal window
+	 */
+	public function get_category($id) {
+		$data['selected_id'] = $id;
+		//	get a category by id...
+		$category = $this->Business_Categories_Model->get_category($id);
+		if($category) {
+			$data['category'] = $this->Business_Categories_Model->get_category($id);
+			echo json_encode($data);
+			// @TODO: Show Edit category modal window
 		} else {
-			echo "<script>alert('Category cannot be updated!')</script>";
+			$this->notify('Selected category not found');
 		}
 	}
 
-	public function get_category()
-	{
-		$id = 4; //$this->session->userdata('id');
-		//$this->db->where('id', $id);
-		// Run the query
-		// $this->data['result'] = $this->db->get('');
+	/*
+	 * Creates new category
+	 */
+	public function create_category() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if(!$this->Business_Categories_Model->is_category_exists($_REQUEST['category-name'])) {
+				$data = array(
+					"category_name" => $_REQUEST['category-name'],
+					"status" => 1,
+					"created_date" => date('Y-m-d H:i:s')
+				);
+				if ($this->Business_Categories_Model->create_category($data)) {
+					$this->notify('New Category created successfully!');
+					redirect('admin/categories');
+				} else {
+					$this->notify('Category cannot be saved!');
+				}
+			} else {
+				$this->notify('Category with same name already exist!');
+			}
+		}
+	}
 
-		$query = $this->db->query("select * from business_categories where category_id='$id'");
-		$this->data['result'] = $query->result();
-		/*
-                if ($_POST) {
-                    $location = explode(",", $_POST['landmark']);
-                    $area = $location[0];
-                    $city = $location[1];
-                    $state = $location[2];
-                    $dob = $this->input->post('dob');
-                    if ($this->data['result'][0]->dob != $dob) {
-                        $mdob = explode("/", $dob);
-                        $udob = $mdob[2] . "-" . $mdob[0] . "-" . $mdob[1];
-                    } else {
-                        $udob = $dob;
-                    }
-                    $gender = $this->input->post('gender');
-                    $phone = $this->input->post('phone');
-                    $query = $this->db->query("update users set area='$area',city='$city',state='$state',contact_number='$phone',dob='$udob',gender='$gender' where  id='$id' ");
-                    echo "<script>alert('Profile Updated Successfuly')</script>";
-                }
-                $query = $this->db->query("select * from users where id='$id'");
-                $this->data['result'] = $query->result();*/
-		//$this->load->view('user/user_profile', $this->data);
-		//load_category($this->data);
-		//redirect('admin/edit_category');
+	/*
+	 * Updates existing category by category id
+	 */
+	public function update_category() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if(!$this->Business_Categories_Model->is_category_exists($_REQUEST['category-name'])) {
+				$data = array(
+					"category_name" => $_REQUEST['category-name'],
+					"status" => $_REQUEST['status']
+				);
+				if ($this->Business_Categories_Model->update_category($data['selected_id'], $data)) {
+					$this->notify('Category updated successfully');
+					redirect('admin/categories');
+				} else {
+					$this->notify('Category cannot be updated!');
+				}
+			} else {
+				$this->notify('Category with same name already exist!');
+			}
+		}
+	}
+
+	/*
+	 * Deletes existing category by category id
+	 */
+	public function delete_category($id) {
+		if($this->Business_Categories_Model->get_category($id)) {
+			if ($this->Business_Categories_Model->delete_category($id)) {
+				redirect('admin/categories');
+				$this->notify('Category deleted successfully!');
+			} else {
+				$this->notify('Category cannot be deleted!');
+			}
+		} else {
+			$this->notify('No category exist with category id: ' . $id);
+		}
+	}
+
+	/*
+	 * This is a sample page to test any piece of code/component
+	 * Will be removed once development completed
+	 */
+	public function playground() {
+		if($this->Login_Model->is_logged_in_admin()){
+			$this->load->view('admin/playground');
+		}
 	}
 }

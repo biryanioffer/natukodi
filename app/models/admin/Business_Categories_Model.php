@@ -1,21 +1,32 @@
 <?php
-
 /**
  * Users model here for getting roles and data
  */
-class Business_Categories_Model extends Admin_Main_Model
+class Business_Categories_Model extends Main_Model
 {
-    // --- Get all categories from DB ---
-    public function get_categories()
-    {
-        $this->db->select('category_id, category_name, status, created_date');
+    /**
+     * Get all (both Active & Inactive) categories from DB
+     */
+    public function get_categories() {
+        //$this->db->select('category_id, category_name, status, created_date');
         $query = $this->db->get('business_categories');
         return $query->result();
     }
 
-    // --- Verify whether category name already exist in DB ---
-    public function is_category_exists($category_name)
-    {
+    /**
+     * Get a category info by category_id from DB
+     */
+    public function get_category($id) {
+        //$this->db->select('category_id, category_name, status, created_date');
+        $this->db->where('category_id', $id);
+        $query = $this->db->get('business_categories');
+        return $query->result();
+    }
+
+    /**
+     * Check category with the same name exist in DB
+     */
+    public function is_category_exists($category_name) {
         $this->db->select('category_id');
         $this->db->where('category_name', $category_name);
         $query = $this->db->get('business_categories');
@@ -23,34 +34,26 @@ class Business_Categories_Model extends Admin_Main_Model
         return ($query->num_rows() > 0);
     }
 
-    // --- Inserting new category into 'business_categories' table in DB ---
-    public function create_category($REQUEST)
-    {
-        if(!$this->is_category_exists($REQUEST['category-name'])){
-            $data = array(
-                "category_name" => $REQUEST['category-name'],
-                "status" => 1,
-                "created_date" => date('Y-m-d H:i:s')
-            );
-            return ($this->db->insert("business_categories", $data));
-        } else {
-            echo "<script>alert('Category with same name already exist!')</script>";
-            return false;
-        }
+    /**
+     * Inserting new category into 'business_categories' table in DB
+     */
+    public function create_category($data) {
+        return ($this->db->insert("business_categories", $data));
     }
 
-    public function update_category($REQUEST)
-    {
-        if(!$this->is_category_exists($REQUEST['category-name'])){
-            $data = array(
-                "category_name" => $REQUEST['category-name'],
-                "status" => 1,
-                "created_date" => date('Y-m-d H:i:s')
-            );
-            return ($this->db->insert("business_categories", $data));
-        } else {
-            echo "<script>alert('Category with same name already exist!')</script>";
-            return false;
-        }
+    /**
+     * Update category in 'business_categories' table by 'category_id'
+     */
+    public function update_category($id, $data) {
+        $this->db->where('category_id', $id);
+        return $this->db->update('business_categories', $data);
+    }
+
+    /**
+     * Function to Delete selected category from table name business_categories
+     */
+    public function delete_category($id) {
+        $this->db->where('category_id', $id);
+        return ($this->db->delete('business_categories'));
     }
 }

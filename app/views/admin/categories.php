@@ -56,12 +56,22 @@
                     </td>
                     <td class="text-center"><?php echo $category->created_date; ?></td>
                     <td class="text-center">
+                        <button type="button" class="btn btn-info btn-xs"
+                                data-toggle="modal" data-target="#editModal"
+                                title="Edit">
+                            <i class="fa fa-plus">Edit</i></button>
                         <!--<button type="button" class="btn btn-effect-ripple btn-xs btn-success" data-toggle="modal" data-target="#editModal"
                                 title="Edit Category"><i class="fa fa-pencil"></i></button>-->
-                        <a href="get_category" data-toggle="tooltip" title="Edit Category"
+                        <a href="<?php echo base_url() . "admin/get_category/" . $category->category_id; ?>"
+                           data-toggle="tooltip" title="Edit Category"
                            class="btn btn-effect-ripple btn-xs btn-success"><i class="fa fa-pencil"></i></a>
-                        <a href="javascript:void(0)" data-toggle="tooltip" title="Delete Category"
-                           class="btn btn-effect-ripple btn-xs btn-danger"><i class="fa fa-times"></i></a>
+
+                        <a class="btn btn-sm btn-primary" href="javascript:void(0)"
+                           title="Edit" onclick="editCategory()">
+                        <i class="glyphicon glyphicon-pencil"></i> Edit</a>
+
+                        <a onclick="return confirm('Are you sure?')" href="<?php echo base_url() . "admin/delete_category/" . $category->category_id; ?>"
+                            class="btn btn-effect-ripple btn-xs btn-danger"><i class="fa fa-times"></i></a>
                     </td>
                 </tr>
                 <?php } ?>
@@ -94,7 +104,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Create</h4>
+                    <h4 class="modal-title">Edit</h4>
                 </div>
                 <div class="modal-body">
                     <?php include 'edit_category.php'; ?>
@@ -104,3 +114,44 @@
     </div>
     <!-- END Modal Block -->
 </div>
+<script>
+    function deleteCategory(category) {
+        if(!category) {
+            category = {
+              category_id: 15,
+                category_name: 'test123'
+            };
+        }
+
+        if(window.confirm('Are you sure to delete '+ category.category_name + '?')) {
+            window.location.href = "<?php echo site_url('admin/admin_link_delete_user');?>?id="+category.category_id;
+        }
+    }
+
+    //Ajax Load data from ajax
+    function editCategory() {
+       // alert(id);
+        id = 13;
+       // $.ajax({
+         //   url: "</?php echo site_url('admin/get_category/')?>/" + id,
+          //  type: "GET",
+           // dataType: "JSON",
+            //success: function (data) {
+            //alert(data.category_name);
+                /*
+                $('[name="id"]').val(data.id);
+                $('[name="firstName"]').val(data.firstName);
+                $('[name="lastName"]').val(data.lastName);
+                $('[name="gender"]').val(data.gender);
+                $('[name="address"]').val(data.address);
+                $('[name="dob"]').datepicker('update', data.dob);*/
+                $('#editModal').modal('show'); // show bootstrap modal when complete loaded
+                $('.modal-title').text('Edit Person'); // Set title to Bootstrap modal title
+
+            //},
+            //error: function (jqXHR, textStatus, errorThrown) {
+              //  alert('Error get data from ajax');
+            //}
+    //    });
+    }
+</script>

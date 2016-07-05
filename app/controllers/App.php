@@ -23,39 +23,38 @@ class App extends CI_Controller
         parent::__construct();
         $this->load->helper('url');
         $this->load->helper('form');
-        // $this->base_url('assets/admin/js/pages/notificationService.js');
         $this->load->library('form_validation');
         $this->load->library('session');
         $this->load->model(array('Main_Model'));
+
         $this->load->model(array('user/User_Login_Model', 'user/User_Registration_Model'));
         $this->load->model(array('merchant/Merchant_Login_Model', 'merchant/Merchant_Registration_Model'));
     }
 
-    public function notify($msg, $type='info')
-    {
+    /**
+     * Global method to notify users error/warning/info messages based on type
+     */
+    public function notify($msg, $type='info') {
         echo $msg;
         //echo "<script>alert('Error occured, please contact administrator...')</script>";
         /*@TODO: display notification instead alert...
          * echo "<script src=\"assets/admin/js/plugins.js\"></script>
-<script>$.bootstrapGrowl('<h4><strong>Notification</strong></h4> <p>msg</p>', {
+        <script>$.bootstrapGrowl('<h4><strong>Notification</strong></h4> <p>msg</p>', {
                 type: 'warning',
                 delay: 3000,
                 allow_dismiss: true,
                 offset: {from: 'top', amount: 20}
             });</script>";*/
     }
-
+    
     // ---- URIs -----
-
-    public function index()
-    {
+    public function index() {
         $this->load->view('includes/head');
         $this->load->view('index');
     }
 
     //	*** USER WORKFLOW ***
-    public function login()
-    {
+    public function login() {
         if ($this->User_Login_Model->is_logged_in_user()) {
             redirect('app/index');
         } else {
@@ -67,8 +66,7 @@ class App extends CI_Controller
         }
     }
 
-    public function sign_up()
-    {
+    public function sign_up() {
         if ($this->User_Login_Model->is_logged_in_user()) {
             redirect('app/profile');
         } else {
