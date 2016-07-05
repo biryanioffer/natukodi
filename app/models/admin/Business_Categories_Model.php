@@ -1,6 +1,6 @@
 <?php
 /**
- * Users model here for getting roles and data
+ * Business Categories model deals with both 'business_categories' and 'business_sub_categories' tables from admincon
  */
 class Business_Categories_Model extends Main_Model
 {
@@ -50,7 +50,7 @@ class Business_Categories_Model extends Main_Model
     }
 
     /**
-     * Function to Delete selected category from table name business_categories
+     * Function to Delete selected category from 'business_categories' table by 'category_id'
      */
     public function delete_category($id) {
         $this->db->where('category_id', $id);
