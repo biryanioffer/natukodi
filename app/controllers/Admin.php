@@ -99,114 +99,6 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/common/footer');
 	}
 
-	//*** User Management ***
-	public function users() {
-		if($this->Login_Model->is_logged_in_admin()) {
-			$this->load->view('admin/common/head');
-			$this->load->view('admin/common/side-nav');
-			$this->load->view('admin/common/top-bar');
-			$this->load->view('admin/users');
-			$this->load->view('admin/common/footer');
-			$this->load->view('admin/common/template-end');
-		}
-	}
-	public function user() {
-		$this->load->view('admin/common/head');
-		$this->load->view('admin/common/side-nav');
-		$this->load->view('admin/common/top-bar');
-		$this->load->view('admin/user');
-		$this->load->view('admin/common/footer');
-	}
-	public function user_likes() {
-		if($this->Login_Model->is_logged_in_admin()) {
-			$this->load->view('admin/common/head');
-			$this->load->view('admin/common/side-nav');
-			$this->load->view('admin/common/top-bar');
-			$this->load->view('admin/user_likes');
-			$this->load->view('admin/common/footer');
-			$this->load->view('admin/common/template-end');
-		}
-	}
-	public function user_ratings() {
-		if($this->Login_Model->is_logged_in_admin()) {
-			$this->load->view('admin/common/head');
-			$this->load->view('admin/common/side-nav');
-			$this->load->view('admin/common/top-bar');
-			$this->load->view('admin/user_ratings');
-			$this->load->view('admin/common/footer');
-			$this->load->view('admin/common/template-end');
-		}
-	}
-	public function user_favourites() {
-		if($this->Login_Model->is_logged_in_admin()) {
-			$this->load->view('admin/common/head');
-			$this->load->view('admin/common/side-nav');
-			$this->load->view('admin/common/top-bar');
-			$this->load->view('admin/user_favourites');
-			$this->load->view('admin/common/footer');
-			$this->load->view('admin/common/template-end');
-		}
-	}
-
-	//*** Merchant Management ***
-	public function merchants() {
-		if($this->Login_Model->is_logged_in_admin()) {
-			$this->load->view('admin/common/head');
-			$this->load->view('admin/common/side-nav');
-			$this->load->view('admin/common/top-bar');
-			$this->load->view('admin/merchants');
-			$this->load->view('admin/common/footer');
-			$this->load->view('admin/common/template-end');
-		}
-	}
-	public function merchant() {
-		$this->load->view('admin/common/head');
-		$this->load->view('admin/common/side-nav');
-		$this->load->view('admin/common/top-bar');
-		$this->load->view('admin/merchant');
-		$this->load->view('admin/common/footer');
-	}
-	public function merchant_branches() {
-		if($this->Login_Model->is_logged_in_admin()) {
-			$this->load->view('admin/common/head');
-			$this->load->view('admin/common/side-nav');
-			$this->load->view('admin/common/top-bar');
-			$this->load->view('admin/merchant_branches');
-			$this->load->view('admin/common/footer');
-			$this->load->view('admin/common/template-end');
-		}
-	}
-	public function merchant_business_categories() {
-		if($this->Login_Model->is_logged_in_admin()) {
-			$this->load->view('admin/common/head');
-			$this->load->view('admin/common/side-nav');
-			$this->load->view('admin/common/top-bar');
-			$this->load->view('admin/merchant_business_categories');
-			$this->load->view('admin/common/footer');
-			$this->load->view('admin/common/template-end');
-		}
-	}
-	public function merchant_notifications() {
-		if($this->Login_Model->is_logged_in_admin()) {
-			$this->load->view('admin/common/head');
-			$this->load->view('admin/common/side-nav');
-			$this->load->view('admin/common/top-bar');
-			$this->load->view('admin/merchant_notifications');
-			$this->load->view('admin/common/footer');
-			$this->load->view('admin/common/template-end');
-		}
-	}
-	public function merchant_transactions() {
-		if($this->Login_Model->is_logged_in_admin()) {
-			$this->load->view('admin/common/head');
-			$this->load->view('admin/common/side-nav');
-			$this->load->view('admin/common/top-bar');
-			$this->load->view('admin/merchant_transactions');
-			$this->load->view('admin/common/footer');
-			$this->load->view('admin/common/template-end');
-		}
-	}
-
 	//*** Offer Management ***
 	public function offers() {
 		if($this->Login_Model->is_logged_in_admin()) {
@@ -583,6 +475,325 @@ class Admin extends CI_Controller {
 			} else {
 				$this->notify('No city exist with city id: ' . $city_id);
 			}
+		}
+	}
+
+	// ***** User URIs ************************************************************
+	/*
+	 * Loads all users to display in summary page
+	 */
+	public function users() {
+		if($this->Login_Model->is_logged_in_admin()){
+			//	get all users...
+			$data['users'] = $this->Users_Model->get_users();
+
+			//	navigating to users Summary ...
+			$this->load->view('admin/common/head');
+			$this->load->view('admin/common/side-nav');
+			$this->load->view('admin/common/top-bar');
+			$this->load->view('admin/users', $data);
+			$this->load->view('admin/common/footer');
+			$this->load->view('admin/common/template-end');
+		}
+	}
+
+	/*
+	 * Load a user by id to display in Edit modal window
+	 */
+	public function get_user($id) {
+		if($this->Login_Model->is_logged_in_admin()) {
+			$data['selected_id'] = $id;
+			//	get an user by id...
+			$user = $this->Users_Model->get_user($id);
+			if ($user) {
+				$data['user'] = $user;
+				echo json_encode($data);
+				// @TODO: Show Edit user modal window
+			} else {
+				$this->notify('Selected user not found');
+			}
+		}
+	}
+
+	/*
+	 * Creates new user
+	 */
+	public function create_user() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if(!$this->Users_Model->is_email_exists($_REQUEST['email'])) {
+				$data = array(
+					"first_name" => $_REQUEST['first_name'],
+					"last_name" => $_REQUEST['last_name'],
+					"dob" => $_REQUEST['dob'],
+					"contact_number" => $_REQUEST['contact_number'],
+					"email" => $_REQUEST['email'],
+					"password" => $_REQUEST['password'],
+					"gender" => $_REQUEST['gender'],
+					"area" => $_REQUEST['area'],
+					"landmark" => $_REQUEST['landmark'],
+					"zip_code" => $_REQUEST['zip_code'],
+					"city" => $_REQUEST['city'],
+					"state" => $_REQUEST['state'],
+					"status" => 1,
+					"created_date" => date('Y-m-d H:i:s'),
+					"last_updated" => date('Y-m-d H:i:s')
+				);
+				if ($this->Users_Model->create_user($data)) {
+					$this->notify('New User created successfully!');
+					redirect('admin/users');
+				} else {
+					$this->notify('User cannot be saved!');
+				}
+			} else {
+				$this->notify('User with same email address already exist!');
+			}
+		}
+	}
+
+	/*
+	 * Updates existing user by id
+	 */
+	public function update_user() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if(!$this->Users_Model->is_email_exists($_REQUEST['email'])) {
+				$data = array(
+					"first_name" => $_REQUEST['first_name'],
+					"last_name" => $_REQUEST['last_name'],
+					"dob" => $_REQUEST['dob'],
+					"contact_number" => $_REQUEST['contact_number'],
+					"password" => $_REQUEST['password'],
+					"gender" => $_REQUEST['gender'],
+					"area" => $_REQUEST['area'],
+					"landmark" => $_REQUEST['landmark'],
+					"zip_code" => $_REQUEST['zip_code'],
+					"city" => $_REQUEST['city'],
+					"state" => $_REQUEST['state'],
+					"status" => $_REQUEST['status'],
+					"created_date" => date('Y-m-d H:i:s'),
+					"last_updated" => date('Y-m-d H:i:s')
+				);
+				if ($this->Users_Model->update_user($data['selected_id'], $data)) {
+					$this->notify('User updated successfully');
+					redirect('admin/users');
+				} else {
+					$this->notify('User cannot be updated!');
+				}
+			} else {
+				$this->notify('User with same email address already exist!');
+			}
+		}
+	}
+
+	/*
+	 * Deletes existing user by id
+	 */
+	public function delete_user($id) {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if ($this->Users_Model->get_user($id)) {
+				if ($this->Users_Model->delete_user($id)) {
+					$this->notify('User deleted successfully!');
+					redirect('admin/users');
+				} else {
+					$this->notify('User cannot be deleted!');
+				}
+			} else {
+				$this->notify('No user exist with user id: ' . $id);
+			}
+		}
+	}
+
+	public function user_likes() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			$this->load->view('admin/common/head');
+			$this->load->view('admin/common/side-nav');
+			$this->load->view('admin/common/top-bar');
+			$this->load->view('admin/user_likes');
+			$this->load->view('admin/common/footer');
+			$this->load->view('admin/common/template-end');
+		}
+	}
+	public function user_ratings() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			$this->load->view('admin/common/head');
+			$this->load->view('admin/common/side-nav');
+			$this->load->view('admin/common/top-bar');
+			$this->load->view('admin/user_ratings');
+			$this->load->view('admin/common/footer');
+			$this->load->view('admin/common/template-end');
+		}
+	}
+	public function user_favourites() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			$this->load->view('admin/common/head');
+			$this->load->view('admin/common/side-nav');
+			$this->load->view('admin/common/top-bar');
+			$this->load->view('admin/user_favourites');
+			$this->load->view('admin/common/footer');
+			$this->load->view('admin/common/template-end');
+		}
+	}
+
+	// ***** Merchant URIs ************************************************************
+	/*
+	 * Loads all merchants to display in summary page
+	 */
+	public function merchants() {
+		if($this->Login_Model->is_logged_in_admin()){
+			//	get all merchants...
+			$data['merchants'] = $this->Merchants_Model->get_merchants();
+
+			//	navigate to merchants Summary ...
+			$this->load->view('admin/common/head');
+			$this->load->view('admin/common/side-nav');
+			$this->load->view('admin/common/top-bar');
+			$this->load->view('admin/merchants', $data);
+			$this->load->view('admin/common/footer');
+			$this->load->view('admin/common/template-end');
+		}
+	}
+
+	/*
+	 * Load a merchant by id to display in Edit modal window
+	 */
+	public function get_merchant($id) {
+		if($this->Login_Model->is_logged_in_admin()) {
+			$data['selected_id'] = $id;
+			//	get a merchant by id...
+			$merchant = $this->Merchants_Model->get_merchant($id);
+			if ($merchant) {
+				$data['merchant'] = $merchant;
+				echo json_encode($data);
+				// @TODO: Show Edit merchant modal window
+			} else {
+				$this->notify('Selected merchant not found');
+			}
+		}
+	}
+
+	/*
+	 * Creates new merchants
+	 */
+	public function create_merchant() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if(!$this->Merchants_Model->is_username_exists($_REQUEST['user_name'])) {
+				$data = array(
+					"user_name" => $_REQUEST['user_name'],
+					"password" => $_REQUEST['password'],
+					"status" => 1,
+					"business_name" => $_REQUEST['business_name'],
+					"description" => $_REQUEST['description'],
+					"website_url" => $_REQUEST['website_url'],
+					"facebook_url" => $_REQUEST['facebook_url'],
+					"twitter_url" => $_REQUEST['twitter_url'],
+					"google_plus_url" => $_REQUEST['google_plus_url'],
+					"pan_number" => $_REQUEST['pan_number'],
+					"address_proof" => $_REQUEST['address_proof'],
+					"wallet_balance" => $_REQUEST['wallet_balance'],
+					"created_date" => date('Y-m-d H:i:s'),
+					"last_updated" => date('Y-m-d H:i:s')
+				);
+				if ($this->Merchants_Model->create_merchant($data)) {
+					$this->notify('New merchant created successfully!');
+					redirect('admin/merchants');
+				} else {
+					$this->notify('Merchant cannot be saved!');
+				}
+			} else {
+				$this->notify('Merchant with same user name already exist!');
+			}
+		}
+	}
+
+	/*
+	 * Updates existing merchant by id
+	 */
+	public function update_merchant() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if(!$this->Merchants_Model->is_username_exists($_REQUEST['user_name'])) {
+				$data = array(
+					"user_name" => $_REQUEST['user_name'],
+					"password" => $_REQUEST['password'],
+					"status" => $_REQUEST['status'],
+					"business_name" => $_REQUEST['business_name'],
+					"description" => $_REQUEST['description'],
+					"website_url" => $_REQUEST['website_url'],
+					"facebook_url" => $_REQUEST['facebook_url'],
+					"twitter_url" => $_REQUEST['twitter_url'],
+					"google_plus_url" => $_REQUEST['google_plus_url'],
+					"pan_number" => $_REQUEST['pan_number'],
+					"address_proof" => $_REQUEST['address_proof'],
+					"wallet_balance" => $_REQUEST['wallet_balance'],
+					"created_date" => date('Y-m-d H:i:s'),
+					"last_updated" => date('Y-m-d H:i:s')
+				);
+				if ($this->Merchants_Model->update_merchant($data['selected_id'], $data)) {
+					$this->notify('Merchant updated successfully');
+					redirect('admin/merchants');
+				} else {
+					$this->notify('Merchant cannot be updated!');
+				}
+			} else {
+				$this->notify('merchant with same user name already exist!');
+			}
+		}
+	}
+
+	/*
+	 * Deletes existing merchant by id
+	 */
+	public function delete_merchant($id) {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if ($this->Merchants_Model->get_merchant($id)) {
+				if ($this->Merchants_Model->delete_merchant($id)) {
+					$this->notify('Merchant deleted successfully!');
+					redirect('admin/merchants');
+				} else {
+					$this->notify('Merchant cannot be deleted!');
+				}
+			} else {
+				$this->notify('No merchant exist with id: ' . $id);
+			}
+		}
+	}
+
+	public function merchant_branches() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			$this->load->view('admin/common/head');
+			$this->load->view('admin/common/side-nav');
+			$this->load->view('admin/common/top-bar');
+			$this->load->view('admin/merchant_branches');
+			$this->load->view('admin/common/footer');
+			$this->load->view('admin/common/template-end');
+		}
+	}
+	public function merchant_business_categories() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			$this->load->view('admin/common/head');
+			$this->load->view('admin/common/side-nav');
+			$this->load->view('admin/common/top-bar');
+			$this->load->view('admin/merchant_business_categories');
+			$this->load->view('admin/common/footer');
+			$this->load->view('admin/common/template-end');
+		}
+	}
+	public function merchant_notifications() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			$this->load->view('admin/common/head');
+			$this->load->view('admin/common/side-nav');
+			$this->load->view('admin/common/top-bar');
+			$this->load->view('admin/merchant_notifications');
+			$this->load->view('admin/common/footer');
+			$this->load->view('admin/common/template-end');
+		}
+	}
+	public function merchant_transactions() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			$this->load->view('admin/common/head');
+			$this->load->view('admin/common/side-nav');
+			$this->load->view('admin/common/top-bar');
+			$this->load->view('admin/merchant_transactions');
+			$this->load->view('admin/common/footer');
+			$this->load->view('admin/common/template-end');
 		}
 	}
 }
