@@ -15,8 +15,8 @@ class Administrators_Model extends Main_Model
     /**
      * Get a administrator info by id from DB
      */
-    public function get_administrator($id) {
-        $this->db->where('admin_id', $id);
+    public function get_administrator($admin_id) {
+        $this->db->where('admin_id', $admin_id);
         $query = $this->db->get('administrators');
         return $query->result();
     }
@@ -48,10 +48,10 @@ class Administrators_Model extends Main_Model
     }
 
     /**
-     * Delete selected admin from 'administrators' table by id
+     * Delete selected admin from 'administrators' table by admin_id
      */
-    public function delete_admin($id) {
-        $this->db->where('admin_id', $id);
+    public function delete_admin($admin_id) {
+        $this->db->where('admin_id', $admin_id);
         return ($this->db->delete('administrators'));
     }
 }

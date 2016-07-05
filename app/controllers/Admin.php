@@ -24,7 +24,12 @@ class Admin extends CI_Controller {
 		$this->load->model(array('Main_Model'));
 
 		$this->load->model(array('admin/Login_Model'));
+		$this->load->model(array('admin/Administrators_Model'));
         $this->load->model(array('admin/Business_Categories_Model'));
+		$this->load->model(array('admin/Cities_Model'));
+		$this->load->model(array('admin/Merchants_Model'));
+		$this->load->model(array('admin/Offers_Model'));
+		$this->load->model(array('admin/Users_Model'));
 	}
 
 	/**
@@ -48,35 +53,15 @@ class Admin extends CI_Controller {
 	/*
 	 * Default page when access http://offerciti.com/admin
 	 */
-	public function index()
-	{
+	public function index() {
 		$this->load->view('admin/common/head');
 		$this->load->view('admin/login');
 	}
 
 	//*** Admin Management ***
-	public function administrators()
-	{
-		if($this->Login_Model->is_logged_in_admin()) {
-			$this->load->view('admin/common/head');
-			$this->load->view('admin/common/side-nav');
-			$this->load->view('admin/common/top-bar');
-			$this->load->view('admin/administrators');
-			$this->load->view('admin/common/footer');
-			$this->load->view('admin/common/template-end');
-		}
-	}
-	public function administrator()
-	{
-		$this->load->view('admin/common/head');
-		$this->load->view('admin/common/side-nav');
-		$this->load->view('admin/common/top-bar');
-		$this->load->view('admin/administrator');
-		$this->load->view('admin/common/footer');
-	}
+	
 
-    public function sub_categories()
-	{
+    public function sub_categories() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -86,16 +71,16 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/common/template-end');
 		}
 	}
-	public function sub_category()
-	{
+
+	public function sub_category() {
 		$this->load->view('admin/common/head');
 		$this->load->view('admin/common/side-nav');
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/sub_category');
 		$this->load->view('admin/common/footer');
 	}
-	public function service_areas()
-	{
+
+	public function service_areas() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -105,8 +90,8 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/common/template-end');
 		}
 	}
-	public function service_area()
-	{
+
+	public function service_area() {
 		$this->load->view('admin/common/head');
 		$this->load->view('admin/common/side-nav');
 		$this->load->view('admin/common/top-bar');
@@ -115,8 +100,7 @@ class Admin extends CI_Controller {
 	}
 
 	//*** User Management ***
-	public function users()
-	{
+	public function users() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -126,16 +110,14 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/common/template-end');
 		}
 	}
-	public function user()
-	{
+	public function user() {
 		$this->load->view('admin/common/head');
 		$this->load->view('admin/common/side-nav');
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/user');
 		$this->load->view('admin/common/footer');
 	}
-	public function user_likes()
-	{
+	public function user_likes() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -145,8 +127,7 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/common/template-end');
 		}
 	}
-	public function user_ratings()
-	{
+	public function user_ratings() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -156,8 +137,7 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/common/template-end');
 		}
 	}
-	public function user_favourites()
-	{
+	public function user_favourites() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -169,8 +149,7 @@ class Admin extends CI_Controller {
 	}
 
 	//*** Merchant Management ***
-	public function merchants()
-	{
+	public function merchants() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -180,16 +159,14 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/common/template-end');
 		}
 	}
-	public function merchant()
-	{
+	public function merchant() {
 		$this->load->view('admin/common/head');
 		$this->load->view('admin/common/side-nav');
 		$this->load->view('admin/common/top-bar');
 		$this->load->view('admin/merchant');
 		$this->load->view('admin/common/footer');
 	}
-	public function merchant_branches()
-	{
+	public function merchant_branches() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -199,8 +176,7 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/common/template-end');
 		}
 	}
-	public function merchant_business_categories()
-	{
+	public function merchant_business_categories() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -210,8 +186,7 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/common/template-end');
 		}
 	}
-	public function merchant_notifications()
-	{
+	public function merchant_notifications() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -221,8 +196,7 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/common/template-end');
 		}
 	}
-	public function merchant_transactions()
-	{
+	public function merchant_transactions() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -234,8 +208,7 @@ class Admin extends CI_Controller {
 	}
 
 	//*** Offer Management ***
-	public function offers()
-	{
+	public function offers() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -245,8 +218,7 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/common/template-end');
 		}
 	}
-	public function offer_sub_categories()
-	{
+	public function offer_sub_categories() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -256,8 +228,7 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/common/template-end');
 		}
 	}
-	public function offer_image_gallery()
-	{
+	public function offer_image_gallery() {
 		if($this->Login_Model->is_logged_in_admin()) {
 			$this->load->view('admin/common/head');
 			$this->load->view('admin/common/side-nav');
@@ -268,13 +239,12 @@ class Admin extends CI_Controller {
 		}
 	}
 
-	// ***** Controller functions *****
+	// ***** Controller functions *********************************************************
 	/*
 	 * Checks DB whether valid admin or not
 	 * Store admin info in session and navigates to administrators summary
 	 */
-	public function login()
-	{
+	public function login() {
 		if($this->Login_Model->verify_admin($_REQUEST)){
 			redirect('admin/administrators');
 		} else {
@@ -287,12 +257,124 @@ class Admin extends CI_Controller {
 	 * Clears all session variables
 	 * Logs out from application and redirects to login page
 	 */
-	public function logout()
-	{
+	public function logout() {
 		$this->Login_Model->clear_session_data();
 		redirect('admin/index');
 	}
 
+	// ***** Administrator URIs *********************************************************
+	/*
+	 * Loads all administrators to display in summary page
+	 */
+	public function administrators() {
+		if($this->Login_Model->is_logged_in_admin()){
+			//	get all administrators...
+			$data['admins'] = $this->Administrators_Model->get_administrators();
+
+			//	navigate to Administrators Summary ...
+			$this->load->view('admin/common/head');
+			$this->load->view('admin/common/side-nav');
+			$this->load->view('admin/common/top-bar');
+			$this->load->view('admin/administrators', $data);
+			$this->load->view('admin/common/footer');
+			$this->load->view('admin/common/template-end');
+		}
+	}
+	
+	/*
+	 * Load an administrator by admin_id to display in Edit modal window
+	 */
+	public function get_administrator($admin_id) {
+		if($this->Login_Model->is_logged_in_admin()) {
+			$data['selected_id'] = $admin_id;
+			//	get an admin by admin_id...
+			$admin = $this->Administrators_Model->get_administrator($admin_id);
+			if ($admin) {
+				$data['admin'] = $admin;
+				echo json_encode($data);
+				// @TODO: Show Edit admin modal window
+			} else {
+				$this->notify('Selected administrator not found');
+			}
+		}
+	}
+
+	/*
+	 * Creates new administrator
+	 */
+	public function create_administrator() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if(!$this->Administrators_Model->is_email_exists($_REQUEST['email'])) {
+				$data = array(
+					"role" => $_REQUEST['role'],
+					"first_name" => $_REQUEST['first_name'],
+					"last_name" => $_REQUEST['last_name'],
+					"contact_number" => $_REQUEST['contact_number'],
+					"email" => $_REQUEST['email'],
+					"user_name" => $_REQUEST['user_name'],
+					"password" => $_REQUEST['password'],
+					"status" => 1,
+					"created_date" => date('Y-m-d H:i:s'),
+					"last_updated" => date('Y-m-d H:i:s')
+				);
+				if ($this->Administrators_Model->create_admin($data)) {
+					$this->notify('New administrator created successfully!');
+					redirect('admin/administrators');
+				} else {
+					$this->notify('Administrator cannot be saved!');
+				}
+			} else {
+				$this->notify('Administrator with email address already exist!');
+			}
+		}
+	}
+
+	/*
+	 * Updates existing admin by admin_id
+	 */
+	public function update_administrator() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if(!$this->Administrators_Model->is_email_exists($_REQUEST['email'])) {
+				$data = array(
+					"role" => $_REQUEST['role'],
+					"first_name" => $_REQUEST['first_name'],
+					"last_name" => $_REQUEST['last_name'],
+					"contact_number" => $_REQUEST['contact_number'],
+					"password" => $_REQUEST['password'],
+					"status" => $_REQUEST['status'],
+					"last_updated" => date('Y-m-d H:i:s')
+				);
+				if ($this->Administrators_Model->update_admin($data['selected_id'], $data)) {
+					$this->notify('Administrator updated successfully');
+					redirect('admin/administrators');
+				} else {
+					$this->notify('Administrator cannot be updated!');
+				}
+			} else {
+				$this->notify('Administrator with email address already exist!');
+			}
+		}
+	}
+
+	/*
+	 * Deletes existing admin by admin_id
+	 */
+	public function delete_administrator($admin_id) {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if ($this->Administrators_Model->get_administrator($admin_id)) {
+				if ($this->Administrators_Model->delete_admin($admin_id)) {
+					$this->notify('Administrator deleted successfully!');
+					redirect('admin/administrators');
+				} else {
+					$this->notify('Administrator cannot be deleted!');
+				}
+			} else {
+				$this->notify('No Administrator exist with id: ' . $admin_id);
+			}
+		}
+	}
+
+	// ***** Categories URIs ************************************************************
 	/*
 	 * Loads all categories to display in summary page
 	 */
@@ -315,15 +397,17 @@ class Admin extends CI_Controller {
 	 * Load a category by category id to display in Edit modal window
 	 */
 	public function get_category($id) {
-		$data['selected_id'] = $id;
-		//	get a category by id...
-		$category = $this->Business_Categories_Model->get_category($id);
-		if($category) {
-			$data['category'] = $this->Business_Categories_Model->get_category($id);
-			echo json_encode($data);
-			// @TODO: Show Edit category modal window
-		} else {
-			$this->notify('Selected category not found');
+		if($this->Login_Model->is_logged_in_admin()) {
+			$data['selected_id'] = $id;
+			//	get a category by id...
+			$category = $this->Business_Categories_Model->get_category($id);
+			if ($category) {
+				$data['category'] = $category;
+				echo json_encode($data);
+				// @TODO: Show Edit category modal window
+			} else {
+				$this->notify('Selected category not found');
+			}
 		}
 	}
 
@@ -376,15 +460,17 @@ class Admin extends CI_Controller {
 	 * Deletes existing category by category id
 	 */
 	public function delete_category($id) {
-		if($this->Business_Categories_Model->get_category($id)) {
-			if ($this->Business_Categories_Model->delete_category($id)) {
-				redirect('admin/categories');
-				$this->notify('Category deleted successfully!');
+		if($this->Login_Model->is_logged_in_admin()) {
+			if ($this->Business_Categories_Model->get_category($id)) {
+				if ($this->Business_Categories_Model->delete_category($id)) {
+					redirect('admin/categories');
+					$this->notify('Category deleted successfully!');
+				} else {
+					$this->notify('Category cannot be deleted!');
+				}
 			} else {
-				$this->notify('Category cannot be deleted!');
+				$this->notify('No category exist with category id: ' . $id);
 			}
-		} else {
-			$this->notify('No category exist with category id: ' . $id);
 		}
 	}
 
@@ -395,6 +481,108 @@ class Admin extends CI_Controller {
 	public function playground() {
 		if($this->Login_Model->is_logged_in_admin()){
 			$this->load->view('admin/playground');
+		}
+	}
+
+	// ***** Cities URIs ************************************************************
+	/*
+	 * Loads all cities to display in summary page
+	 */
+	public function cities() {
+		if($this->Login_Model->is_logged_in_admin()){
+			//	get all cities...
+			$data['cities'] = $this->Cities_Model->get_cities();
+
+			//	navigating to Cities Summary ...
+			$this->load->view('admin/common/head');
+			$this->load->view('admin/common/side-nav');
+			$this->load->view('admin/common/top-bar');
+			$this->load->view('admin/cities', $data);
+			$this->load->view('admin/common/footer');
+			$this->load->view('admin/common/template-end');
+		}
+	}
+
+	/*
+	 * Load a city by city id to display in Edit modal window
+	 */
+	public function get_city($city_id) {
+		if($this->Login_Model->is_logged_in_admin()) {
+			$data['selected_id'] = $city_id;
+			//	get a city by id...
+			$city = $this->Cities_Model->get_city($city_id);
+			if ($city) {
+				$data['city'] = $city;
+				echo json_encode($data);
+				// @TODO: Show Edit city modal window
+			} else {
+				$this->notify('Selected city not found');
+			}
+		}
+	}
+
+	/*
+	 * Creates new city
+	 */
+	public function create_city() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if(!$this->Cities_Model->is_exists($_REQUEST['city'])) {
+				$data = array(
+					"city" => $_REQUEST['city'],
+					"state" => $_REQUEST['state'],
+					"status" => 1,
+					"created_on" => date('Y-m-d H:i:s')
+				);
+				if ($this->Cities_Model->create_city($data)) {
+					$this->notify('New City created successfully!');
+					redirect('admin/cities');
+				} else {
+					$this->notify('City cannot be saved!');
+				}
+			} else {
+				$this->notify('City with same name already exist!');
+			}
+		}
+	}
+
+	/*
+	 * Updates existing city by city id
+	 */
+	public function update_city() {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if(!$this->Cities_Model->is_exists($_REQUEST['city'])) {
+				$data = array(
+					"city" => $_REQUEST['city'],
+					"state" => $_REQUEST['state'],
+					"status" => $_REQUEST['status']
+				);
+				if ($this->Cities_Model->update_city($data['selected_id'], $data)) {
+					$this->notify('City updated successfully');
+					redirect('admin/cities');
+				} else {
+					$this->notify('City cannot be updated!');
+				}
+			} else {
+				$this->notify('City with same name already exist!');
+			}
+		}
+	}
+
+	/*
+	 * Deletes existing city by city id
+	 */
+	public function delete_city($city_id) {
+		if($this->Login_Model->is_logged_in_admin()) {
+			if ($this->Cities_Model->get_city($city_id)) {
+				if ($this->Cities_Model->delete_city($city_id)) {
+					$this->notify('City deleted successfully!');
+					redirect('admin/cities');
+				} else {
+					$this->notify('City cannot be deleted!');
+				}
+			} else {
+				$this->notify('No city exist with city id: ' . $city_id);
+			}
 		}
 	}
 }

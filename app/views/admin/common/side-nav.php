@@ -44,7 +44,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="service_areas">Service Areas</a>
+                            <a href="cities">Cities</a>
                         </li>
                     </ul>
                 </li>
